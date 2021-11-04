@@ -1,51 +1,60 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-function Nav() {
-  function showNavigation() {
-    if (Auth.loggedIn()) {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/orderHistory">Order History</Link>
-          </li>
-          <li className="mx-1">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
-            </a>
-          </li>
-        </ul>
-      );
-    } else {
-      return (
-        <ul className="flex-row">
-          <li className="mx-1">
-            <Link to="/signup">Signup</Link>
-          </li>
-          <li className="mx-1">
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
-      );
-    }
+// import NavbarItem from "./NavbarItem";
+// import NavbarBurger from "./NavbarBurger";
+
+const NavbarItem = props => (
+  <a className="navbar-item is-capitalized" href={`#${props.page}`}>
+    {props.page}
+  </a>
+);
+const NavbarBurger = props => (
+  <button
+    onClick={props.toggleMenu}
+    className={`button navbar-burger ${props.active ? 'is-active' : ''}`}
+  >
+    <span />
+    <span />
+    <span />
+  </button>
+);
+
+export default class Navbar extends React.Component {
+  state = {
+    activeMenu: false,
+  };
+  toggleMenu = () => {
+    this.setState({
+      activeMenu: !this.state.activeMenu,
+    });
+  };
+  render() {
+    let { pages = [], color } = this.props;
+    let navbarItems = pages.map(page => <NavbarItem page={page} key={page} />);
+    return (
+      <nav className={`navbar is-fixed-top is-${color}`}>
+        <div className="navbar-brand">
+          <NavbarItem page="logo" />
+          <NavbarBurger
+            active={this.state.activeMenu}
+            toggleMenu={this.toggleMenu}
+          />
+        </div>
+        <div
+          className={`navbar-menu ${this.state.activeMenu ? 'is-active' : ''}`}
+        >
+          <div className="navbar-start">{navbarItems}</div>
+        </div>
+      </nav>
+    );
   }
-
-  return (
-    <header className="flex-row px-1">
-      <h1>
-        <Link to="/">
-          <span role="img" aria-label="shopping bag">
-            🛍️
-          </span>
-          -Shop-Shop
-        </Link>
-      </h1>
-
-      <nav>{showNavigation()}</nav>
-    </header>
-  );
 }
 
-export default Nav;
+Navbar.propTypes = {
+  pages: PropTypes.array.isRequired,
+  color: PropTypes.string,
+};
+

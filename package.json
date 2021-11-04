@@ -19,5 +19,8 @@
     "husky": "^7.0.0",
     "husky-init": "^7.0.0",
     "npx": "^10.2.2"
+  },
+  "dependencies": {
+    "bulma": "^0.9.3"
   }
 }

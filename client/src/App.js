@@ -7,13 +7,14 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import 'bulma/css/bulma.css';
 
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import Nav from "./components/Nav";
+import Navbar from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
 import Success from "./pages/Success";
 import OrderHistory from "./pages/OrderHistory";
@@ -37,13 +38,15 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const pages = ['about', 'contact', 'sitemap'];
+
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
           <StoreProvider>
-            <Nav />
+            <Navbar pages={pages} />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
