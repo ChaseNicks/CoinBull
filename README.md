@@ -5,13 +5,13 @@
 <!-- TODO: Add link to deployed application -->
 
 ## Table of Contents
-  * [Technologies](#technologies)
-  * [Functionality](#functionality)
-  * [Challenges](#challenges)
-  * [Future Development](#future-development)
-  * [Contact](#contact)
-  * [License](#license)
 
+- [Technologies](#technologies)
+- [Functionality](#functionality)
+- [Challenges](#challenges)
+- [Future Development](#future-development)
+- [Contact](#contact)
+- [License](#license)
 
 ## Technologies
 
@@ -26,28 +26,24 @@
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)&nbsp;
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)&nbsp;
 
-
 ## Functionality
 
 <!-- TODO: Add screenshots/GIFs of functionality as available -->
-
 
 ## Challenges
 
 <!-- TODO: Add challenges as they arise -->
 
-
 ## Future Development
 
 <!-- TODO: Add ideas for future development as they arise -->
-
 
 ## Contact
 
 <!-- TODO: Add contact information for full team -->
 
-
 ## License
+
 &copy; 2021 CoinBull
 
 [MIT License](https://opensource.org/licenses/MIT)
