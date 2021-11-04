@@ -6,8 +6,15 @@ import PropTypes from 'prop-types';
 // import NavbarItem from "./NavbarItem";
 // import NavbarBurger from "./NavbarBurger";
 
+const NavbarLogo = props => (
+  <a className="navbar-item is-capitalized is-size-3" href={`#${props.page}`}
+      style={{ color: "#38C838", textDecoration: "none"}}>
+    {props.page}
+  </a>
+);
+
 const NavbarItem = props => (
-  <a className="navbar-item is-capitalized" href={`#${props.page}`}>
+  <a className="navbar-item is-capitalized is-size-5" href={`#${props.page}`}>
     {props.page}
   </a>
 );
@@ -37,7 +44,8 @@ export default class Navbar extends React.Component {
     return (
       <nav className={`navbar is-fixed-top is-${color}`}>
         <div className="navbar-brand">
-          <NavbarItem page="logo" />
+          <NavbarLogo page="CoinBull"/>
+          <NavbarItem/>
           <NavbarBurger
             active={this.state.activeMenu}
             toggleMenu={this.toggleMenu}
