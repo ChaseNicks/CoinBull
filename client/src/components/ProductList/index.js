@@ -82,7 +82,8 @@ function ProductList() {
         )}
         {loading ? <img src={spinner} alt="loading" /> : null}
       </div>
-      <div>
+
+      <div class="panel">
         {coinsState.map((coin) => (
           <SingleCoin key={coin.id} logo_url={coin.logo_url} />
         ))}

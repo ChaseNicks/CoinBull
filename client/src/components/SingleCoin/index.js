@@ -1,9 +1,9 @@
 const SingleCoin = (coin) => {
   const { logo_url } = coin;
   return (
-    <div>
-      <img src={logo_url} alt={logo_url} />
-    </div>
+    <a class="panel-block" href={logo_url}>
+      <img width="50px" src={logo_url} alt={logo_url} />
+    </a>
   );
 };
 
