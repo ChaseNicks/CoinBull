@@ -1,20 +1,19 @@
 import React from "react";
-import Auth from "../../utils/auth";
-import { Link } from "react-router-dom";
+// import Auth from "../../utils/auth";
+// import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-
-// import NavbarItem from "./NavbarItem";
-// import NavbarBurger from "./NavbarBurger";
+import "./styles/nav.css";
 
 const NavbarLogo = props => (
   <a className="navbar-item is-capitalized is-size-3" href={`#${props.page}`}
-      style={{ color: "#38C838", textDecoration: "none"}}>
+      style={{ color: "rgb(56,200,56)", textDecoration: "none"}}>
     {props.page}
   </a>
 );
 
 const NavbarItem = props => (
-  <a className="navbar-item is-capitalized is-size-5" href={`#${props.page}`}>
+  <a className="navbar-item is-capitalized is-size-5 nav-item-styles" href={`#${props.page}`}
+  style={{textDecoration: "none"}}>
     {props.page}
   </a>
 );
