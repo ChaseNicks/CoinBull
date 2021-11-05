@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductItem from "../ProductItem";
-import SingleCoin from "../SingleCoin";
+import CoinTab from "../CoinTab";
 import { useStoreContext } from "../../utils/GlobalState";
 import { UPDATE_PRODUCTS } from "../../utils/actions";
 import { useQuery } from "@apollo/client";
@@ -83,12 +83,45 @@ function ProductList() {
         {loading ? <img src={spinner} alt="loading" /> : null}
       </div>
 
-      <div class="panel">
-        {coinsState.map((coin) => (
-          <SingleCoin key={coin.id} logo_url={coin.logo_url} />
-        ))}
-        {console.log(coinsState)}
-      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              <abbr title="Coin">Coin</abbr>
+            </th>
+            <th>
+              <abbr title="Name">Name</abbr>
+            </th>
+            <th>
+              <abbr title="Price">Price</abbr>
+            </th>
+            <th>
+              <abbr title="Change">Change</abbr>
+            </th>
+            <th>
+              <abbr title="Circulating_Supply">Circulating supply</abbr>
+            </th>
+            <th>
+              <abbr title="Price_Chart">Price Chart</abbr>
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {coinsState.map((coin) => (
+            <CoinTab
+              key={coin.id}
+              name={coin.name}
+              logo_url={coin.logo_url}
+              price={coin.price}
+              change={coin["1d"].price_change_pct}
+              circulating_supply={coin.circulating_supply}
+              market_cap={coin.market_cap}
+            />
+          ))}
+          {console.log(coinsState)}
+        </tbody>
+      </table>
     </>
   );
 }
