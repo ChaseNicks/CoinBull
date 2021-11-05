@@ -14,7 +14,7 @@ function ProductList() {
 
   const { currentCategory } = state;
   const [coinsState, setCoinsState] = useState([]);
-  console.log({ coinsState });
+  // console.log(coinsState);
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
@@ -23,6 +23,7 @@ function ProductList() {
       try {
         const coins = await getAllCoins();
         setCoinsState(coins);
+        console.log("helloooooooooooo");
       } catch (err) {
         console.error(err);
       }
@@ -60,10 +61,10 @@ function ProductList() {
   }
 
   return (
-    <div className="my-2">
-      <h2>Our Products:</h2>
-      {state.products.length ? (
-        <>
+    <>
+      <div className="my-2">
+        <h2>Our Products:</h2>
+        {state.products.length ? (
           <div className="flex-row">
             {filterProducts().map((product) => (
               <ProductItem
@@ -76,17 +77,18 @@ function ProductList() {
               />
             ))}
           </div>
-          <div>
-            {coinsState.coins.map((coin) => (
-              <SingleCoin key={coin.id} logo_url={coin.logo_url} />
-            ))}
-          </div>
-        </>
-      ) : (
-        <h3>You haven't added any products yet!</h3>
-      )}
-      {loading ? <img src={spinner} alt="loading" /> : null}
-    </div>
+        ) : (
+          <h3>You haven't added any products yet!</h3>
+        )}
+        {loading ? <img src={spinner} alt="loading" /> : null}
+      </div>
+      <div>
+        {coinsState.map((coin) => (
+          <SingleCoin key={coin.id} logo_url={coin.logo_url} />
+        ))}
+        {console.log(coinsState)}
+      </div>
+    </>
   );
 }
 
