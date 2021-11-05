@@ -83,7 +83,7 @@ function ProductList() {
         {loading ? <img src={spinner} alt="loading" /> : null}
       </div> */}
 
-      <table class="table">
+      <table class="table mt-2">
         <thead>
           <tr>
             <th>
@@ -102,9 +102,12 @@ function ProductList() {
               <abbr title="Circulating_Supply">Circulating supply</abbr>
             </th>
             <th>
+              <abbr title="Price_Chart">Market Cap</abbr>
+            </th>
+            <th>
               <abbr title="Price_Chart">Price Chart</abbr>
             </th>
-            <th></th>
+            <th>Add to favorites</th>
           </tr>
         </thead>
         <tbody>
@@ -119,7 +122,6 @@ function ProductList() {
               market_cap={coin.market_cap}
             />
           ))}
-          {console.log(coinsState)}
         </tbody>
       </table>
     </>

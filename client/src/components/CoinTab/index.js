@@ -1,6 +1,9 @@
+import upMarket from "../../assets/upmarket.png";
+import downMarket from "../../assets/downmarket.png";
+
 const CoinTab = (coin) => {
   let { name, logo_url, price, change, circulating_supply, market_cap } = coin;
-  price = parseFloat(price).toFixed(2);
+  price = parseFloat(price).toFixed(4);
 
   return (
     <tr>
@@ -14,7 +17,13 @@ const CoinTab = (coin) => {
       </th>
       <th>{circulating_supply}</th>
       <th>{market_cap}</th>
-      <th></th>
+      <th>
+        {change > 0 ? (
+          <img width="100" src={upMarket} alt="market chart" />
+        ) : (
+          <img width="100" src={downMarket} alt="market chart" />
+        )}
+      </th>
       <th>
         <button class="button is-small is-success">Favorite</button>
       </th>
