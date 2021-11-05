@@ -35,6 +35,7 @@ const userSchema = new Schema({
         weekPercentChange: Number,
         volume: Number,
         marketCap: Number,
+        logoURL: String
     },
   ],
 });
