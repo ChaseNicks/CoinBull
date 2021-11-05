@@ -25,6 +25,18 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  favorites: [
+    {
+        name: String,
+        ticker: String,
+        price: Number,
+        hourPercentChange: Number,
+        dayPercentChange: Number,
+        weekPercentChange: Number,
+        volume: Number,
+        marketCap: Number,
+    },
+  ],
 });
 
 // set up pre-save middleware to create password
