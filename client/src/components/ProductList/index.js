@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProductItem from "../ProductItem";
+import SingleCoin from "../SingleCoin";
 import { useStoreContext } from "../../utils/GlobalState";
 import { UPDATE_PRODUCTS } from "../../utils/actions";
 import { useQuery } from "@apollo/client";
@@ -12,6 +13,8 @@ function ProductList() {
   const [state, dispatch] = useStoreContext();
 
   const { currentCategory } = state;
+  const [coinsState, setCoinsState] = useState([]);
+  console.log({ coinsState });
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
@@ -19,7 +22,7 @@ function ProductList() {
     const fetchCoins = async () => {
       try {
         const coins = await getAllCoins();
-        console.log(coins);
+        setCoinsState(coins);
       } catch (err) {
         console.error(err);
       }
@@ -60,18 +63,25 @@ function ProductList() {
     <div className="my-2">
       <h2>Our Products:</h2>
       {state.products.length ? (
-        <div className="flex-row">
-          {filterProducts().map((product) => (
-            <ProductItem
-              key={product._id}
-              _id={product._id}
-              image={product.image}
-              name={product.name}
-              price={product.price}
-              quantity={product.quantity}
-            />
-          ))}
-        </div>
+        <>
+          <div className="flex-row">
+            {filterProducts().map((product) => (
+              <ProductItem
+                key={product._id}
+                _id={product._id}
+                image={product.image}
+                name={product.name}
+                price={product.price}
+                quantity={product.quantity}
+              />
+            ))}
+          </div>
+          <div>
+            {coinsState.coins.map((coin) => (
+              <SingleCoin key={coin.id} logo_url={coin.logo_url} />
+            ))}
+          </div>
+        </>
       ) : (
         <h3>You haven't added any products yet!</h3>
       )}
