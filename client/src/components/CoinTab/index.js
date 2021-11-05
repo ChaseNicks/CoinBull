@@ -1,13 +1,14 @@
 const CoinTab = (coin) => {
-  const { name, logo_url, price, change, circulating_supply, market_cap } =
-    coin;
+  let { name, logo_url, price, change, circulating_supply, market_cap } = coin;
+  price = parseFloat(price).toFixed(2);
+
   return (
     <tr>
       <th>
         <img height="40" width="40" src={logo_url} alt={logo_url} />
       </th>
       <th>{name}</th>
-      <th>${price}</th>
+      <th>$ {price}</th>
       <th class={change > 0 ? "has-text-success" : "has-text-danger"}>
         {change}
       </th>
