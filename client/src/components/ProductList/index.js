@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
 import spinner from "../../assets/spinner.gif";
+import { getAllCoins } from "../../utils/API";
 
 function ProductList() {
   const [state, dispatch] = useStoreContext();
@@ -14,7 +15,18 @@ function ProductList() {
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
-  
+  useEffect(() => {
+    const fetchCoins = async () => {
+      try {
+        const coins = await getAllCoins();
+        console.log(coins);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchCoins();
+  }, []);
+
   useEffect(() => {
     if (data) {
       dispatch({

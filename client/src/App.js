@@ -7,7 +7,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import 'bulma/css/bulma.css';
+import "bulma/css/bulma.css";
 
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
@@ -38,7 +38,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const pages = ['about', 'prices', 'charts', 'Dashboard'];
+const pages = ["about", "prices", "charts", "Dashboard"];
 
 function App() {
   return (
