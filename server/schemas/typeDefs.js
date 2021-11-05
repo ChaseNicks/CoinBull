@@ -18,8 +18,19 @@ const typeDefs = gql`
 
   type Order {
     _id: ID
-    purchaseDate: String
-    products: [Product]
+  }
+
+  type Favorite {
+    _id: ID
+    name: String
+    ticker: String
+    price: Int
+    hourPercentChange: Int
+    dayPercentChange: Int
+    weekPercentChange: Int
+    volume: Int
+    marketCap: Int
+    logoURL: String
   }
 
   type User {
@@ -27,7 +38,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
-    orders: [Order]
+    favorites: [Favorite]
   }
 
   type Checkout {
