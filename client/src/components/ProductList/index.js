@@ -109,6 +109,7 @@ function ProductList() {
             {currentCoins.map((coin) => (
               <CoinTab
                 key={coin.id}
+                id={coin.id}
                 name={coin.name}
                 logo_url={coin.logo_url}
                 price={coin.price}

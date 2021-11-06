@@ -7,9 +7,17 @@ export async function getAllCoins() {
   return coins;
 }
 
+const singleLunarURL = `https://api.lunarcrush.com/v2?data=assets&key=axnpldsftoa03n17z75cy5r&symbol=BTC&interval=day&time_series_indicators=open,close,high,volume,low&data_points=90`;
+export async function getASingleCoin() {
+  const res = await axios.get(singleLunarURL);
+  const coin = res.data;
+  return coin;
+}
 // Gets news from Lunarcrush
 export async function getNews(symbol) {
-  const res = await axios.get(`https://api.lunarcrush.com/v2?data=feeds&key=axnpldsftoa03n17z75cy5r&symbol=${symbol}&limit=10&sources=news`);
+  const res = await axios.get(
+    `https://api.lunarcrush.com/v2?data=feeds&key=axnpldsftoa03n17z75cy5r&symbol=${symbol}&limit=10&sources=news`
+  );
   const news = res.data;
   return news;
 }
