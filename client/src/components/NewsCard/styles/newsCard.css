@@ -5,6 +5,11 @@ article {
     padding: 20px;
 }
 
+
+.news-card {
+    width: 66%;
+}
+
 .news-container {
     margin-top: 2em;
     display: flex;
@@ -12,19 +17,29 @@ article {
     justify-content: center;
 }
 
-.news-card {
-    width: 50%;
-}
-
-.news-image {
-    height: 100px;
-    width: 100px;
-    object-fit: cover;
-}
-
 .news-item {
     padding-bottom: 2em;
     margin-bottom: 2em;
-    border-bottom: 1px solid black;
-    
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container {
+    height: 100%;
+    width: 25%;
+    margin-right: 25px;
+}
+
+.news-image {
+    object-fit: cover;
+}
+
+.news-title {
+    color: rgb(56, 200, 56);
+}
+
+.item-content {
+    width: 75%;
 }
