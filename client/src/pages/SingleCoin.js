@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getASingleCoin } from "../utils/API";
 import Chart from "../components/Chart";
+import ProductList from "../components/ProductList";
 
 const SingleCoin = () => {
   const [singleCoin, setSingleCoin] = useState("");
@@ -21,6 +22,7 @@ const SingleCoin = () => {
     <div>
       <Chart singleCoin={singleCoin} />
       {/*  <News /> */}
+      <ProductList />
     </div>
   );
 };
