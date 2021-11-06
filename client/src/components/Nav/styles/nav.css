@@ -6,8 +6,15 @@
 .signin {
   background-color: rgb(56, 200, 56);
   color: white !important;
+  border-radius: .2rem;
+  margin-left: .2rem;
+  margin-right: .2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .signup {
+  display: flex;
+  justify-content: center;
   color: black !important;
 }
