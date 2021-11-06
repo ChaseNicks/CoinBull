@@ -21,7 +21,7 @@ const NewsCard = () => {
 
   return (
     <>
-      <article>
+      <article className="card">
         {currentNews.map((newsItem) => (
           <NewsItem
             key={newsItem.id}
