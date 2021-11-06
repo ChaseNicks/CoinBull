@@ -1,0 +1,10 @@
+article {
+    max-height: 20em;
+    overflow-y: scroll;
+    margin-bottom: 2em;
+}
+
+.news-item {
+    margin-bottom: 2em;
+    border-bottom: 1px solid black;
+}

@@ -1,15 +1,15 @@
 import React from "react";
 
-
 const NewsItem = (props) => {
-
-    return (
-        <>
-            <h4>{props.title}</h4>
-            <p>{props.description}</p>
-            <a href={props.url} rel="noreferrer" target="_blank">Go to Article</a>
-        </>
-    );
+  return (
+    <div className="news-item">
+      <h5 className="title is-5">{props.title}</h5>
+      <p>{props.description}</p>
+      <a href={props.url} rel="noreferrer" target="_blank">
+        Go to Article
+      </a>
+    </div>
+  );
 };
 
 export default NewsItem;

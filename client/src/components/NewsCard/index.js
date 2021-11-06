@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import NewsItem from "../NewsItem";
 import { getNews } from "../../utils/API";
+import "./styles/newsCard.css";
 
 const NewsCard = () => {
   const [newsState, setNewsState] = useState([]);
+  const symbol = "BTC";
 
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const news = await getNews();
+        const news = await getNews(symbol);
         setNewsState(news.data);
       } catch (err) {
         console.error(err);
