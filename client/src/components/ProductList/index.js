@@ -137,6 +137,7 @@ function ProductList() {
         coinsPerPage={coinsPerPage}
         totalCoins={coinsState.length}
         paginate={paginate}
+        currentPage={currentPage}
       />
     </>
   );

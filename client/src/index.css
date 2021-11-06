@@ -208,3 +208,8 @@ input:focus {
     width: 100%;
   }
 }
+
+.is-current {
+  background-color: hsl(141, 71%, 48%) !important;
+  border-color: hsl(141, 71%, 48%) !important;
+}
