@@ -91,35 +91,35 @@ function ProductList() {
         )}
         {loading ? <img src={spinner} alt="loading" /> : null}
       </div> */}
-<div className="is-flex is-justify-content-center">
-      <table className="table mt-1">
-        <thead>
-          <tr>
-            <th>Coin</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Change</th>
-            <th>Circulating supply</th>
-            <th>Market Cap</th>
-            <th>Price Chart</th>
-            <th>Add to favorites</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentCoins.map((coin) => (
-            <CoinTab
-              key={coin.id}
-              name={coin.name}
-              logo_url={coin.logo_url}
-              price={coin.price}
-              change={coin["1d"].price_change_pct}
-              circulating_supply={coin.circulating_supply}
-              market_cap={coin.market_cap}
-            />
-          ))}
-        </tbody>
-      </table>
-</div>
+      <div className="is-flex is-justify-content-center">
+        <table className="table mt-1">
+          <thead>
+            <tr>
+              <th>Coin</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Change</th>
+              <th>Circulating supply</th>
+              <th>Market Cap</th>
+              <th>Price Chart</th>
+              <th>Add to favorites</th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentCoins.map((coin) => (
+              <CoinTab
+                key={coin.id}
+                name={coin.name}
+                logo_url={coin.logo_url}
+                price={coin.price}
+                change={coin["1d"].price_change_pct}
+                circulating_supply={coin.circulating_supply}
+                market_cap={coin.market_cap}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <Pagination
         coinsPerPage={coinsPerPage}
@@ -128,7 +128,6 @@ function ProductList() {
         currentPage={currentPage}
       />
     </>
-
   );
 }
 

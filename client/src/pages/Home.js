@@ -1,6 +1,7 @@
 import React from "react";
 import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
+import NewsCard from "../components/NewsCard";
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
     <div className="container">
       <CategoryMenu />
       <ProductList />
+      <NewsCard />
     </div>
   );
 };
