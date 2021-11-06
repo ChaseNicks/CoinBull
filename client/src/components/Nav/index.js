@@ -70,6 +70,10 @@ export default class Navbar extends React.Component {
     let navbarItems = pages.map((page) => (
       <NavbarItem page={page} key={page} />
     ));
+    const signout = (event) => {
+      event.preventDefault();
+      Auth.logout();
+    };
       return (
         <nav className={`navbar is-${color}`}     style={{ marginTop: ".2rem", marginBottom: ".2rem" }}>
           <div className="navbar-brand">
@@ -83,9 +87,23 @@ export default class Navbar extends React.Component {
           <div
             className={`navbar-menu ${this.state.activeMenu ? "is-active" : ""}`}
           >
-            <div className="navbar-start">{navbarItems}</div>
-            <SignIn page="Sign In" />
-            <SignUp page="Sign Up" />
+          <div className="navbar-start">{navbarItems}</div>         
+            {Auth.loggedIn() ? (
+              <>
+                <button onClick={signout}>
+                  Signout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <SignIn page="Sign In" />
+                </Link>
+                <Link to="/signup">
+                  <SignUp page="Sign Up" />
+                </Link>
+              </>
+            )}
           </div>
         </nav>
       );
