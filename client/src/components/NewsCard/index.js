@@ -3,9 +3,9 @@ import NewsItem from "../NewsItem";
 import { getNews } from "../../utils/API";
 import "./styles/newsCard.css";
 
-const NewsCard = () => {
+const NewsCard = (props) => {
   const [newsState, setNewsState] = useState([]);
-  const symbol = "BTC";
+  const symbol = props.symbol;
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -17,7 +17,7 @@ const NewsCard = () => {
       }
     };
     fetchNews();
-  }, []);
+  }, [symbol]);
 
   const currentNews = newsState;
 
