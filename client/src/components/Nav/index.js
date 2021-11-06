@@ -15,14 +15,15 @@ const NavbarLogo = (props) => (
 );
 
 const SignIn = (props) => (
-  <button className="navbar-item is-capitalized is-rounded is-size-5 signin">
+  <div className="navbar-item is-capitalized  signin">
     <a
+      className="is-size-5"
       href={`#${props.page}`}
       style={{ textDecoration: "none", color: "white" }}
     >
       {props.page}
     </a>
-  </button>
+  </div>
 );
 
 const SignUp = (props) => (
@@ -93,7 +94,7 @@ export default class Navbar extends React.Component {
           <div className="navbar-start">{navbarItems}</div>
           {Auth.loggedIn() ? (
             <>
-              <button onClick={signout}>Signout</button>
+              <div onClick={signout}>Signout</div>
             </>
           ) : (
             <>

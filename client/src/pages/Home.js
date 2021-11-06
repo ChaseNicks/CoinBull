@@ -8,7 +8,7 @@ const Home = () => {
     <div className="container">
       {/* <CategoryMenu /> */}
       <ProductList />
-      <NewsCard />
+      <NewsCard symbol="ADA" />
     </div>
   );
 };
