@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 // import ProductItem from "../ProductItem";
 import CoinTab from "../CoinTab";
+import Pagination from "../Pagination";
 
 // import { useStoreContext } from "../../utils/GlobalState";
 // import { UPDATE_PRODUCTS } from "../../utils/actions";
@@ -130,6 +131,11 @@ function ProductList() {
           ))}
         </tbody>
       </table>
+      <Pagination
+        coinsPerPage={coinsPerPage}
+        totalCoins={coinsState.length}
+        paginate={paginate}
+      />
     </>
   );
 }

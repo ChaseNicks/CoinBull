@@ -1,4 +1,4 @@
-const Pagination = ({ coinsPerPage, totalCoins }) => {
+const Pagination = ({ coinsPerPage, totalCoins, paginate }) => {
   const pageNumber = [];
 
   for (let i = 1; i <= Math.ceil(totalCoins / coinsPerPage); i++) {
@@ -15,6 +15,7 @@ const Pagination = ({ coinsPerPage, totalCoins }) => {
           <li>
             <a
               key={number}
+              onClick={() => paginate(number)}
               className="pagination-link"
               aria-label={`Goto page ${number}`}
               href="!#"
