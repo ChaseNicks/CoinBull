@@ -28,7 +28,7 @@ const NewsCard = () => {
             name={newsItem.name}
             title={newsItem.title}
             description={newsItem.description}
-            newsItem_url={newsItem.url}
+            url={newsItem.url}
           />
         ))}
       </article>
