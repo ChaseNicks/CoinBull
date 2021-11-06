@@ -5,23 +5,25 @@ import PropTypes from "prop-types";
 import "./styles/nav.css";
 
 const NavbarLogo = (props) => (
-  <a
+  <Link
     className="navbar-item is-capitalized is-size-3"
-    href={`#${props.page}`}
+    to="/"
     style={{ color: "rgb(56,200,56)", textDecoration: "none" }}
   >
     {props.page}
-  </a>
+  </Link>
 );
 
 const SignIn = (props) => (
-  <div className="navbar-item is-capitalized  signin"><a
-    className="is-size-5"
-    href={`#${props.page}`}
-    style={{ textDecoration: "none", color:"white"}}
-  >
-    {props.page}
-  </a></div>
+  <div className="navbar-item is-capitalized  signin">
+    <a
+      className="is-size-5"
+      href={`#${props.page}`}
+      style={{ textDecoration: "none", color: "white" }}
+    >
+      {props.page}
+    </a>
+  </div>
 );
 
 const SignUp = (props) => (
@@ -43,7 +45,6 @@ const NavbarItem = (props) => (
     {props.page}
   </a>
 );
-
 
 const NavbarBurger = (props) => (
   <button
@@ -74,43 +75,44 @@ export default class Navbar extends React.Component {
       event.preventDefault();
       Auth.logout();
     };
-      return (
-        <nav className={`navbar is-${color}`}     style={{ marginTop: ".2rem", marginBottom: ".2rem" }}>
-          <div className="navbar-brand">
-            <NavbarLogo page="CoinBull" />
-            <NavbarItem />
-            <NavbarBurger
-              active={this.state.activeMenu}
-              toggleMenu={this.toggleMenu}
-            />
-          </div>
-          <div
-            className={`navbar-menu ${this.state.activeMenu ? "is-active" : ""}`}
-          >
-          <div className="navbar-start">{navbarItems}</div>         
-            {Auth.loggedIn() ? (
-              <>
-                <div onClick={signout}>
-                  Signout
-                </div>
-              </>
-            ) : (
-              <>
-                <Link to="/login">
-                  <SignIn page="Sign In" />
-                </Link>
-                <Link to="/signup">
-                  <SignUp page="Sign Up" />
-                </Link>
-              </>
-            )}
-          </div>
-        </nav>
-      );
+    return (
+      <nav
+        className={`navbar is-${color}`}
+        style={{ marginTop: ".2rem", marginBottom: ".2rem" }}
+      >
+        <div className="navbar-brand">
+          <NavbarLogo page="CoinBull" />
+          <NavbarItem />
+          <NavbarBurger
+            active={this.state.activeMenu}
+            toggleMenu={this.toggleMenu}
+          />
+        </div>
+        <div
+          className={`navbar-menu ${this.state.activeMenu ? "is-active" : ""}`}
+        >
+          <div className="navbar-start">{navbarItems}</div>
+          {Auth.loggedIn() ? (
+            <>
+              <div onClick={signout}>Signout</div>
+            </>
+          ) : (
+            <>
+              <Link to="/login">
+                <SignIn page="Sign In" />
+              </Link>
+              <Link to="/signup">
+                <SignUp page="Sign Up" />
+              </Link>
+            </>
+          )}
+        </div>
+      </nav>
+    );
   }
 }
 
 Navbar.propTypes = {
-    pages: PropTypes.array.isRequired,
-    color: PropTypes.string,
-  };
+  pages: PropTypes.array.isRequired,
+  color: PropTypes.string,
+};
