@@ -4,28 +4,36 @@ import downMarket from "../../assets/downmarket.png";
 const CoinTab = (coin) => {
   let { name, logo_url, price, change, circulating_supply, market_cap } = coin;
   price = parseFloat(price).toFixed(4);
+  circulating_supply = circulating_supply.replace(/(.)(?=(\d{3})+$)/g, "$1,");
+  market_cap = market_cap.replace(/(.)(?=(\d{3})+$)/g, "$1,");
 
   return (
     <tr>
-      <th>
-        <img height="40" width="40" src={logo_url} alt={logo_url} />
+      <th className="is-vcentered">
+        <img className="coins-icons" src={logo_url} alt={logo_url} />
       </th>
-      <th>{name}</th>
-      <th>$ {price}</th>
-      <th class={change > 0 ? "has-text-success" : "has-text-danger"}>
+      <th className="is-vcentered">{name}</th>
+      <th className="is-vcentered">${price}</th>
+      <th
+        className={
+          change > 0
+            ? "has-text-success is-vcentered"
+            : "has-text-danger is-vcentered"
+        }
+      >
         {change}
       </th>
-      <th>{circulating_supply}</th>
-      <th>{market_cap}</th>
-      <th>
+      <th className="is-vcentered">{circulating_supply}</th>
+      <th className="is-vcentered">${market_cap}</th>
+      <th className="is-vcentered">
         {change > 0 ? (
           <img width="100" src={upMarket} alt="market chart" />
         ) : (
           <img width="100" src={downMarket} alt="market chart" />
         )}
       </th>
-      <th>
-        <button class="button is-small is-success">Favorite</button>
+      <th className="is-vcentered">
+        <button className="button is-small is-success">Favorite</button>
       </th>
     </tr>
   );
