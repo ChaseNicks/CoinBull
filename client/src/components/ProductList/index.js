@@ -18,7 +18,7 @@ function ProductList() {
   // const { currentCategory } = state;
   const [coinsState, setCoinsState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [coinsPerPage, setCoinsPerPage] = useState(10);
+  const [coinsPerPage] = useState(10);
 
   // const { loading, data } = useQuery(QUERY_PRODUCTS);
 
@@ -37,6 +37,8 @@ function ProductList() {
   const indexOfLastCoin = currentPage * coinsPerPage;
   const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
   const currentCoins = coinsState.slice(indexOfFirstCoin, indexOfLastCoin);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   // useEffect(() => {
   //   if (data) {

@@ -1,8 +1,8 @@
 const Pagination = ({ coinsPerPage, totalCoins, paginate }) => {
-  const pageNumber = [];
+  const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalCoins / coinsPerPage); i++) {
-    pageNumber.push(i);
+    pageNumbers.push(i);
   }
   return (
     <nav
@@ -11,14 +11,13 @@ const Pagination = ({ coinsPerPage, totalCoins, paginate }) => {
       aria-label="pagination"
     >
       <ul className="pagination-list">
-        {pageNumber.map((number) => (
-          <li>
+        {pageNumbers.map((number) => (
+          <li key={number}>
             <a
-              key={number}
               onClick={() => paginate(number)}
               className="pagination-link"
               aria-label={`Goto page ${number}`}
-              href="!#"
+              href="#"
             >
               {number}
             </a>
