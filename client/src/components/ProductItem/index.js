@@ -12,8 +12,6 @@
 
 //   const { cart } = state;
 
-
-
 //   const addToCart = () => {
 //     const itemInCart = cart.find((cartItem) => cartItem._id === _id);
 //     if (itemInCart) {
@@ -52,7 +50,6 @@
 //   );
 // }
 
-
 //   const addToCart = () => {
 //     const itemInCart = cart.find((cartItem) => cartItem._id === _id);
 //     if (itemInCart) {
@@ -90,6 +87,5 @@
 //     </div>
 //   );
 // }
-
 
 // export default ProductItem;

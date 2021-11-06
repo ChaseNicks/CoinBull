@@ -27,7 +27,6 @@
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)&nbsp;
 ![Bulma](https://img.shields.io/badge/Bulma-00D1B2?style=for-the-badge&logo=bulma&logoColor=white)&nbsp;
 
-
 ## Functionality
 
 <!-- TODO: Add screenshots/GIFs of functionality as available -->

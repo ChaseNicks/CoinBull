@@ -6,3 +6,10 @@ export async function getAllCoins() {
   const coins = res.data;
   return coins;
 }
+
+const singleLunarURL = `https://api.lunarcrush.com/v2?data=assets&key=axnpldsftoa03n17z75cy5r&symbol=BTC&interval=day&time_series_indicators=open,close,high,volume,low&data_points=90`;
+export async function getASingleCoin() {
+  const res = await axios.get(singleLunarURL);
+  const coin = res.data;
+  return coin;
+}
