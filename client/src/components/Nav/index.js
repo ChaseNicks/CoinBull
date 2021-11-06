@@ -14,6 +14,26 @@ const NavbarLogo = (props) => (
   </a>
 );
 
+const SignIn = (props) => (
+  <button className="navbar-item is-capitalized is-rounded is-size-5 signin"><a
+
+    href={`#${props.page}`}
+    style={{ textDecoration: "none", color:"white" }}
+  >
+    {props.page}
+  </a></button>
+);
+
+const SignUp = (props) => (
+  <a
+    className="navbar-item is-capitalized is-size-5 signup"
+    href={`#${props.page}`}
+    style={{ textDecoration: "none" }}
+  >
+    {props.page}
+  </a>
+);
+
 const NavbarItem = (props) => (
   <a
     className="navbar-item is-capitalized is-size-5 nav-item-styles"
@@ -23,6 +43,7 @@ const NavbarItem = (props) => (
     {props.page}
   </a>
 );
+
 
 const NavbarBurger = (props) => (
   <button
@@ -50,7 +71,7 @@ export default class Navbar extends React.Component {
       <NavbarItem page={page} key={page} />
     ));
       return (
-        <nav className={`navbar is-fixed-top is-${color}`}>
+        <nav className={`navbar is-${color}`}     style={{ marginTop: ".2rem", marginBottom: ".2rem" }}>
           <div className="navbar-brand">
             <NavbarLogo page="CoinBull" />
             <NavbarItem />
@@ -63,6 +84,8 @@ export default class Navbar extends React.Component {
             className={`navbar-menu ${this.state.activeMenu ? "is-active" : ""}`}
           >
             <div className="navbar-start">{navbarItems}</div>
+            <SignIn page="Sign In" />
+            <SignUp page="Sign Up" />
           </div>
         </nav>
       );
