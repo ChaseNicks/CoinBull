@@ -12,7 +12,7 @@ const CoinTab = (coin) => {
       </th>
       <th>{name}</th>
       <th>$ {price}</th>
-      <th class={change > 0 ? "has-text-success" : "has-text-danger"}>
+      <th className={change > 0 ? "has-text-success" : "has-text-danger"}>
         {change}
       </th>
       <th>{circulating_supply}</th>
@@ -25,7 +25,7 @@ const CoinTab = (coin) => {
         )}
       </th>
       <th>
-        <button class="button is-small is-success">Favorite</button>
+        <button className="button is-small is-success">Favorite</button>
       </th>
     </tr>
   );

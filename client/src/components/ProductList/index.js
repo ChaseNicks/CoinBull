@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+
 // import ProductItem from "../ProductItem";
 import CoinTab from "../CoinTab";
-import { useStoreContext } from "../../utils/GlobalState";
+
+// import { useStoreContext } from "../../utils/GlobalState";
 // import { UPDATE_PRODUCTS } from "../../utils/actions";
 // import { useQuery } from "@apollo/client";
 // import { QUERY_PRODUCTS } from "../../utils/queries";
@@ -10,9 +12,9 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { getAllCoins } from "../../utils/API";
 
 function ProductList() {
-  const [state, dispatch] = useStoreContext();
+  // const [state, dispatch] = useStoreContext();
 
-  const { currentCategory } = state;
+  // const { currentCategory } = state;
   const [coinsState, setCoinsState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage, setCoinsPerPage] = useState(10);
@@ -87,7 +89,7 @@ function ProductList() {
         {loading ? <img src={spinner} alt="loading" /> : null}
       </div> */}
 
-      <table class="table mt-2">
+      <table className="table mt-2">
         <thead>
           <tr>
             <th>
@@ -115,7 +117,7 @@ function ProductList() {
           </tr>
         </thead>
         <tbody>
-          {coinsState.map((coin) => (
+          {currentCoins.map((coin) => (
             <CoinTab
               key={coin.id}
               name={coin.name}
