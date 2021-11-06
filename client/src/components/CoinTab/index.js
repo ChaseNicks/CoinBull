@@ -37,7 +37,12 @@ const CoinTab = (coin) => {
         )}
       </th>
       <th className="is-vcentered">
-        <button className="button is-small is-success">Favorite</button>
+        <button
+          className="button is-small is-rounded"
+          style={{ backgroundColor: "rgb(56,200,56)", color: "white" }}
+        >
+          Favorite
+        </button>
       </th>
     </tr>
   );
