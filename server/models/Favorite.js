@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const favoriteSchema = new Schema({
-
   name: String,
 
   ticker: String,
@@ -20,8 +19,7 @@ const favoriteSchema = new Schema({
 
   marketCap: Number,
 
-  logoURL: String
-
+  logoURL: String,
 });
 
 const Favorite = mongoose.model("Favorite", favoriteSchema);
