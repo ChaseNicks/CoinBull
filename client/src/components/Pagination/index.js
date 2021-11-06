@@ -13,14 +13,13 @@ const Pagination = ({ coinsPerPage, totalCoins, paginate }) => {
       <ul className="pagination-list">
         {pageNumbers.map((number) => (
           <li key={number}>
-            <a
+            <div
               onClick={() => paginate(number)}
               className="pagination-link"
               aria-label={`Goto page ${number}`}
-              href="#"
             >
               {number}
-            </a>
+            </div>
           </li>
         ))}
       </ul>
