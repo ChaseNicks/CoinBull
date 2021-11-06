@@ -31,6 +31,10 @@ function ProductList() {
     fetchCoins();
   }, []);
 
+  const indexOfLastCoin = currentPage * coinsPerPage;
+  const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
+  const currentCoins = coinsState.slice(indexOfFirstCoin, indexOfLastCoin);
+
   // useEffect(() => {
   //   if (data) {
   //     dispatch({
