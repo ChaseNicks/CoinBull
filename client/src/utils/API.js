@@ -6,3 +6,11 @@ export async function getAllCoins() {
   const coins = res.data;
   return coins;
 }
+
+// Gets news from Lunarcrush
+const newsURL = `https://api.lunarcrush.com/v2?data=feeds&key=axnpldsftoa03n17z75cy5r&limit=10&sources=news`;
+export async function getNews() {
+  const res = await axios.get(newsURL);
+  const news = res.data;
+  return news;
+}
