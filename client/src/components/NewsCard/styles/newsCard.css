@@ -4,7 +4,25 @@ article {
     margin-bottom: 2em;
 }
 
+.news-container {
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-card {
+    width: 50%;
+}
+
+.news-image {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
 .news-item {
+    padding-bottom: 2em;
     margin-bottom: 2em;
     border-bottom: 1px solid black;
 }

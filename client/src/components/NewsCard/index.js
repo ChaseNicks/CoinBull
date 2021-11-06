@@ -22,8 +22,8 @@ const NewsCard = (props) => {
   const currentNews = newsState;
 
   return (
-    <>
-      <article className="card">
+    <div className="container news-container">
+      <article className="card news-card">
         {currentNews.map((newsItem) => (
           <NewsItem
             key={newsItem.id}
@@ -31,10 +31,11 @@ const NewsCard = (props) => {
             title={newsItem.title}
             description={newsItem.description}
             url={newsItem.url}
+            image={newsItem.image}
           />
         ))}
       </article>
-    </>
+    </div>
   );
 };
 
