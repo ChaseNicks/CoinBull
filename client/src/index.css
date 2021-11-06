@@ -213,3 +213,8 @@ input:focus {
   background-color: hsl(141, 71%, 48%) !important;
   border-color: hsl(141, 71%, 48%) !important;
 }
+
+.coins-icons {
+  width: 40px !important;
+  height: 40px !important;
+}

@@ -7,24 +7,30 @@ const CoinTab = (coin) => {
 
   return (
     <tr>
-      <th>
-        <img height="40" width="40" src={logo_url} alt={logo_url} />
+      <th className="is-vcentered">
+        <img className="coins-icons" src={logo_url} alt={logo_url} />
       </th>
-      <th>{name}</th>
-      <th>$ {price}</th>
-      <th className={change > 0 ? "has-text-success" : "has-text-danger"}>
+      <th className="is-vcentered">{name}</th>
+      <th className="is-vcentered">${price}</th>
+      <th
+        className={
+          change > 0
+            ? "has-text-success is-vcentered"
+            : "has-text-danger is-vcentered"
+        }
+      >
         {change}
       </th>
-      <th>{circulating_supply}</th>
-      <th>{market_cap}</th>
-      <th>
+      <th className="is-vcentered">{circulating_supply}</th>
+      <th className="is-vcentered">{market_cap}</th>
+      <th className="is-vcentered">
         {change > 0 ? (
           <img width="100" src={upMarket} alt="market chart" />
         ) : (
           <img width="100" src={downMarket} alt="market chart" />
         )}
       </th>
-      <th>
+      <th className="is-vcentered">
         <button className="button is-small is-success">Favorite</button>
       </th>
     </tr>
