@@ -95,27 +95,13 @@ function ProductList() {
       <table className="table mt-2">
         <thead>
           <tr>
-            <th>
-              <abbr title="Coin">Coin</abbr>
-            </th>
-            <th>
-              <abbr title="Name">Name</abbr>
-            </th>
-            <th>
-              <abbr title="Price">Price</abbr>
-            </th>
-            <th>
-              <abbr title="Change">Change</abbr>
-            </th>
-            <th>
-              <abbr title="Circulating_Supply">Circulating supply</abbr>
-            </th>
-            <th>
-              <abbr title="Price_Chart">Market Cap</abbr>
-            </th>
-            <th>
-              <abbr title="Price_Chart">Price Chart</abbr>
-            </th>
+            <th>Coin</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Change</th>
+            <th>Circulating supply</th>
+            <th>Market Cap</th>
+            <th>Price Chart</th>
             <th>Add to favorites</th>
           </tr>
         </thead>
