@@ -91,8 +91,8 @@ function ProductList() {
         )}
         {loading ? <img src={spinner} alt="loading" /> : null}
       </div> */}
-
-      <table className="table mt-2">
+<div className="is-flex is-justify-content-center">
+      <table className="table mt-1">
         <thead>
           <tr>
             <th>Coin</th>
@@ -119,6 +119,8 @@ function ProductList() {
           ))}
         </tbody>
       </table>
+</div>
+
       <Pagination
         coinsPerPage={coinsPerPage}
         totalCoins={coinsState.length}
@@ -126,6 +128,7 @@ function ProductList() {
         currentPage={currentPage}
       />
     </>
+
   );
 }
 

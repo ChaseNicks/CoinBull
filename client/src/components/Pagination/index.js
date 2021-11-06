@@ -5,8 +5,9 @@ const Pagination = ({ coinsPerPage, totalCoins, paginate, currentPage }) => {
     pageNumbers.push(i);
   }
   return (
+    <div className="is-flex is-justify-content-center">
     <nav
-      className="pagination is-rounded"
+      className="pagination is-rounded "
       role="navigation"
       aria-label="pagination"
     >
@@ -28,6 +29,7 @@ const Pagination = ({ coinsPerPage, totalCoins, paginate, currentPage }) => {
         ))}
       </ul>
     </nav>
+    </div>
   );
 };
 
