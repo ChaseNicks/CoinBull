@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NewsItem from "../NewsItem";
+
 import { getNews } from "../../utils/API";
 import "./styles/newsCard.css";
 

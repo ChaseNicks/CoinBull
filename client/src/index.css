@@ -28,6 +28,10 @@ body {
   color: var(--dark);
 }
 
+article {
+  max-height: fit-content !important;
+}
+
 h1,
 h2,
 h3,
