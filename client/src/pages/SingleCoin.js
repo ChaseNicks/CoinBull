@@ -6,6 +6,7 @@ import SideList from "../components/SideList";
 import { useParams } from "react-router-dom";
 import "../index.css";
 import NewsCard from "../components/NewsCard";
+import ChartHeader from "../components/ChartHeader";
 
 const SingleCoin = () => {
   // const [singleCoin, setSingleCoin] = useState("");
