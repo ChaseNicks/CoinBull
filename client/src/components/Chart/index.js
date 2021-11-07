@@ -4,7 +4,7 @@ import TradingViewWidget, { Themes } from "react-tradingview-widget";
 
 const Chart = ({ singleCoin }) => {
   return (
-    <div>
+    <div className="is-flex-direction-column">
       <TradingViewWidget
         symbol={singleCoin + "USD"}
         theme={Themes.WHITE}
