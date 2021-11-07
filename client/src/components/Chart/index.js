@@ -7,9 +7,9 @@ const Chart = ({ singleCoin }) => {
     <div>
       <TradingViewWidget
         symbol={singleCoin + "USD"}
-        theme={Themes.DARK}
-        width={700}
-        height={500}
+        theme={Themes.WHITE}
+        width={1200}
+        height={700}
         local="en"
       />
 
