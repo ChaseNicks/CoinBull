@@ -30,44 +30,12 @@ function Login(props) {
   };
 
   return (
-    // <div className="container my-1">
-    //   <Link to="/signup"> Go to Signup</Link>
-
-    //   <h2>Login</h2>
-    //   <form onSubmit={handleFormSubmit}>
-    //     <div className="flex-row space-between my-2">
-    //       <input
-    //         placeholder="Email"
-    //         name="email"
-    //         type="email"
-    //         id="email"
-    //         onChange={handleChange}
-    //       />
-    //     </div>
-    //     <div className="flex-row space-between my-2">
-    //       <input
-    //         placeholder="******"
-    //         name="password"
-    //         type="password"
-    //         id="pwd"
-    //         onChange={handleChange}
-    //       />
-    //     </div>
-    //     {error ? (
-    //       <div>
-    //         <p className="error-text">The provided credentials are incorrect</p>
-    //       </div>
-    //     ) : null}
-    //     <div className="flex-row flex-end">
-    //       <button type="submit">Signin</button>
-    //     </div>
-    //   </form>
-    // </div>
-
-    
-      <div className="hero-body has-text-centered">
-        <div className="login " style={{ borderRadius: "25px", padding: "1.5rem", boxShadow: "8px 8px 15px gray, -8px -8px 15px gray"}}>
-          <form onSubmit={handleFormSubmit} className="is-flex-direction-column is-align-item-center">
+    <section class="hero is-fullheight">
+      <div className="hero-body has-text-centered is-flex is-justify-content-center">
+      {/* <h3 class="title has-text-black">Login</h3> */}
+                   
+        <div className="login" style={{ borderRadius: "25px", padding: "1.5rem", boxShadow: "8px 8px 15px #d9dde6, -8px -8px 15px #d9dde6"}}>
+          <form onSubmit={handleFormSubmit} className="is-flex-direction-column is-align-item-center" style={{ width: "max-content" }}>
             <div className="field">
               <div className="control has-icons-left">
                 <input 
@@ -78,8 +46,8 @@ function Login(props) {
                   id="email"
                   onChange={handleChange}
                 />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-envelope"></i>
+                <span className="icon is-left">
+                  <i className="fas fa-envelope" style={{ zIndex: "1" }}></i>
                 </span>
               </div>
             </div>
@@ -87,13 +55,13 @@ function Login(props) {
               <div className="control has-icons-left">               
                 <input
                   className="input is-large is-rounded"
-                  placeholder="******"
+                  placeholder="Password"
                   name="password"
                   type="password"
                   id="pwd"
                   onChange={handleChange}
                 />
-                <span className="icon is-small is-left">
+                <span className="icon is-left">
                   <i className="fas fa-lock"></i>
                 </span>
               </div>
@@ -103,19 +71,19 @@ function Login(props) {
                 <p className="error-text">The provided credentials are incorrect</p>
               </div>
             ) : null}
-            <button className="button is-block is-fullwidth is-primary is-medium is-rounded" type="submit" style={{ backgroundColor: "rgb(56, 200, 56)"}}>
+            <button className="button is-block is-fullwidth is-primary is-medium is-rounded" type="submit" style={{ backgroundColor: "rgb(56, 200, 56)", marginBottom: ".75rem" }}>
               Sign In
             </button>
+              <div style={{ textDecoration: "none", fontSize: "1.2rem", marginBottom: ".75rem" }}>Or</div>
+              <Link to="/signup" style={{ textDecoration: "none", fontSize: "1.2rem" }}>
+              <button className="button is-block is-fullwidth is-primary is-medium is-rounded" type="submit" style={{ backgroundColor: "rgb(56, 200, 56)"}}>
+              Create an Account
+              </button>
+              </Link>
           </form>
-          <br />   
-            <div className="level-item has-text-centered">
-              <div>
-                <Link to="/signup" className="">Create an Account</Link>
-              </div>
-            </div>
         </div>
       </div>
-    
+    </section>
   );
 }
 
