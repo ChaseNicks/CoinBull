@@ -5,13 +5,13 @@ import PropTypes from "prop-types";
 import "./styles/nav.css";
 
 const NavbarLogo = (props) => (
-  <a
+  <Link
     className="navbar-item is-capitalized is-size-3"
-    href={`#${props.page}`}
+    to="/"
     style={{ color: "rgb(56,200,56)", textDecoration: "none" }}
   >
     {props.page}
-  </a>
+  </Link>
 );
 
 const SignIn = (props) => (
