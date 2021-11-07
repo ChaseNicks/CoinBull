@@ -1,8 +1,10 @@
 // import React, { useEffect, useState } from "react";
 // import { getASingleCoin } from "../utils/API";
 import Chart from "../components/Chart";
-import ProductList from "../components/ProductList";
+import SideList from "../components/SideList";
+// import ProductList from "../components/ProductList";
 import { useParams } from "react-router-dom";
+import "../index.css";
 import NewsCard from "../components/NewsCard";
 
 const SingleCoin = () => {
@@ -24,9 +26,12 @@ const SingleCoin = () => {
 
   return (
     <div>
-      <Chart singleCoin={id} />
-      <NewsCard symbol={id} />
-      <ProductList />
+      <div className="is-flex">
+        <Chart singleCoin={id} />
+        {/*  <News /> */}
+        <SideList />
+      </div>
+      <NewsCard symbol="ADA" />
     </div>
   );
 };

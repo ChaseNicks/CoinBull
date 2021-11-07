@@ -12,8 +12,9 @@ article {
 .news-container {
   margin-top: 2em;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
+  flex-direction: column;
 }
 
 .news-item {
@@ -33,6 +34,7 @@ article {
 
 .news-image {
   object-fit: cover;
+  border-radius: 0.6rem;
 }
 
 .news-title {
