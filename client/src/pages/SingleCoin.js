@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { getASingleCoin } from "../utils/API";
+// import React, { useEffect, useState } from "react";
+// import { getASingleCoin } from "../utils/API";
 import Chart from "../components/Chart";
 import ProductList from "../components/ProductList";
 import { useParams } from "react-router-dom";
+import NewsCard from "../components/NewsCard";
 
 const SingleCoin = () => {
   // const [singleCoin, setSingleCoin] = useState("");
@@ -24,7 +25,7 @@ const SingleCoin = () => {
   return (
     <div>
       <Chart singleCoin={id} />
-      {/*  <News /> */}
+      <NewsCard symbol={id} />
       <ProductList />
     </div>
   );

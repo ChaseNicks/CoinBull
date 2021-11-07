@@ -218,3 +218,7 @@ input:focus {
   width: 40px !important;
   height: 40px !important;
 }
+
+article {
+  max-height: 100% !important;
+}
