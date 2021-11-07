@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footerr
     ">
       <Link
-        className="is-capitalized is-size-3"
+        className="is-capitalized is-size-2"
         to="/"
         style={{ color: "white", textDecoration: "none" }}
       >

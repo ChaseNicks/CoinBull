@@ -9,7 +9,7 @@ const NewsItem = (props) => {
       <div className="item-content">
         <h5 className="title is-5 news-title">{props.title}</h5>
         <p>{props.description}</p>
-        <a href={props.url} rel="noreferrer" target="_blank">
+        <a href={props.url} rel="noreferrer" target="_blank" style={{ color: "black"}}>
           Go to Article
         </a>
       </div>
