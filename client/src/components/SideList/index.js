@@ -9,7 +9,7 @@ function SideList() {
   // const { currentCategory } = state;
   const [coinsState, setCoinsState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [coinsPerPage] = useState(10);
+  const [coinsPerPage] = useState(200);
 
   // const { loading, data } = useQuery(QUERY_PRODUCTS);
 
@@ -29,11 +29,9 @@ function SideList() {
   const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
   const currentCoins = coinsState.slice(indexOfFirstCoin, indexOfLastCoin);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   return (
     <>
-    <div className="is-flex-direction-column">
+    <div className="is-flex-direction-column" style={{ height: "740px", overflow: "scroll"}}>
       <div className="is-flex is-justify-content-center">
         <table className="table mt-1">
           <thead>
@@ -58,13 +56,6 @@ function SideList() {
           </tbody>
         </table>
       </div>
-
-      <Pagination
-        coinsPerPage={coinsPerPage}
-        totalCoins={coinsState.length}
-        paginate={paginate}
-        currentPage={currentPage}
-      />
       </div>
     </>
   );

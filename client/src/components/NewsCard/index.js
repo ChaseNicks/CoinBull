@@ -24,6 +24,7 @@ const NewsCard = (props) => {
 
   return (
     <div className="container news-container">
+    <div className="is-capitalized is-size-3 has-text-left">Trending Stories</div>
       <article className="card news-card">
         {currentNews.map((newsItem) => (
           <NewsItem

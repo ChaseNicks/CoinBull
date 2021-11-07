@@ -1,5 +1,3 @@
-import upMarket from "../../assets/upmarket.png";
-import downMarket from "../../assets/downmarket.png";
 import { Link } from "react-router-dom";
 
 const CoinSideTab = (coin) => {
