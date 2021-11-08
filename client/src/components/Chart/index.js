@@ -5,8 +5,6 @@ import TradingViewWidget, { Themes } from "react-tradingview-widget";
 const Chart = ({ singleCoin }) => {
   return (
 
-    <div className="is-flex-direction-column">
-
     <div style={{ marginTop: "5rem"}}>
 
       <TradingViewWidget
@@ -21,5 +19,6 @@ const Chart = ({ singleCoin }) => {
     </div>
   );
 };
+
 
 export default Chart;
