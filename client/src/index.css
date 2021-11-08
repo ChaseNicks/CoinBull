@@ -226,3 +226,12 @@ input:focus {
 article {
   max-height: 100% !important;
 }
+
+.arrows {
+  padding: 5px;
+  color: hsl(141, 71%, 48%);
+}
+
+.arrows:hover {
+  cursor: pointer;
+}

@@ -98,12 +98,24 @@ function ProductList() {
         <table className="table mt-1">
           <thead>
             <tr>
-              <th>Coin</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Change</th>
-              <th>Circulating supply</th>
-              <th>Market Cap</th>
+              <th>
+                <span className="arrows">&#8661;</span>Coin
+              </th>
+              <th>
+                <span className="arrows">&#8661;</span>Name
+              </th>
+              <th>
+                <span className="arrows">&#8661;</span>Price
+              </th>
+              <th>
+                <span className="arrows">&#8661;</span>Change
+              </th>
+              <th>
+                <span className="arrows">&#8661;</span>Circulating supply
+              </th>
+              <th>
+                <span className="arrows">&#8661;</span>Market Cap
+              </th>
               <th>Price Chart</th>
               <th>Add to favorites</th>
             </tr>
