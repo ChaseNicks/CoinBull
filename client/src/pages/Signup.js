@@ -31,56 +31,106 @@ function Signup(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
+    <section class="hero is-fullheight">
+      <div className="hero-body has-text-centered is-flex is-justify-content-center">
+        {/* <h3 class="title has-text-black">Login</h3> */}
 
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            placeholder="First"
-            name="firstName"
-            type="firstName"
-            id="firstName"
-            onChange={handleChange}
-          />
+        <div
+          className="login"
+          style={{
+            borderRadius: "25px",
+            padding: "1.5rem",
+            boxShadow: "8px 8px 15px #D9D9DA, -8px -8px 15px #D9D9DA",
+          }}
+        >
+          <form
+            onSubmit={handleFormSubmit}
+            className="is-flex-direction-column is-align-item-center"
+            style={{ width: "max-content" }}
+          >
+            <div className="field">
+              <div className="control has-icons-left">
+                <input
+                  className="input is-large is-rounded"
+                  placeholder="First Name"
+                  name="firstName"
+                  type="firstName"
+                  id="firstName"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="field">
+              <div className="control has-icons-left">
+                <input
+                  className="input is-large is-rounded"
+                  placeholder="Last Name"
+                  name="lastName"
+                  type="lastName"
+                  id="lastName"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="field">
+              <div className="control has-icons-left">
+                <input
+                  className="input is-large is-rounded"
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  id="email"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="field">
+              <div className="control has-icons-left">
+                <input
+                  className="input is-large is-rounded"
+                  placeholder="Password"
+                  name="password"
+                  type="password"
+                  id="pwd"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <button
+              className="button is-block is-fullwidth is-primary is-medium is-rounded"
+              type="submit"
+              style={{
+                backgroundColor: "rgb(56, 200, 56)",
+                marginBottom: ".75rem",
+              }}
+            >
+              Sign Up
+            </button>
+            <div
+              style={{
+                textDecoration: "none",
+                fontSize: "1.2rem",
+                marginBottom: ".75rem",
+              }}
+            >
+              Or
+            </div>
+            <Link
+              to="/login"
+              style={{ textDecoration: "none", fontSize: "1.2rem" }}
+            >
+              <button
+                className="button is-block is-fullwidth is-primary is-medium is-rounded"
+                type="submit"
+                style={{ backgroundColor: "rgb(56, 200, 56)" }}
+              >
+                Sign In
+              </button>
+            </Link>
+          </form>
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            placeholder="Last"
-            name="lastName"
-            type="lastName"
-            id="lastName"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+      </div>
+    </section>
   );
 }
 

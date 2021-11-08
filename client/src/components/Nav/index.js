@@ -15,7 +15,10 @@ const NavbarLogo = (props) => (
 );
 
 const SignIn = (props) => (
-  <div className="navbar-item is-capitalized  signin">
+  <div
+    className="navbar-item is-capitalized  signin"
+    style={{ marginTop: ".2rem" }}
+  >
     <a
       className="is-size-5"
       href={`#${props.page}`}
@@ -30,7 +33,7 @@ const SignUp = (props) => (
   <a
     className="navbar-item is-capitalized is-size-5 signup"
     href={`#${props.page}`}
-    style={{ textDecoration: "none" }}
+    style={{ textDecoration: "none", marginTop: ".2rem" }}
   >
     {props.page}
   </a>
@@ -78,7 +81,7 @@ export default class Navbar extends React.Component {
     return (
       <nav
         className={`navbar is-${color}`}
-        style={{ marginTop: ".2rem", marginBottom: ".2rem" }}
+        style={{ position: "fixed", top: "0", width: "100%" }}
       >
         <div className="navbar-brand">
           <NavbarLogo page="CoinBull" />
@@ -94,7 +97,18 @@ export default class Navbar extends React.Component {
           <div className="navbar-start">{navbarItems}</div>
           {Auth.loggedIn() ? (
             <>
-              <div onClick={signout}>Signout</div>
+              <div
+                onClick={signout}
+                className="navbar-item is-capitalized nav-item-styles"
+              >
+                <a
+                  style={{ textDecoration: "none", color: "black" }}
+                  href="/"
+                  className="is-size-5"
+                >
+                  Sign Out
+                </a>
+              </div>
             </>
           ) : (
             <>
