@@ -1,6 +1,6 @@
 article {
   max-height: 20em;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   margin-bottom: 2em;
   padding: 20px;
 }
@@ -34,7 +34,7 @@ article {
 
 .news-image {
   object-fit: cover;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
 }
 
 .news-title {
