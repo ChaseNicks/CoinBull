@@ -20,6 +20,7 @@ function ProductList() {
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(10);
   const [sortOrder, setSortOrder] = useState({ sortTarget: "", value: false });
+  console.log(coinsState);
 
   // const { loading, data } = useQuery(QUERY_PRODUCTS);
 
@@ -47,13 +48,18 @@ function ProductList() {
         toBeSorted = "price";
       } else if (sortOrder.sortTarget === "change") {
         toBeSorted = "change";
+      } else if (sortOrder.sortTarget === "circulating_supply") {
+        toBeSorted = "circulating_supply";
       }
 
       function compare(a, b) {
         if (sortOrder.sortTarget === "coin") {
           toBeSortedA = a[toBeSorted].toLowerCase();
           toBeSortedB = b[toBeSorted].toLowerCase();
-        } else if (sortOrder.sortTarget === "price") {
+        } else if (
+          sortOrder.sortTarget === "price" ||
+          sortOrder.sortTarget === "circulating_supply"
+        ) {
           toBeSortedA = +a[toBeSorted];
           toBeSortedB = +b[toBeSorted];
         } else if (sortOrder.sortTarget === "change") {
@@ -167,7 +173,14 @@ function ProductList() {
                 Change
               </th>
               <th>
-                <span className="arrows">&#8661;</span>Circulating supply
+                <span
+                  id="circulating_supply"
+                  className="arrows"
+                  onClick={handleSortChange}
+                >
+                  &#8661;
+                </span>
+                Circulating supply
               </th>
               <th>
                 <span className="arrows">&#8661;</span>Market Cap
