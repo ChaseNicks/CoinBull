@@ -19,24 +19,24 @@ const SignIn = (props) => (
     className="navbar-item is-capitalized  signin"
     style={{ marginTop: ".2rem" }}
   >
-    <a
+    <div
       className="is-size-5"
-      href={`#${props.page}`}
+      // href={`#${props.page}`}
       style={{ textDecoration: "none", color: "white" }}
     >
       {props.page}
-    </a>
+    </div>
   </div>
 );
 
 const SignUp = (props) => (
-  <a
+  <div
     className="navbar-item is-capitalized is-size-5 signup"
-    href={`#${props.page}`}
+    // href={`#${props.page}`}
     style={{ textDecoration: "none", marginTop: ".2rem" }}
   >
     {props.page}
-  </a>
+  </div>
 );
 
 const NavbarItem = (props) => (

@@ -31,7 +31,7 @@ function Signup(props) {
   };
 
   return (
-    <section class="hero is-fullheight">
+    <section className="hero is-fullheight">
       <div className="hero-body has-text-centered is-flex is-justify-content-center">
         {/* <h3 class="title has-text-black">Login</h3> */}
 
@@ -57,6 +57,7 @@ function Signup(props) {
                   type="firstName"
                   id="firstName"
                   onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -69,6 +70,7 @@ function Signup(props) {
                   type="lastName"
                   id="lastName"
                   onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -81,6 +83,7 @@ function Signup(props) {
                   type="email"
                   id="email"
                   onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -93,6 +96,7 @@ function Signup(props) {
                   type="password"
                   id="pwd"
                   onChange={handleChange}
+                  required
                 />
               </div>
             </div>

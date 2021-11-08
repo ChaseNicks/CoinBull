@@ -30,7 +30,7 @@ function Login(props) {
   };
 
   return (
-    <section class="hero is-fullheight">
+    <section className="hero is-fullheight">
       <div className="hero-body has-text-centered is-flex is-justify-content-center">
         {/* <h3 class="title has-text-black">Login</h3> */}
 
@@ -56,6 +56,7 @@ function Login(props) {
                   type="email"
                   id="email"
                   onChange={handleChange}
+                  required
                 />
                 <span className="icon is-left">
                   <i className="fas fa-envelope" style={{ zIndex: "1" }}></i>
@@ -71,6 +72,7 @@ function Login(props) {
                   type="password"
                   id="pwd"
                   onChange={handleChange}
+                  required
                 />
                 <span className="icon is-left">
                   <i className="fas fa-lock"></i>
