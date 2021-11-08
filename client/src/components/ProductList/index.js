@@ -19,6 +19,9 @@ function ProductList() {
   const [coinsState, setCoinsState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(10);
+  const [sortOrder, setSortOrder] = useState({ sortTarget: "", value: false });
+  console.log(sortOrder);
+  console.log(coinsState);
 
   // const { loading, data } = useQuery(QUERY_PRODUCTS);
 
@@ -34,11 +37,46 @@ function ProductList() {
     fetchCoins();
   }, []);
 
+  useEffect(() => {
+    if (sortOrder.sortTarget !== "") {
+      let toBeSorted;
+
+      if (sortOrder.sortTarget === "coin") {
+        toBeSorted = "id";
+      }
+      console.log(toBeSorted);
+
+      function compare(a, b) {
+        const toBeSortedA = a[toBeSorted].toLowerCase();
+        const toBeSortedB = b[toBeSorted].toLowerCase();
+
+        let comparison = 0;
+        if (toBeSortedA > toBeSortedB) {
+          comparison = 1;
+        } else if (toBeSortedA < toBeSortedB) {
+          comparison = -1;
+        }
+        if (sortOrder.value === true) {
+          return comparison;
+        } else {
+          return comparison * -1;
+        }
+      }
+
+      coinsState.sort(compare);
+    }
+  }, [coinsState, sortOrder]);
+
   const indexOfLastCoin = currentPage * coinsPerPage;
   const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
   const currentCoins = coinsState.slice(indexOfFirstCoin, indexOfLastCoin);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const handleSortChange = (event) => {
+    let invokedTarget = event.target.id;
+    setSortOrder({ sortTarget: invokedTarget, value: !sortOrder.value });
+  };
 
   // useEffect(() => {
   //   if (data) {
@@ -99,7 +137,10 @@ function ProductList() {
           <thead>
             <tr>
               <th>
-                <span className="arrows">&#8661;</span>Coin
+                <span id="coin" className="arrows" onClick={handleSortChange}>
+                  &#8661;
+                </span>
+                Coin
               </th>
               <th>
                 <span className="arrows">&#8661;</span>Name
@@ -108,7 +149,8 @@ function ProductList() {
                 <span className="arrows">&#8661;</span>Price
               </th>
               <th>
-                <span className="arrows">&#8661;</span>Change
+                <span className="arrows">&#8661;</span>
+                Change
               </th>
               <th>
                 <span className="arrows">&#8661;</span>Circulating supply
