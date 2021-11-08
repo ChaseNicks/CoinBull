@@ -49,3 +49,25 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_FAVORITE = gql`
+  mutation addFavorite($input: favorite!) {
+    addFavorite(input: $input) {
+      _id
+      username
+      email
+      favorites {
+        # _id
+        name
+        ticker
+        price
+        hourPercentChange
+        dayPercentChange
+        weekPercentChange
+        volume
+        marketCap
+        logoURL
+      }
+    }
+  }
+`;
