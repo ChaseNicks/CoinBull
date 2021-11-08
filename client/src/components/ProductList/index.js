@@ -40,15 +40,24 @@ function ProductList() {
   useEffect(() => {
     if (sortOrder.sortTarget !== "") {
       let toBeSorted;
+      let toBeSortedA;
+      let toBeSortedB;
 
       if (sortOrder.sortTarget === "coin") {
         toBeSorted = "id";
+      } else if (sortOrder.sortTarget === "price") {
+        toBeSorted = "price";
       }
       console.log(toBeSorted);
 
       function compare(a, b) {
-        const toBeSortedA = a[toBeSorted].toLowerCase();
-        const toBeSortedB = b[toBeSorted].toLowerCase();
+        if (toBeSorted === "id") {
+          toBeSortedA = a[toBeSorted].toLowerCase();
+          toBeSortedB = b[toBeSorted].toLowerCase();
+        } else if (toBeSorted === "price") {
+          toBeSortedA = +a[toBeSorted];
+          toBeSortedB = +b[toBeSorted];
+        }
 
         let comparison = 0;
         if (toBeSortedA > toBeSortedB) {
@@ -136,17 +145,18 @@ function ProductList() {
         <table className="table mt-1">
           <thead>
             <tr>
+              <th>Coin</th>
               <th>
                 <span id="coin" className="arrows" onClick={handleSortChange}>
                   &#8661;
                 </span>
-                Coin
+                Name
               </th>
               <th>
-                <span className="arrows">&#8661;</span>Name
-              </th>
-              <th>
-                <span className="arrows">&#8661;</span>Price
+                <span id="price" className="arrows" onClick={handleSortChange}>
+                  &#8661;
+                </span>
+                Price
               </th>
               <th>
                 <span className="arrows">&#8661;</span>
