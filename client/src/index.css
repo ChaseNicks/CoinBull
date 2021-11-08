@@ -232,6 +232,7 @@ article {
   color: hsl(141, 71%, 48%);
 }
 
-.arrows:hover {
+.arrows:hover,
+.tableHead:hover {
   cursor: pointer;
 }
