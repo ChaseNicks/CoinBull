@@ -15,7 +15,7 @@ const Footer = () => {
       >
         CoinBull
       </Link>
-      <div class="has-text-centered footer-cont">
+      <div className="has-text-centered footer-cont">
         © 2021 | Designed & Created by Chase Nicks, Muiasar Alani, Leland Hayes,
         and Tucker Barrett
       </div>
