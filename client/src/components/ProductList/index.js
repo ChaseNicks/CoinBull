@@ -54,7 +54,7 @@ function ProductList() {
         toBeSorted = "market_cap";
       }
 
-      function compare(a, b) {
+      const compare = (a, b) => {
         if (sortOrder.sortTarget === "coin") {
           toBeSortedA = a[toBeSorted].toLowerCase();
           toBeSortedB = b[toBeSorted].toLowerCase();
@@ -81,7 +81,7 @@ function ProductList() {
         } else {
           return comparison * -1;
         }
-      }
+      };
 
       coinsState.sort(compare);
     }
@@ -157,40 +157,36 @@ function ProductList() {
           <thead>
             <tr>
               <th>Coin</th>
-              <th>
-                <span id="coin" className="arrows" onClick={handleSortChange}>
-                  &#8661;
-                </span>
+              <th id="coin" className="tableHead" onClick={handleSortChange}>
+                <span className="arrows">&#8661;</span>
                 Name
               </th>
-              <th>
-                <span id="price" className="arrows" onClick={handleSortChange}>
-                  &#8661;
-                </span>
+              <th id="price" className="tableHead" onClick={handleSortChange}>
+                <span className="arrows">&#8661;</span>
                 Price
               </th>
-              <th>
-                <span id="change" className="arrows" onClick={handleSortChange}>
+              <th id="change" className="tableHead" onClick={handleSortChange}>
+                <span className="arrows" onClick={handleSortChange}>
                   &#8661;
                 </span>
                 Change
               </th>
-              <th>
-                <span
-                  id="circulating_supply"
-                  className="arrows"
-                  onClick={handleSortChange}
-                >
+              <th
+                id="circulating_supply"
+                className="tableHead"
+                onClick={handleSortChange}
+              >
+                <span className="arrows" onClick={handleSortChange}>
                   &#8661;
                 </span>
                 Circulating supply
               </th>
-              <th>
-                <span
-                  id="market_cap"
-                  className="arrows"
-                  onClick={handleSortChange}
-                >
+              <th
+                id="market_cap"
+                className="tableHead"
+                onClick={handleSortChange}
+              >
+                <span className="arrows" onClick={handleSortChange}>
                   &#8661;
                 </span>
                 Market Cap
