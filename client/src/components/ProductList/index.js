@@ -19,6 +19,8 @@ function ProductList() {
   const [coinsState, setCoinsState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(10);
+  const [sortOrder, setSortOrder] = useState({ sortTarget: "", value: false });
+  console.log(coinsState);
 
   // const { loading, data } = useQuery(QUERY_PRODUCTS);
 
@@ -34,11 +36,67 @@ function ProductList() {
     fetchCoins();
   }, []);
 
+  useEffect(() => {
+    if (sortOrder.sortTarget !== "") {
+      let toBeSorted;
+      let toBeSortedA;
+      let toBeSortedB;
+
+      if (sortOrder.sortTarget === "coin") {
+        toBeSorted = "id";
+      } else if (sortOrder.sortTarget === "price") {
+        toBeSorted = "price";
+      } else if (sortOrder.sortTarget === "change") {
+        toBeSorted = "change";
+      } else if (sortOrder.sortTarget === "circulating_supply") {
+        toBeSorted = "circulating_supply";
+      } else if (sortOrder.sortTarget === "market_cap") {
+        toBeSorted = "market_cap";
+      }
+
+      function compare(a, b) {
+        if (sortOrder.sortTarget === "coin") {
+          toBeSortedA = a[toBeSorted].toLowerCase();
+          toBeSortedB = b[toBeSorted].toLowerCase();
+        } else if (
+          sortOrder.sortTarget === "price" ||
+          sortOrder.sortTarget === "circulating_supply" ||
+          sortOrder.sortTarget === "market_cap"
+        ) {
+          toBeSortedA = +a[toBeSorted];
+          toBeSortedB = +b[toBeSorted];
+        } else if (sortOrder.sortTarget === "change") {
+          toBeSortedA = a["1d"].price_change_pct;
+          toBeSortedB = b["1d"].price_change_pct;
+        }
+
+        let comparison = 0;
+        if (toBeSortedA > toBeSortedB) {
+          comparison = 1;
+        } else if (toBeSortedA < toBeSortedB) {
+          comparison = -1;
+        }
+        if (sortOrder.value === true) {
+          return comparison;
+        } else {
+          return comparison * -1;
+        }
+      }
+
+      coinsState.sort(compare);
+    }
+  }, [coinsState, sortOrder]);
+
   const indexOfLastCoin = currentPage * coinsPerPage;
   const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
   const currentCoins = coinsState.slice(indexOfFirstCoin, indexOfLastCoin);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const handleSortChange = (event) => {
+    let invokedTarget = event.target.id;
+    setSortOrder({ sortTarget: invokedTarget, value: !sortOrder.value });
+  };
 
   // useEffect(() => {
   //   if (data) {
@@ -99,11 +157,44 @@ function ProductList() {
           <thead>
             <tr>
               <th>Coin</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Change</th>
-              <th>Circulating supply</th>
-              <th>Market Cap</th>
+              <th>
+                <span id="coin" className="arrows" onClick={handleSortChange}>
+                  &#8661;
+                </span>
+                Name
+              </th>
+              <th>
+                <span id="price" className="arrows" onClick={handleSortChange}>
+                  &#8661;
+                </span>
+                Price
+              </th>
+              <th>
+                <span id="change" className="arrows" onClick={handleSortChange}>
+                  &#8661;
+                </span>
+                Change
+              </th>
+              <th>
+                <span
+                  id="circulating_supply"
+                  className="arrows"
+                  onClick={handleSortChange}
+                >
+                  &#8661;
+                </span>
+                Circulating supply
+              </th>
+              <th>
+                <span
+                  id="market_cap"
+                  className="arrows"
+                  onClick={handleSortChange}
+                >
+                  &#8661;
+                </span>
+                Market Cap
+              </th>
               <th>Price Chart</th>
               <th>Add to favorites</th>
             </tr>
