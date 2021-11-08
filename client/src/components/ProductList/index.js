@@ -50,6 +50,8 @@ function ProductList() {
         toBeSorted = "change";
       } else if (sortOrder.sortTarget === "circulating_supply") {
         toBeSorted = "circulating_supply";
+      } else if (sortOrder.sortTarget === "market_cap") {
+        toBeSorted = "market_cap";
       }
 
       function compare(a, b) {
@@ -58,7 +60,8 @@ function ProductList() {
           toBeSortedB = b[toBeSorted].toLowerCase();
         } else if (
           sortOrder.sortTarget === "price" ||
-          sortOrder.sortTarget === "circulating_supply"
+          sortOrder.sortTarget === "circulating_supply" ||
+          sortOrder.sortTarget === "market_cap"
         ) {
           toBeSortedA = +a[toBeSorted];
           toBeSortedB = +b[toBeSorted];
@@ -183,7 +186,14 @@ function ProductList() {
                 Circulating supply
               </th>
               <th>
-                <span className="arrows">&#8661;</span>Market Cap
+                <span
+                  id="market_cap"
+                  className="arrows"
+                  onClick={handleSortChange}
+                >
+                  &#8661;
+                </span>
+                Market Cap
               </th>
               <th>Price Chart</th>
               <th>Add to favorites</th>
