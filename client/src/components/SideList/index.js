@@ -25,13 +25,14 @@ function SideList() {
     fetchCoins();
   }, []);
 
+  
   const indexOfLastCoin = currentPage * coinsPerPage;
   const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
   const currentCoins = coinsState.slice(indexOfFirstCoin, indexOfLastCoin);
 
   return (
     <>
-    <div className="is-flex-direction-column" style={{ height: "740px", overflow: "scroll"}}>
+    <div className="is-flex-direction-column" style={{ height: "740px", overflow: "scroll", marginTop: "5rem"}}>
       <div className="is-flex is-justify-content-center">
         <table className="table mt-1">
           <thead>

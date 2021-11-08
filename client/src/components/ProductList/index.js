@@ -91,7 +91,7 @@ function ProductList() {
         )}
         {loading ? <img src={spinner} alt="loading" /> : null}
       </div> */}
-      <div className="is-flex is-justify-content-center">
+      <div className="is-flex is-justify-content-center" style={{ marginTop: "5rem"}}>
         <table className="table mt-1">
           <thead>
             <tr>
