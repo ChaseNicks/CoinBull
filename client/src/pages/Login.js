@@ -34,7 +34,7 @@ function Login(props) {
       <div className="hero-body has-text-centered is-flex is-justify-content-center">
       {/* <h3 class="title has-text-black">Login</h3> */}
                    
-        <div className="login" style={{ borderRadius: "25px", padding: "1.5rem", boxShadow: "8px 8px 15px #d9dde6, -8px -8px 15px #d9dde6"}}>
+        <div className="login" style={{ borderRadius: "25px", padding: "1.5rem", boxShadow: "8px 8px 15px #D9D9DA, -8px -8px 15px #D9D9DA"}}>
           <form onSubmit={handleFormSubmit} className="is-flex-direction-column is-align-item-center" style={{ width: "max-content" }}>
             <div className="field">
               <div className="control has-icons-left">
