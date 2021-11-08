@@ -20,8 +20,6 @@ function ProductList() {
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(10);
   const [sortOrder, setSortOrder] = useState({ sortTarget: "", value: false });
-  console.log(sortOrder);
-  console.log(coinsState);
 
   // const { loading, data } = useQuery(QUERY_PRODUCTS);
 
@@ -47,16 +45,20 @@ function ProductList() {
         toBeSorted = "id";
       } else if (sortOrder.sortTarget === "price") {
         toBeSorted = "price";
+      } else if (sortOrder.sortTarget === "change") {
+        toBeSorted = "change";
       }
-      console.log(toBeSorted);
 
       function compare(a, b) {
-        if (toBeSorted === "id") {
+        if (sortOrder.sortTarget === "coin") {
           toBeSortedA = a[toBeSorted].toLowerCase();
           toBeSortedB = b[toBeSorted].toLowerCase();
-        } else if (toBeSorted === "price") {
+        } else if (sortOrder.sortTarget === "price") {
           toBeSortedA = +a[toBeSorted];
           toBeSortedB = +b[toBeSorted];
+        } else if (sortOrder.sortTarget === "change") {
+          toBeSortedA = a["1d"].price_change_pct;
+          toBeSortedB = b["1d"].price_change_pct;
         }
 
         let comparison = 0;
@@ -159,7 +161,9 @@ function ProductList() {
                 Price
               </th>
               <th>
-                <span className="arrows">&#8661;</span>
+                <span id="change" className="arrows" onClick={handleSortChange}>
+                  &#8661;
+                </span>
                 Change
               </th>
               <th>
