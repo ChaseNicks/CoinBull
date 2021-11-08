@@ -53,8 +53,8 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
-              <Route exact path="/success" component={Success} />
-              <Route exact path="/orderHistory" component={OrderHistory} />
+              {/* <Route exact path="/success" component={Success} /> */}
+              {/* <Route exact path="/orderHistory" component={OrderHistory} /> */}
               {/* <Route exact path="/products/:id" component={Detail} /> */}
               <Route exact path="/coins/:id" component={SingleCoin} />
               <Route component={NoMatch} />
