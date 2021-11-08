@@ -36,6 +36,7 @@ const CoinTab = (coin) => {
           <img width="100" src={downMarket} alt="market chart" />
         )}
       </th>
+
       <th className="is-vcentered">
         <button
           className="button is-small is-rounded"

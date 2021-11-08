@@ -31,14 +31,25 @@ function Signup(props) {
   };
 
   return (
-    <section class="hero is-fullheight">
+    <section className="hero is-fullheight">
       <div className="hero-body has-text-centered is-flex is-justify-content-center">
-      {/* <h3 class="title has-text-black">Login</h3> */}
-                   
-        <div className="login" style={{ borderRadius: "25px", padding: "1.5rem", boxShadow: "8px 8px 15px #D9D9DA, -8px -8px 15px #D9D9DA"}}>
-          <form onSubmit={handleFormSubmit} className="is-flex-direction-column is-align-item-center" style={{ width: "max-content" }}>
+        {/* <h3 class="title has-text-black">Login</h3> */}
+
+        <div
+          className="login"
+          style={{
+            borderRadius: "25px",
+            padding: "1.5rem",
+            boxShadow: "8px 8px 15px #D9D9DA, -8px -8px 15px #D9D9DA",
+          }}
+        >
+          <form
+            onSubmit={handleFormSubmit}
+            className="is-flex-direction-column is-align-item-center"
+            style={{ width: "max-content" }}
+          >
             <div className="field">
-              <div className="control has-icons-left">               
+              <div className="control has-icons-left">
                 <input
                   className="input is-large is-rounded"
                   placeholder="First Name"
@@ -46,11 +57,12 @@ function Signup(props) {
                   type="firstName"
                   id="firstName"
                   onChange={handleChange}
+                  required
                 />
               </div>
-              </div>
-              <div className="field">
-              <div className="control has-icons-left">               
+            </div>
+            <div className="field">
+              <div className="control has-icons-left">
                 <input
                   className="input is-large is-rounded"
                   placeholder="Last Name"
@@ -58,23 +70,25 @@ function Signup(props) {
                   type="lastName"
                   id="lastName"
                   onChange={handleChange}
+                  required
                 />
               </div>
-              </div>
-              <div className="field">
+            </div>
+            <div className="field">
               <div className="control has-icons-left">
-                <input 
+                <input
                   className="input is-large is-rounded"
                   placeholder="Email"
                   name="email"
                   type="email"
                   id="email"
                   onChange={handleChange}
+                  required
                 />
               </div>
-              </div>
+            </div>
             <div className="field">
-              <div className="control has-icons-left">               
+              <div className="control has-icons-left">
                 <input
                   className="input is-large is-rounded"
                   placeholder="Password"
@@ -82,18 +96,41 @@ function Signup(props) {
                   type="password"
                   id="pwd"
                   onChange={handleChange}
+                  required
                 />
               </div>
             </div>
-            <button className="button is-block is-fullwidth is-primary is-medium is-rounded" type="submit" style={{ backgroundColor: "rgb(56, 200, 56)", marginBottom: ".75rem" }}>
+            <button
+              className="button is-block is-fullwidth is-primary is-medium is-rounded"
+              type="submit"
+              style={{
+                backgroundColor: "rgb(56, 200, 56)",
+                marginBottom: ".75rem",
+              }}
+            >
               Sign Up
             </button>
-              <div style={{ textDecoration: "none", fontSize: "1.2rem", marginBottom: ".75rem" }}>Or</div>
-              <Link to="/login" style={{ textDecoration: "none", fontSize: "1.2rem" }}>
-              <button className="button is-block is-fullwidth is-primary is-medium is-rounded" type="submit" style={{ backgroundColor: "rgb(56, 200, 56)"}}>
-              Sign In
+            <div
+              style={{
+                textDecoration: "none",
+                fontSize: "1.2rem",
+                marginBottom: ".75rem",
+              }}
+            >
+              Or
+            </div>
+            <Link
+              to="/login"
+              style={{ textDecoration: "none", fontSize: "1.2rem" }}
+            >
+              <button
+                className="button is-block is-fullwidth is-primary is-medium is-rounded"
+                type="submit"
+                style={{ backgroundColor: "rgb(56, 200, 56)" }}
+              >
+                Sign In
               </button>
-              </Link>
+            </Link>
           </form>
         </div>
       </div>

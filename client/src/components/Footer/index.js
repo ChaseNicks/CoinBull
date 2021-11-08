@@ -4,8 +4,10 @@ import "./styles/footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footerr
-    ">
+    <footer
+      className="footerr
+    "
+    >
       <Link
         className="is-capitalized is-size-2"
         to="/"
@@ -13,9 +15,10 @@ const Footer = () => {
       >
         CoinBull
       </Link>
-      <div class="has-text-centered footer-cont">
-      © 2021 | Designed & Created by Chase Nicks, Muiasar Alani, Leland Hayes, and Tucker Barrett
-    </div>
+      <div className="has-text-centered footer-cont">
+        © 2021 | Designed & Created by Chase Nicks, Muiasar Alani, Leland Hayes,
+        and Tucker Barrett
+      </div>
     </footer>
   );
 };

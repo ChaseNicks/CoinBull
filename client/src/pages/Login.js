@@ -30,21 +30,33 @@ function Login(props) {
   };
 
   return (
-    <section class="hero is-fullheight">
+    <section className="hero is-fullheight">
       <div className="hero-body has-text-centered is-flex is-justify-content-center">
-      {/* <h3 class="title has-text-black">Login</h3> */}
-                   
-        <div className="login" style={{ borderRadius: "25px", padding: "1.5rem", boxShadow: "8px 8px 15px #D9D9DA, -8px -8px 15px #D9D9DA"}}>
-          <form onSubmit={handleFormSubmit} className="is-flex-direction-column is-align-item-center" style={{ width: "max-content" }}>
+        {/* <h3 class="title has-text-black">Login</h3> */}
+
+        <div
+          className="login"
+          style={{
+            borderRadius: "25px",
+            padding: "1.5rem",
+            boxShadow: "8px 8px 15px #D9D9DA, -8px -8px 15px #D9D9DA",
+          }}
+        >
+          <form
+            onSubmit={handleFormSubmit}
+            className="is-flex-direction-column is-align-item-center"
+            style={{ width: "max-content" }}
+          >
             <div className="field">
               <div className="control has-icons-left">
-                <input 
+                <input
                   className="input is-large is-rounded"
                   placeholder="Email"
                   name="email"
                   type="email"
                   id="email"
                   onChange={handleChange}
+                  required
                 />
                 <span className="icon is-left">
                   <i className="fas fa-envelope" style={{ zIndex: "1" }}></i>
@@ -52,7 +64,7 @@ function Login(props) {
               </div>
             </div>
             <div className="field">
-              <div className="control has-icons-left">               
+              <div className="control has-icons-left">
                 <input
                   className="input is-large is-rounded"
                   placeholder="Password"
@@ -60,6 +72,7 @@ function Login(props) {
                   type="password"
                   id="pwd"
                   onChange={handleChange}
+                  required
                 />
                 <span className="icon is-left">
                   <i className="fas fa-lock"></i>
@@ -68,18 +81,42 @@ function Login(props) {
             </div>
             {error ? (
               <div>
-                <p className="error-text">The provided credentials are incorrect</p>
+                <p className="error-text">
+                  The provided credentials are incorrect
+                </p>
               </div>
             ) : null}
-            <button className="button is-block is-fullwidth is-primary is-medium is-rounded" type="submit" style={{ backgroundColor: "rgb(56, 200, 56)", marginBottom: ".75rem" }}>
+            <button
+              className="button is-block is-fullwidth is-primary is-medium is-rounded"
+              type="submit"
+              style={{
+                backgroundColor: "rgb(56, 200, 56)",
+                marginBottom: ".75rem",
+              }}
+            >
               Sign In
             </button>
-              <div style={{ textDecoration: "none", fontSize: "1.2rem", marginBottom: ".75rem" }}>Or</div>
-              <Link to="/signup" style={{ textDecoration: "none", fontSize: "1.2rem" }}>
-              <button className="button is-block is-fullwidth is-primary is-medium is-rounded" type="submit" style={{ backgroundColor: "rgb(56, 200, 56)"}}>
-              Create an Account
+            <div
+              style={{
+                textDecoration: "none",
+                fontSize: "1.2rem",
+                marginBottom: ".75rem",
+              }}
+            >
+              Or
+            </div>
+            <Link
+              to="/signup"
+              style={{ textDecoration: "none", fontSize: "1.2rem" }}
+            >
+              <button
+                className="button is-block is-fullwidth is-primary is-medium is-rounded"
+                type="submit"
+                style={{ backgroundColor: "rgb(56, 200, 56)" }}
+              >
+                Create an Account
               </button>
-              </Link>
+            </Link>
           </form>
         </div>
       </div>
