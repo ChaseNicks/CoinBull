@@ -54,7 +54,8 @@ export const ADD_FAVORITE = gql`
   mutation addFavorite($input: favorite!) {
     addFavorite(input: $input) {
       _id
-      username
+      firstName
+      lastName
       email
       favorites {
         # _id

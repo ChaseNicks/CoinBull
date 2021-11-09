@@ -12,6 +12,10 @@ import Pagination from "../Pagination";
 // import spinner from "../../assets/spinner.gif";
 import { getAllCoins } from "../../utils/API";
 
+import { ADD_FAVORITE } from "../../utils/mutations";
+import { useMutation } from "@apollo/client";
+import Auth from '../../utils/auth';
+
 function ProductList() {
   // const [state, dispatch] = useStoreContext();
 
@@ -86,6 +90,29 @@ function ProductList() {
       coinsState.sort(compare);
     }
   }, [coinsState, sortOrder]);
+
+  const [addFavorite] = useMutation(ADD_FAVORITE);
+
+  const handleAddFavorite = async (coinId) => {
+    // find the book in `searchedBooks` state by the matching id
+
+    const coinToFavorite = coinsState.find((coin) => coin.id === coinId);
+
+    // get token
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      await addFavorite({
+        variables: { input: coinToFavorite },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const indexOfLastCoin = currentPage * coinsPerPage;
   const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
@@ -210,6 +237,7 @@ function ProductList() {
                 change={coin["1d"].price_change_pct}
                 circulating_supply={coin.circulating_supply}
                 market_cap={coin.market_cap}
+                handleAddFavorite={handleAddFavorite}
               />
             ))}
           </tbody>
