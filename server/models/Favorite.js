@@ -3,23 +3,23 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const favoriteSchema = new Schema({
-  name: String,
+  name: { type: String },
 
-  ticker: String,
+  ticker: { type: String },
 
-  price: Number,
+  price: { type: Number },
 
-  hourPercentChange: Number,
+  hourPercentChange: { type: Number },
 
-  dayPercentChange: Number,
+  dayPercentChange: { type: Number },
 
-  weekPercentChange: Number,
+  weekPercentChange: { type: Number },
 
-  volume: Number,
+  volume: { type: Number },
 
-  marketCap: Number,
+  marketCap: { type: Number },
 
-  logoURL: String,
+  logoURL: { type: String },
 });
 
 const Favorite = mongoose.model("Favorite", favoriteSchema);

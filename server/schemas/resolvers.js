@@ -26,6 +26,9 @@ const resolvers = {
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate("category");
     },
+    users: async () => {
+      return await User.find({});
+    },
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id);
@@ -89,6 +92,20 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addFavorite: async (parent, args, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { favorite: args.input } },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+        return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
     addOrder: async (parent, { products }, context) => {
       console.log(context);

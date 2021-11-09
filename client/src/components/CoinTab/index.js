@@ -2,13 +2,16 @@ import upMarket from "../../assets/upmarket.png";
 import downMarket from "../../assets/downmarket.png";
 import { Link } from "react-router-dom";
 
+
+
 const CoinTab = (coin) => {
-  let { name, id, logo_url, price, change, circulating_supply, market_cap } =
+  let { name, id, logo_url, price, change, circulating_supply, market_cap, handleAddFavorite } =
     coin;
   price = parseFloat(price).toFixed(4);
   circulating_supply = circulating_supply.replace(/(.)(?=(\d{3})+$)/g, "$1,");
   market_cap = market_cap.replace(/(.)(?=(\d{3})+$)/g, "$1,");
   change = parseFloat(change * 100).toFixed(2);
+
 
   return (
     <tr>
@@ -42,6 +45,7 @@ const CoinTab = (coin) => {
         <button
           className="button is-small is-rounded"
           style={{ backgroundColor: "rgb(56,200,56)", color: "white" }}
+          onClick={() => handleAddFavorite(id)}
         >
           Favorite
         </button>

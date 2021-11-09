@@ -25,12 +25,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  favorites: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Favorite",
-    },
-  ],
+  favorites: [Favorite.schema],
 });
 
 // set up pre-save middleware to create password

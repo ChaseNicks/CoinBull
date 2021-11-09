@@ -55,6 +55,7 @@ const typeDefs = gql`
     products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     user: User
+    users: [User]
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
   }
@@ -66,6 +67,7 @@ const typeDefs = gql`
       email: String!
       password: String!
     ): Auth
+    addFavorite(input: favorite!): User
     addOrder(products: [ID]!): Order
     updateUser(
       firstName: String
@@ -76,6 +78,19 @@ const typeDefs = gql`
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
   }
+
+  input favorite {
+    name: String
+    ticker: String
+    price: Int
+    hourPercentChange: Int
+    dayPercentChange: Int
+    weekPercentChange: Int
+    volume: Int
+    marketCap: Int
+    logoURL: String
+  }
+
 `;
 
 module.exports = typeDefs;
