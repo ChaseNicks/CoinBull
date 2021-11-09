@@ -1,7 +1,7 @@
 {
-  "name": "mern-shopping",
+  "name": "CoinBull",
   "version": "1.0.0",
-  "description": "",
+  "description": "A full-stack web application for researching and tracking cryptocurrencies.",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
