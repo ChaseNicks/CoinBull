@@ -98,7 +98,18 @@ function ProductList() {
 
     const coinToFavorite = coinsState.find((coin) => coin.id === coinId);
 
-    const { id } = coinToFavorite;
+    const { 
+      id,
+      name,
+      ticker,
+      price,
+      hourPercentChange,
+      dayPercentChange,
+      weekPercentChange,
+      volume,
+      marketCap,
+      logoURL 
+    } = coinToFavorite;
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -110,7 +121,8 @@ function ProductList() {
     try {
       await addFavorite({
         variables: { input: {
-          name: id
+          name: name,
+          ticker: ticker,
         } },
       });
     } catch (err) {
