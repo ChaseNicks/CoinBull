@@ -98,6 +98,8 @@ function ProductList() {
 
     const coinToFavorite = coinsState.find((coin) => coin.id === coinId);
 
+    const { id } = coinToFavorite;
+
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -107,7 +109,9 @@ function ProductList() {
 
     try {
       await addFavorite({
-        variables: { input: coinToFavorite },
+        variables: { input: {
+          name: id
+        } },
       });
     } catch (err) {
       console.error(err);
