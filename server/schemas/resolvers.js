@@ -99,7 +99,7 @@ const resolvers = {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { favorite: args.input } },
+          { $addToSet: { favorites: args.input } },
           {
             new: true,
             runValidators: true,
