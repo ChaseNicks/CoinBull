@@ -30,6 +30,7 @@ const resolvers = {
       return await User.find({});
     },
     user: async (parent, args, context) => {
+      console.log("context: ", context.user);
       if (context.user) {
         const user = await User.findById(context.user._id);
         return user;
@@ -94,6 +95,7 @@ const resolvers = {
       return { token, user };
     },
     addFavorite: async (parent, args, context) => {
+      console.log("addFavorite: ", context.user);
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
