@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const GET_My_FAVORITES = gql`
+export const GET_MY_FAVORITES = gql`
   {
     getFavoriteCoins {
       _id
