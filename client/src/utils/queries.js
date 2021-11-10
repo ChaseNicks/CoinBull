@@ -9,6 +9,7 @@ export const GET_My_FAVORITES = gql`
       email
       favorites {
         name
+        ticker
         logoURL
       }
     }
