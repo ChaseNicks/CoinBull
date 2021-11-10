@@ -42,7 +42,7 @@ const SignUp = (props) => (
 const NavbarItem = (props) => (
   <a
     className="navbar-item is-capitalized is-size-5 nav-item-styles"
-    href={`#${props.page}`}
+    href={`${props.page}`}
     style={{ textDecoration: "none" }}
   >
     {props.page}

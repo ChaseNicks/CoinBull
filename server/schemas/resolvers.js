@@ -7,7 +7,7 @@ const resolvers = {
   Query: {
     getFavoriteCoins: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _Id: context.user._id })
+        const userData = await User.findOne({ _id: context.user._id })
           .select("-__v -password")
           .populate("favorites");
 
@@ -15,6 +15,7 @@ const resolvers = {
       }
       throw new AuthenticationError("Not logged in");
     },
+
     categories: async () => {
       return await Category.find();
     },

@@ -236,3 +236,7 @@ article {
 .tableHead:hover {
   cursor: pointer;
 }
+
+.favorites-container {
+  margin: 5rem !important;
+}

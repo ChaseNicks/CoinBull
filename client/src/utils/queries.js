@@ -4,6 +4,8 @@ export const GET_My_FAVORITES = gql`
   {
     getFavoriteCoins {
       _id
+      firstName
+      lastName
       email
       favorites {
         name
