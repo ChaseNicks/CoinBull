@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 const SingleCoinCard = ({ coin }) => {
   return (
-    <div className="card">
+    <div className="card  m-3 p-2">
       <div className="card-content">
         <Helmet>
           <script
@@ -17,14 +17,31 @@ const SingleCoinCard = ({ coin }) => {
           lcw-base="USD"
           lcw-secondary="BTC"
           lcw-period="d"
-          lcw-color-tx="#000000"
-          lcw-color-pr="#0693e3"
+          lcw-color-tx="#00d084"
+          lcw-color-pr="#00d084"
           lcw-color-bg="#e6e6e6"
           lcw-border-w="1"
+          lcw-digits="4"
         ></div>
-        {coin.name}
-        <img src={coin.logoURL} alt={coin.name} />
+        <div className="media">
+          <div className="media-left">
+            <figure className="image is-32x32">
+              <img src={`${coin.logoURL}`} alt={`${coin.name}`} />
+            </figure>
+          </div>
+          <div className="media-content">
+            <p className="title is-4">{coin.name}</p>
+          </div>
+        </div>
       </div>
+      <footer className="card-footer">
+        <button className="card-footer-item cards-buttons" type="button">
+          Delete
+        </button>
+        <button className="card-footer-item cards-buttons" type="button">
+          Purchase
+        </button>
+      </footer>
     </div>
   );
 };

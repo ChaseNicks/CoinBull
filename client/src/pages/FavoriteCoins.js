@@ -25,7 +25,7 @@ const FavoriteCoins = () => {
   return (
     <div className="container favorites-container ">
       <h1 className="has-text-success is-size-5">My favorite coins:</h1>
-      <div className="is-flex is-justify-content-space-between">
+      <div className="is-flex is-justify-content-space-between is-flex-wrap-wrap">
         {uniqueCoins.map((coin) => (
           <SingleCoinCard coin={coin} key={coin.name} />
         ))}
@@ -35,9 +35,9 @@ const FavoriteCoins = () => {
           defer
           src="https://www.livecoinwatch.com/static/lcw-widget.js"
         ></script>
-      </Helmet>{" "}
+      </Helmet>
       <div
-        class="livecoinwatch-widget-5"
+        className="livecoinwatch-widget-5"
         lcw-base="USD"
         lcw-color-tx="#00d084"
         lcw-marquee-1="movers"
