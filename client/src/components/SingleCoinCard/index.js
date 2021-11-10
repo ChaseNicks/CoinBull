@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 const SingleCoinCard = ({ coin, handleDeleteCoin }) => {
   return (
-    <div className="card m-3 p-2 widget-card">
+    <div className="card p-2 widget-card">
       <div className="card-content">
         <Helmet>
           <script
