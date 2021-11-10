@@ -67,6 +67,7 @@ const typeDefs = gql`
       password: String!
     ): Auth
     addFavorite(input: favorite!): User
+    removeCoinFromFavorite(name: String!): User
     addOrder(products: [ID]!): Order
     updateUser(
       firstName: String

@@ -120,6 +120,20 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    removeCoinFromFavorite: async (parent, args, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+
+          { $pull: { favorite: { name: args.name } } },
+
+          { new: true }
+        );
+
+        return updatedUser;
+      }
+      throw new AuthenticationError("Please login in!");
+    },
     addOrder: async (parent, { products }, context) => {
       console.log(context);
       if (context.user) {
