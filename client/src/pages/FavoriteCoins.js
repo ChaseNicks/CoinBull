@@ -3,10 +3,12 @@ import { useQuery, useMutation } from "@apollo/client";
 import { GET_My_FAVORITES } from "../utils/queries";
 import SingleCoinCard from "../components/SingleCoinCard";
 import { Helmet } from "react-helmet";
+import { REMOVE_COIN } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 const FavoriteCoins = () => {
   const { loading, data } = useQuery(GET_My_FAVORITES);
-
+  const [removeCoinFromFavorite] = useMutation(REMOVE_COIN);
   const userData = data?.getFavoriteCoins || [];
 
   if (!userData?.firstName) {
@@ -18,6 +20,22 @@ const FavoriteCoins = () => {
   ];
   console.log(uniqueCoins);
 
+  const handleDeleteCoin = async (coinName) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      await removeCoinFromFavorite({
+        variables: { coinName },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   if (loading) {
     return <h2>LOADING...</h2>;
   }
@@ -27,7 +45,11 @@ const FavoriteCoins = () => {
       <h1 className="has-text-success is-size-5">My favorite coins:</h1>
       <div className="is-flex is-justify-content-space-between is-flex-wrap-wrap">
         {uniqueCoins.map((coin) => (
-          <SingleCoinCard coin={coin} key={coin.name} />
+          <SingleCoinCard
+            coin={coin}
+            key={coin.name}
+            handleDeleteCoin={handleDeleteCoin}
+          />
         ))}
       </div>
       <Helmet>
