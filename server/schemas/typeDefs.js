@@ -86,7 +86,6 @@ const typeDefs = gql`
     marketCap: String
     logoURL: String
   }
-
 `;
 
 module.exports = typeDefs;
