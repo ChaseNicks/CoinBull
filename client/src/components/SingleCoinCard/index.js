@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const SingleCoinCard = ({ coin }) => {
+const SingleCoinCard = ({ coin, handleDeleteCoin }) => {
   return (
     <div className="card  m-3 p-2">
       <div className="card-content">
@@ -35,7 +35,11 @@ const SingleCoinCard = ({ coin }) => {
         </div>
       </div>
       <footer className="card-footer">
-        <button className="card-footer-item cards-buttons" type="button">
+        <button
+          className="card-footer-item cards-buttons"
+          type="button"
+          onClick={() => handleDeleteCoin(coin.name)}
+        >
           Delete
         </button>
         <button className="card-footer-item cards-buttons" type="button">

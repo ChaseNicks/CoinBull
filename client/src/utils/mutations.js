@@ -72,7 +72,7 @@ export const ADD_FAVORITE = gql`
 `;
 
 export const REMOVE_COIN = gql`
-  mutation removeCoinFromFavorite($name: string!) {
+  mutation removeCoinFromFavorite($name: String!) {
     removeCoinFromFavorite(name: $name) {
       firstName
       lastName

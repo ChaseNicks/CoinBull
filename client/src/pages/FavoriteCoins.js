@@ -18,9 +18,8 @@ const FavoriteCoins = () => {
   const uniqueCoins = [
     ...new Map(userData.favorites.map((coin) => [coin.name, coin])).values(),
   ];
-  console.log(uniqueCoins);
 
-  const handleDeleteCoin = async (coinName) => {
+  const handleDeleteCoin = async (name) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -29,7 +28,7 @@ const FavoriteCoins = () => {
 
     try {
       await removeCoinFromFavorite({
-        variables: { coinName },
+        variables: { name },
       });
     } catch (err) {
       console.error(err);
