@@ -62,9 +62,7 @@ export const ADD_FAVORITE = gql`
         name
         ticker
         price
-        hourPercentChange
         dayPercentChange
-        weekPercentChange
         volume
         marketCap
         logoURL

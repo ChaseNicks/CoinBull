@@ -24,12 +24,10 @@ const typeDefs = gql`
     _id: ID
     name: String
     ticker: String
-    price: Int
-    hourPercentChange: Int
-    dayPercentChange: Int
-    weekPercentChange: Int
-    volume: Int
-    marketCap: Int
+    price: String
+    dayPercentChange: String
+    volume: String
+    marketCap: String
     logoURL: String
   }
 
@@ -82,12 +80,10 @@ const typeDefs = gql`
   input favorite {
     name: String
     ticker: String
-    price: Int
-    hourPercentChange: Int
-    dayPercentChange: Int
-    weekPercentChange: Int
-    volume: Int
-    marketCap: Int
+    price: String
+    dayPercentChange: String
+    volume: String
+    marketCap: String
     logoURL: String
   }
 
