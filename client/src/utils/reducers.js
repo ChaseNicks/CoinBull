@@ -24,9 +24,6 @@ export const reducer = (state, action) => {
 
     case REMOVE_FROM_FAVORITES:
       let updatedFavorites = state.favorites.filter((coin) => {
-        console.log(
-          "`````````````````````````````````````hi`````````````````````````````````````"
-        );
         return coin.name !== action.name;
       });
       return {

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 const SingleCoinCard = ({ coin, handleDeleteCoin }) => {
   return (
-    <div className="card  m-3 p-2">
+    <div className="card m-3 p-2 widget-card">
       <div className="card-content">
         <Helmet>
           <script
@@ -12,7 +12,7 @@ const SingleCoinCard = ({ coin, handleDeleteCoin }) => {
           ></script>
         </Helmet>
         <div
-          className="livecoinwatch-widget-1 widget-card"
+          className="livecoinwatch-widget-1 "
           lcw-coin={`${coin.ticker}`}
           lcw-base="USD"
           lcw-secondary="BTC"
