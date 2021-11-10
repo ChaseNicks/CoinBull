@@ -57,9 +57,9 @@ const FavoriteCoins = () => {
   }
 
   return (
-    <div className="container favorites-container ">
-      <h1 className="has-text-success is-size-5">My favorite coins:</h1>
-      <div className="is-flex is-justify-content-space-between is-flex-wrap-wrap">
+    <div className=" favorites-container ">
+      <h1 className="has-text-success is-size-5 ml-6">My favorite coins:</h1>
+      <div className="is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
         {state.favorites.map((coin) => (
           <SingleCoinCard
             coin={coin}
