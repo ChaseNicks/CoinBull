@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import {
   UPDATE_FAVORITES,
+  REMOVE_FROM_FAVORITES,
   ADD_TO_CART,
   UPDATE_CART_QUANTITY,
   REMOVE_FROM_CART,
@@ -22,9 +23,16 @@ export const reducer = (state, action) => {
       };
 
     case REMOVE_FROM_FAVORITES:
-      let newState = state.favorites.filter((coin) => {
+      let updatedFavorites = state.favorites.filter((coin) => {
+        console.log(
+          "`````````````````````````````````````hi`````````````````````````````````````"
+        );
         return coin.name !== action.name;
       });
+      return {
+        ...state,
+        favorites: updatedFavorites,
+      };
 
     case ADD_TO_CART:
       return {

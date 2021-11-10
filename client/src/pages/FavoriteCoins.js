@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 import { REMOVE_COIN } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { useStoreContext } from "../utils/GlobalState";
-import { UPDATE_FAVORITES } from "../utils/actions";
+import { UPDATE_FAVORITES, REMOVE_FROM_FAVORITES } from "../utils/actions";
 
 const FavoriteCoins = () => {
   const [state, dispatch] = useStoreContext();
@@ -42,6 +42,10 @@ const FavoriteCoins = () => {
     try {
       await removeCoinFromFavorite({
         variables: { name },
+      });
+      dispatch({
+        type: REMOVE_FROM_FAVORITES,
+        name: name,
       });
     } catch (err) {
       console.error(err);
