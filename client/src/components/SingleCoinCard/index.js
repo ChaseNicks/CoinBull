@@ -1,7 +1,14 @@
 import React from "react";
 
-const SingleCoinCard = () => {
-  return <div className="column"></div>;
+const SingleCoinCard = ({ coin }) => {
+  return (
+    <div class="card">
+      <div class="card-content">
+        {coin.name}
+        <img src={coin.logoURL} alt={coin.name} />
+      </div>
+    </div>
+  );
 };
 
 export default SingleCoinCard;

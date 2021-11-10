@@ -7,11 +7,17 @@ const FavoriteCoins = () => {
   const { loading, data } = useQuery(GET_My_FAVORITES);
 
   const userData = data?.getFavoriteCoins || [];
+
   console.log(userData);
 
   if (!userData?.firstName) {
     return <h2>Users must be logged in to view this page!</h2>;
   }
+
+  const uniqueCoins = [
+    ...new Map(userData.favorites.map((coin) => [coin.name, coin])).values(),
+  ];
+  console.log(uniqueCoins);
 
   if (loading) {
     return <h2>LOADING...</h2>;
@@ -20,9 +26,9 @@ const FavoriteCoins = () => {
   return (
     <div className="container favorites-container ">
       <h1 className="has-text-success is-size-5">My favorite coins:</h1>
-      <div className="columns">
-        {userData.favorites.map((coin) => (
-          <SingleCoinCard coin={coin} />
+      <div className="is-flex is-justify-content-space-between">
+        {uniqueCoins.map((coin) => (
+          <SingleCoinCard coin={coin} key={coin.id} />
         ))}
       </div>
     </div>
