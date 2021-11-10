@@ -1,5 +1,18 @@
 import { gql } from "@apollo/client";
 
+export const GET_My_FAVORITES = gql`
+  {
+    getFavoriteCoins {
+      _id
+      email
+      favorites {
+        name
+        logoURL
+      }
+    }
+  }
+`;
+
 export const QUERY_PRODUCTS = gql`
   query getProducts($category: ID) {
     products(category: $category) {

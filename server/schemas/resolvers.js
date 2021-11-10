@@ -5,6 +5,16 @@ const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
+    getFavoriteCoins: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _Id: context.user._id })
+          .select("-__v -password")
+          .populate("favorites");
+
+        return userData;
+      }
+      throw new AuthenticationError("Not logged in");
+    },
     categories: async () => {
       return await Category.find();
     },
