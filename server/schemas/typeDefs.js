@@ -23,6 +23,12 @@ const typeDefs = gql`
   type Favorite {
     _id: ID
     name: String
+    ticker: String
+    price: String
+    dayPercentChange: String
+    volume: String
+    marketCap: String
+    logoURL: String
   }
 
   type User {
@@ -73,6 +79,12 @@ const typeDefs = gql`
 
   input favorite {
     name: String
+    ticker: String
+    price: String
+    dayPercentChange: String
+    volume: String
+    marketCap: String
+    logoURL: String
   }
 
 `;

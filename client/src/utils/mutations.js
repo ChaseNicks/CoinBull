@@ -60,6 +60,12 @@ export const ADD_FAVORITE = gql`
       favorites {
         # _id
         name
+        ticker
+        price
+        dayPercentChange
+        volume
+        marketCap
+        logoURL
       }
     }
   }

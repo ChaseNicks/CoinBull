@@ -98,7 +98,25 @@ function ProductList() {
 
     const coinToFavorite = coinsState.find((coin) => coin.id === coinId);
 
-    const { id } = coinToFavorite;
+    const { 
+      symbol,
+      name,
+      price,
+      market_cap,
+      logo_url
+    } = coinToFavorite;
+
+    let oneDay;
+
+    for(const key in coinToFavorite) {
+      if(key === '1d') {
+        oneDay = coinToFavorite[key]
+      }
+    }
+
+    const { price_change_pct, volume } = oneDay
+
+
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -108,9 +126,16 @@ function ProductList() {
     }
 
     try {
+      console.log('coinToFavorite: ', coinToFavorite);
       await addFavorite({
         variables: { input: {
-          name: id
+          name: name,
+          ticker: symbol,
+          price: price,
+          volume: volume,
+          dayPercentChange: price_change_pct,
+          marketCap: market_cap,
+          logoURL: logo_url
         } },
       });
     } catch (err) {

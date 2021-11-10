@@ -5,21 +5,21 @@ const { Schema } = mongoose;
 const favoriteSchema = new Schema({
   name: { type: String },
 
-//   ticker: { type: String },
+  ticker: { type: String },
 
-//   price: { type: Number },
+  price: { type: Number },
 
-//   hourPercentChange: { type: Number },
+  hourPercentChange: { type: Number },
 
-//   dayPercentChange: { type: Number },
+  dayPercentChange: { type: Number },
 
-//   weekPercentChange: { type: Number },
+  weekPercentChange: { type: Number },
 
-//   volume: { type: Number },
+  volume: { type: Number },
 
-//   marketCap: { type: Number },
+  marketCap: { type: Number },
 
-//   logoURL: { type: String },
+  logoURL: { type: String },
 });
 
 const Favorite = mongoose.model("Favorite", favoriteSchema);
