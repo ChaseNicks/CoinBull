@@ -21,6 +21,11 @@ export const reducer = (state, action) => {
         favorites: [...action.favorites],
       };
 
+    case REMOVE_FROM_FAVORITES:
+      let newState = state.favorites.filter((coin) => {
+        return coin.name !== action.name;
+      });
+
     case ADD_TO_CART:
       return {
         ...state,
