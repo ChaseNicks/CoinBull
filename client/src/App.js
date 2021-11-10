@@ -20,6 +20,7 @@ import Footer from "./components/Footer";
 import { StoreProvider } from "./utils/GlobalState";
 import Success from "./pages/Success";
 import OrderHistory from "./pages/OrderHistory";
+import FavoriteCoins from "./pages/FavoriteCoins";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -40,7 +41,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const pages = ["about", "prices", "charts", "Dashboard"];
+const pages = ["about", "prices", "charts", "Dashboard", "favorites"];
 
 function App() {
   return (
@@ -53,10 +54,9 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
-              {/* <Route exact path="/success" component={Success} /> */}
-              {/* <Route exact path="/orderHistory" component={OrderHistory} /> */}
-              {/* <Route exact path="/products/:id" component={Detail} /> */}
+
               <Route exact path="/coins/:id" component={SingleCoin} />
+              <Route exact path="/favorites" component={FavoriteCoins} />
               <Route component={NoMatch} />
             </Switch>
             <Footer />

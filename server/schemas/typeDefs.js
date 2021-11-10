@@ -56,6 +56,7 @@ const typeDefs = gql`
     users: [User]
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
+    getFavoriteCoins: User
   }
 
   type Mutation {
@@ -66,6 +67,7 @@ const typeDefs = gql`
       password: String!
     ): Auth
     addFavorite(input: favorite!): User
+    removeCoinFromFavorite(name: String!): User
     addOrder(products: [ID]!): Order
     updateUser(
       firstName: String
@@ -86,7 +88,6 @@ const typeDefs = gql`
     marketCap: String
     logoURL: String
   }
-
 `;
 
 module.exports = typeDefs;

@@ -5,6 +5,17 @@ const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
+    getFavoriteCoins: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id })
+          .select("-__v -password")
+          .populate("favorites");
+
+        return userData;
+      }
+      throw new AuthenticationError("Not logged in");
+    },
+
     categories: async () => {
       return await Category.find();
     },
@@ -108,6 +119,21 @@ const resolvers = {
         return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in!");
+    },
+    removeCoinFromFavorite: async (parent, args, context) => {
+      console.log(context.user);
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+
+          { $pull: { favorites: { name: args.name } } },
+
+          { new: true }
+        );
+        console.log(updatedUser);
+        return updatedUser;
+      }
+      throw new AuthenticationError("Please login in!");
     },
     addOrder: async (parent, { products }, context) => {
       console.log(context);

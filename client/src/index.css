@@ -236,3 +236,15 @@ article {
 .tableHead:hover {
   cursor: pointer;
 }
+
+.favorites-container {
+  margin: 5rem 0 !important;
+}
+
+.widget-card {
+  width: 450px !important;
+}
+
+.cards-buttons {
+  background-color: hsl(141, 71%, 48%) !important;
+}

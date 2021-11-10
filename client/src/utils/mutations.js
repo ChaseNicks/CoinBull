@@ -70,3 +70,23 @@ export const ADD_FAVORITE = gql`
     }
   }
 `;
+
+export const REMOVE_COIN = gql`
+  mutation removeCoinFromFavorite($name: String!) {
+    removeCoinFromFavorite(name: $name) {
+      firstName
+      lastName
+      email
+      favorites {
+        # _id
+        name
+        ticker
+        price
+        dayPercentChange
+        volume
+        marketCap
+        logoURL
+      }
+    }
+  }
+`;
