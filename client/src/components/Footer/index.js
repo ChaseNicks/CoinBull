@@ -23,6 +23,8 @@ const Footer = () => {
         <a href="https://willberner.github.io/Portfolio/" target="_blank" rel="noreferrer" style={{color: "white", textDecoration: "none"}}> Will Berner </a>
         <a href="https://ctbarrett.tech/index.html" target="_blank" rel="noreferrer" style={{color: "white", textDecoration: "none"}}> and Tucker Barrett </a>
       </div>
+
+      <div> All pricing data is brought to you by <a href="https://nomics.com/" style={{ color: "black"}}>Nomics</a></div>
     </footer>
   );
 };
