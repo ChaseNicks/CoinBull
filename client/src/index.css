@@ -18,6 +18,11 @@ body {
   min-height: 100%;
 }
 
+.backgroundbull {
+  background-image: url(./assets/bull4.png);
+  background-repeat: no-repeat;
+}
+
 body {
   margin: 0;
   padding: 0;
