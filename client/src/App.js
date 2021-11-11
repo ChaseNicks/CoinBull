@@ -21,8 +21,8 @@ import Signup from "./pages/Signup";
 import Navbar from "./components/Nav";
 import Footer from "./components/Footer";
 import { StoreProvider } from "./utils/GlobalState";
-import Success from "./pages/Success";
-import OrderHistory from "./pages/OrderHistory";
+// import Success from "./pages/Success";
+// import OrderHistory from "./pages/OrderHistory";
 import FavoriteCoins from "./pages/FavoriteCoins";
 
 const httpLink = createHttpLink({
