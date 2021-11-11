@@ -24,6 +24,7 @@ const SignIn = (props) => (
       className="is-size-5"
       // href={`#${props.page}`}
       style={{ textDecoration: "none", color: "white" }}
+      onClick={props.toggleMenu}
     >
       {props.page}
     </div>
@@ -35,6 +36,7 @@ const SignUp = (props) => (
     className="navbar-item is-capitalized is-size-5 signup"
     // href={`#${props.page}`}
     style={{ textDecoration: "none", marginTop: ".2rem" }}
+    onClick={props.toggleMenu}
   >
     {props.page}
   </div>
