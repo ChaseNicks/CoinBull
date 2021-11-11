@@ -1,25 +1,19 @@
 import React from "react";
-
-// import ProductList from "../components/ProductList";
-// import CategoryMenu from "../components/CategoryMenu";
-// import NewsCard from "../components/NewsCard";
-import pricesPhoto from '../assets/chart.png'
-import pricingPhoto from '../assets/prices.png'
-import favPhoto from '../assets/favs.png'
+import pricesPhoto from '../assets/chart.png';
+import pricingPhoto from '../assets/prices.png';
+import favPhoto from '../assets/favs.png';
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div className="container" style={{ marginTop: "2rem" }}>
-      {/* <CategoryMenu /> */}
-      {/* <ProductList />
-      <NewsCard symbol="ADA" /> */}
       <h1 className="is-size-1 has-text-centered has-text-weight-bold" style={{ marginTop: "1.2rem", marginBottom: "2.5rem"}}> Made and Designed For You</h1>
       <div className="columns is-pricing" style={{ marginRight: "2rem", marginLeft: "2rem" }}>
         <div className="column is-half is-flex-direction-column is-align-items-center">
           <h1 className="is-size-2 has-text-weight-medium">Techincal Chart with Multiple Features and Studies</h1>
           <p style={{ marginTop: "1.3rem" }} className="is-size-5">Responsive charts that gives you the power to make your best analysis from high level all the way to the lowest level on granularity </p>
           <div className="is-flex is-justify-content-center">
-            <button
+            <Link to="/charts" style={{ textDecoration: "none", fontSize: "1.2rem" }}><button
               className="button is-block is-fullwidth is-primary is-medium is-rounded"
               type="submit"
               style={{
@@ -30,6 +24,7 @@ const Home = () => {
                 width: "15rem"
               }}
             > Check it Out</button>
+            </Link>
           </div>
         </div>
         <div className="column is-half">
@@ -48,7 +43,8 @@ const Home = () => {
           <img src={pricingPhoto} alt="chart" />
         </div>
         <div className="is-flex is-justify-content-center">
-            <button
+        <Link to="/prices" style={{ textDecoration: "none", fontSize: "1.2rem" }}>
+          <button
               className="button is-block is-fullwidth is-primary is-medium is-rounded"
               type="submit"
               style={{
@@ -59,6 +55,7 @@ const Home = () => {
                 width: "15rem"
               }}
             >View</button>
+            </Link>
           </div>
       </div>
 
@@ -67,6 +64,7 @@ const Home = () => {
           <h1 className="is-size-2 has-text-weight-medium">A Page Tailored Just For You</h1>
           <p style={{ marginTop: "1.3rem" }} className="is-size-5"> You tracking a particular coin or maybe even multiple? Favorite it so you can view all your favorite coins on the same page with chart, pricing, % change, and more.</p>
           <div className="is-flex is-justify-content-center">
+          <Link to="/favorites" style={{ textDecoration: "none", fontSize: "1.2rem" }}>
             <button
               className="button is-block is-fullwidth is-primary is-medium is-rounded"
               type="submit"
@@ -78,6 +76,7 @@ const Home = () => {
                 width: "15rem"
               }}
             > Favorites</button>
+            </Link>
           </div>
         </div>
         <div className="column is-half">
