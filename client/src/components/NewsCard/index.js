@@ -24,7 +24,7 @@ const NewsCard = (props) => {
 
   return (
     <div className="container news-container">
-      <div className="is-capitalized is-size-3 has-text-left">
+      <div className="is-capitalized is-size-2">
         Trending Stories
       </div>
       <article className="card news-card">
