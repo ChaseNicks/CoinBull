@@ -88,6 +88,7 @@ function ProductList() {
 
     let oneDay;
 
+    // Ensures this works, since variables can't begin with numbers
     for (const key in coinToFavorite) {
       if (key === "1d") {
         oneDay = coinToFavorite[key];
@@ -143,6 +144,7 @@ function ProductList() {
         <table className="table mt-1">
           <thead>
             <tr>
+              <th>#</th>
               <th>Coin</th>
               <th id="coin" className="tableHead" onClick={handleSortChange}>
                 <span className="arrows">&#8661;</span>
@@ -187,6 +189,7 @@ function ProductList() {
               <CoinTab
                 key={coin.id}
                 id={coin.id}
+                rank={coin.rank}
                 name={coin.name}
                 logo_url={coin.logo_url}
                 price={coin.price}

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const CoinTab = (coin) => {
   let {
+    rank,
     name,
     id,
     logo_url,
@@ -20,6 +21,7 @@ const CoinTab = (coin) => {
 
   return (
     <tr>
+      <th className="is-vcentered">{rank}</th>
       <th className="is-vcentered">
         <Link to={`/coins/${id}`}>
           <img className="coins-icons" src={logo_url} alt={logo_url} />
