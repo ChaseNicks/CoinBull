@@ -27,18 +27,22 @@ const NewsCard = (props) => {
       <div className="is-capitalized is-size-3 has-text-left">
         Trending Stories
       </div>
-      <article className="card news-card">
-        {currentNews.map((newsItem) => (
-          <NewsItem
-            key={newsItem.id}
-            name={newsItem.name}
-            title={newsItem.title}
-            description={newsItem.description}
-            url={newsItem.url}
-            image={newsItem.image}
-          />
-        ))}
-      </article>
+      <div className="columns">
+        <div className="column">
+          <article className="card news-card">
+            {currentNews.map((newsItem) => (
+              <NewsItem
+                key={newsItem.id}
+                name={newsItem.name}
+                title={newsItem.title}
+                description={newsItem.description}
+                url={newsItem.url}
+                image={newsItem.image}
+              />
+            ))}
+          </article>
+        </div>
+      </div>
     </div>
   );
 };
