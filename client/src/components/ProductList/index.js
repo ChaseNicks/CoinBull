@@ -1,32 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-// import ProductItem from "../ProductItem";
 import CoinTab from "../CoinTab";
 import Pagination from "../Pagination";
-
-// import { useStoreContext } from "../../utils/GlobalState";
-// import { UPDATE_PRODUCTS } from "../../utils/actions";
-// import { useQuery } from "@apollo/client";
-// import { QUERY_PRODUCTS } from "../../utils/queries";
-// import { idbPromise } from "../../utils/helpers";
-// import spinner from "../../assets/spinner.gif";
 import { getAllCoins } from "../../utils/API";
-
 import { ADD_FAVORITE } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
 
 function ProductList() {
-  // const [state, dispatch] = useStoreContext();
-
-  // const { currentCategory } = state;
   const [coinsState, setCoinsState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(20);
   const [sortOrder, setSortOrder] = useState({ sortTarget: "", value: false });
   console.log(coinsState);
-
-  // const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -148,57 +134,8 @@ function ProductList() {
     setSortOrder({ sortTarget: invokedTarget, value: !sortOrder.value });
   };
 
-  // useEffect(() => {
-  //   if (data) {
-  //     dispatch({
-  //       type: UPDATE_PRODUCTS,
-  //       products: data.products,
-  //     });
-  //     data.products.forEach(product => {
-  //       idbPromise("products", "put", product);
-  //     });
-  //   } else if (!loading) {
-  //     idbPromise("products", "get").then(products => {
-  //       dispatch({
-  //         type: UPDATE_PRODUCTS,
-  //         products: products,
-  //       });
-  //     });
-  //   }
-  // }, [data, loading, dispatch]);
-
-  // function filterProducts() {
-  //   if (!currentCategory) {
-  //     return state.products;
-  //   }
-
-  //   return state.products.filter(
-  //     product => product.category._id === currentCategory
-  //   );
-  // }
-
   return (
     <>
-      {/* <div className="my-2">
-        <h2>Our Products:</h2>
-        {state.products.length ? (
-          <div className="flex-row">
-            {filterProducts().map((product) => (
-              <ProductItem
-                key={product._id}
-                _id={product._id}
-                image={product.image}
-                name={product.name}
-                price={product.price}
-                quantity={product.quantity}
-              />
-            ))}
-          </div>
-        ) : (
-          <h3>You haven't added any products yet!</h3>
-        )}
-        {loading ? <img src={spinner} alt="loading" /> : null}
-      </div> */}
       <div
         className="is-flex is-justify-content-center"
         style={{ marginTop: "5rem" }}
