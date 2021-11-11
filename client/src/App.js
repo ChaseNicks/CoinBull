@@ -9,6 +9,8 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import "bulma/css/bulma.css";
 
+import ScrollToTop from "./utils/ScrollToTop";
+
 import Home from "./pages/Home";
 // import Detail from "./pages/Detail";
 import SingleCoin from "./pages/SingleCoin";
@@ -51,13 +53,34 @@ function App() {
           <StoreProvider>
             <Navbar pages={pages} />
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
 
-              <Route exact path="/coins/:id" component={SingleCoin} />
-              <Route exact path="/favorites" component={FavoriteCoins} />
+              <Route exact path="/">
+                <ScrollToTop />
+                <Home />
+              </Route>
+
+              <Route exact path="/login">
+                <ScrollToTop />
+                <Login  />
+              </Route>
+
+              <Route exact path="/signup">
+                <ScrollToTop />
+                <Signup />
+              </Route>
+
+              <Route exact path="/coins/:id">
+                <ScrollToTop />
+                <SingleCoin />
+              </Route>
+
+              <Route exact path="/favorites">
+                <ScrollToTop />
+                <FavoriteCoins />
+              </Route>
+
               <Route component={NoMatch} />
+              
             </Switch>
             <Footer />
           </StoreProvider>
