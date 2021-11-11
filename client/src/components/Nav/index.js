@@ -9,8 +9,9 @@ const NavbarLogo = (props) => (
     className="navbar-item is-capitalized is-size-3"
     to="/"
     style={{ color: "rgb(56,200,56)", textDecoration: "none" }}
+    onClick={props.toggleMenu}
   >
-    {props.page}
+    CoinBull
   </Link>
 );
 
