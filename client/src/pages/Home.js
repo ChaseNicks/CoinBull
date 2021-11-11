@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="container" style={{ marginTop: "2rem" }}>
-      <h1 className="is-size-1 has-text-centered has-text-weight-bold" style={{ marginTop: "1.2rem", marginBottom: "2.5rem"}}> Made and Designed For You</h1>
+      {/* <CategoryMenu /> */}
+      {/* <ProductList />
+      <NewsCard symbol="ADA" /> */}
+      <h1 className="is-size-1 has-text-centered has-text-weight-bold" style={{ marginTop: "1.2rem", marginBottom: "2.5rem"}}> Created & Designed For You</h1>
       <div className="columns is-pricing" style={{ marginRight: "2rem", marginLeft: "2rem" }}>
         <div className="column is-half is-flex-direction-column is-align-items-center">
           <h1 className="is-size-2 has-text-weight-medium">Techincal Chart with Multiple Features and Studies</h1>
