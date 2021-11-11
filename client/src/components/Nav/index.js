@@ -44,6 +44,7 @@ const NavbarItem = (props) => (
     className="navbar-item is-capitalized is-size-5 nav-item-styles"
     to={`${props.page === "home" ? "/" : props.page}`}
     style={{ textDecoration: "none" }}
+    onClick={props.toggleMenu}
   >
     {props.page}
   </Link>
@@ -53,6 +54,8 @@ const NavbarBurger = (props) => (
   <button
     onClick={props.toggleMenu}
     className={`button navbar-burger ${props.active ? "is-active" : ""}`}
+    aria-label={"menu"}
+    aria-expanded={props.active ? true : false}
   >
     <span />
     <span />
@@ -72,7 +75,7 @@ export default class Navbar extends React.Component {
   render() {
     let { pages = [], color } = this.props;
     let navbarItems = pages.map((page) => (
-      <NavbarItem page={page} key={page} />
+      <NavbarItem page={page} key={page} toggleMenu={this.toggleMenu} />
     ));
     const signout = (event) => {
       event.preventDefault();
@@ -84,7 +87,7 @@ export default class Navbar extends React.Component {
         style={{ position: "fixed", top: "0", width: "100%" }}
       >
         <div className="navbar-brand">
-          <NavbarLogo page="CoinBull" />
+          <NavbarLogo page="CoinBull" toggleMenu={this.toggleMenu} />
           <NavbarBurger
             active={this.state.activeMenu}
             toggleMenu={this.toggleMenu}
@@ -112,10 +115,10 @@ export default class Navbar extends React.Component {
           ) : (
             <>
               <Link to="/login">
-                <SignIn page="Sign In" />
+                <SignIn page="Sign In" toggleMenu={this.toggleMenu}/>
               </Link>
               <Link to="/signup">
-                <SignUp page="Sign Up" />
+                <SignUp page="Sign Up" toggleMenu={this.toggleMenu} />
               </Link>
             </>
           )}
