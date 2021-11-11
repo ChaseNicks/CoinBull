@@ -22,7 +22,7 @@ function ProductList() {
   // const { currentCategory } = state;
   const [coinsState, setCoinsState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [coinsPerPage] = useState(10);
+  const [coinsPerPage] = useState(15);
   const [sortOrder, setSortOrder] = useState({ sortTarget: "", value: false });
   console.log(coinsState);
 

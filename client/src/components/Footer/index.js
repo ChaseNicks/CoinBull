@@ -16,8 +16,12 @@ const Footer = () => {
         CoinBull
       </Link>
       <div className="has-text-centered footer-cont">
-        © 2021 | Designed & Created by Chase Nicks, Muiasar Alani, Leland Hayes,
-        and Tucker Barrett
+        © 2021 | Designed & Created by
+        <a href="https://chasenicks.github.io/Portfolio_Page/" target="_blank" rel="noreferrer" style={{color: "white", textDecoration: "none"}}> Chase Nicks, </a>
+        <a href="https://muiasar-al-ani.github.io/my_personal_portfolio/" target="_blank" rel="noreferrer" style={{color: "white", textDecoration: "none"}}> Muiasar Alani, </a> 
+        <a href="https://ilelandhayes.github.io/Portfolio/" target="_blank" rel="noreferrer" style={{color: "white", textDecoration: "none"}}> Leland Hayes, </a>
+        <a href="https://willberner.github.io/Portfolio/" target="_blank" rel="noreferrer" style={{color: "white", textDecoration: "none"}}> Will Berner </a>
+        <a href="https://ctbarrett.tech/index.html" target="_blank" rel="noreferrer" style={{color: "white", textDecoration: "none"}}> and Tucker Barrett </a>
       </div>
     </footer>
   );
