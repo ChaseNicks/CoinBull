@@ -12,7 +12,7 @@ const Home = () => {
       {/* <ProductList />
       <NewsCard symbol="ADA" /> */}
       <h1 className="is-size-1 is-size-2-mobile has-text-centered has-text-weight-bold" style={{ marginTop: "2.5rem", marginBottom: "2.5rem" }}> Designed & Created For You</h1>
-      <div className="columns is-pricing" style={{ marginRight: "1rem", marginLeft: "1rem", marginTop: "2.5rem" }}>
+      <div className="columns is-pricing" style={{ marginRight: ".2rem", marginLeft: ".2rem", marginTop: "2.5rem" }}>
         <div className="column is-half is-flex-direction-column is-align-items-center">
           <h1 className="is-size-2 is-size-3-mobile has-text-weight-medium">Technical Chart with Multiple Features and Studies</h1>
           <p style={{ marginTop: "1.3rem" }} className="is-size-5 is-size-6-mobile">Responsive charts that gives you the power to make your best analysis from high level all the way to the lowest level on granularity </p>
@@ -36,7 +36,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="is-flex-direction-column is-justify-content-center is-align-content-center" style={{ marginRight: "1rem", marginLeft: "1rem", marginTop: "2.5rem" }}>
+      <div className="is-flex-direction-column is-justify-content-center is-align-content-center" style={{ marginRight: ".2rem", marginLeft: ".2rem", marginTop: "2.5rem" }}>
 
         <div className=" is-flex-direction-column is-align-items-center">
           <h1 className="is-size-2 is-size-3-mobile  has-text-weight-medium has-text-centered">Real Time Pricing For Your Favorite Coins</h1>
@@ -62,8 +62,9 @@ const Home = () => {
           </Link>
         </div>
       </div>
+      
 
-      <div className="columns is-pricing" style={{ marginRight: "1rem", marginLeft: "1rem", marginTop: "2.5rem", marginBottom: "2.5rem" }}>
+      <div className="columns is-pricing" style={{ marginRight: ".2rem", marginLeft: ".2rem", marginTop: "2.5rem", marginBottom: "2.5rem" }}>
         <div className="column is-half is-flex-direction-column is-align-items-center">
           <h1 className="is-size-2 is-size-3-mobile has-text-weight-medium">A Page Tailored Just For You</h1>
           <p style={{ marginTop: "1.3rem" }} className="is-size-5 is-size-6-mobile"> You tracking a particular coin or maybe even multiple? Favorite it so you can view all your favorite coins on the same page with chart, pricing, % change, and more.</p>
@@ -88,7 +89,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="is-flex-direction-column is-justify-content-center is-align-content-center" style={{ marginRight: "1rem", marginLeft: "1rem", marginTop: "2.5rem", marginBottom: "2.5rem" }}>
+      <div className="is-flex-direction-column is-justify-content-center is-align-content-center" style={{ marginRight: ".2rem", marginLeft: ".2rem", marginTop: "2.5rem", marginBottom: "2.5rem" }}>
 
         <div className=" is-flex-direction-column is-align-items-center">
           <h1 className="is-size-2 is-size-3-mobile  has-text-weight-medium has-text-centered">Always Know Whats Being Talked About</h1>
