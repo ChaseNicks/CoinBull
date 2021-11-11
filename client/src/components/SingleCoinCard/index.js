@@ -37,12 +37,13 @@ const SingleCoinCard = ({ coin, handleDeleteCoin }) => {
       <footer className="card-footer">
         <button
           className="card-footer-item cards-buttons"
+          style={{ backgroundColor: "rgb(56, 200, 56)"}}
           type="button"
           onClick={() => handleDeleteCoin(coin.name)}
         >
           Delete
         </button>
-        <button className="card-footer-item cards-buttons" type="button">
+        <button className="card-footer-item cards-buttons" type="button" style={{ backgroundColor: "rgb(56, 200, 56)"}}>
           Purchase
         </button>
       </footer>
