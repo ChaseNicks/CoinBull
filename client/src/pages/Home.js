@@ -5,9 +5,10 @@ import favPhoto from '../assets/favs.png';
 import newsPhoto from '../assets/newsss.png';
 import { Link } from "react-router-dom";
 
+
 const Home = () => {
   return (
-    <div className="container backgroundbull" style={{ marginTop: "2rem" }}>
+    <div className="container backgroundbull" style={{ marginTop: "2rem", width: "100%" }}>
       {/* <CategoryMenu /> */}
       {/* <ProductList />
       <NewsCard symbol="ADA" /> */}
