@@ -28,8 +28,17 @@ const FavoriteCoins = () => {
     }
   }, [dispatch, userData.favorites]);
 
+  let notLoggedInStyle = {
+    height: "100%",
+    marginTop: "65px"
+  }
+
   if (!userData?.firstName) {
-    return <h2>Users must be logged in to view this page!</h2>;
+    return (<div style={notLoggedInStyle} className="columns is-vcentered is-hcentered">
+              <div className="column has-text-centered">
+                <h2>Users must be logged in to view this page!</h2>
+              </div>
+            </div>)
   }
 
   const handleDeleteCoin = async (name) => {

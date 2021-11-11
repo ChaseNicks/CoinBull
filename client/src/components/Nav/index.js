@@ -85,7 +85,6 @@ export default class Navbar extends React.Component {
       >
         <div className="navbar-brand">
           <NavbarLogo page="CoinBull" />
-          <NavbarItem />
           <NavbarBurger
             active={this.state.activeMenu}
             toggleMenu={this.toggleMenu}

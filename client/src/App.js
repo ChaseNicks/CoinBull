@@ -10,7 +10,6 @@ import { setContext } from "@apollo/client/link/context";
 import "bulma/css/bulma.css";
 
 import Home from "./pages/Home";
-// import Detail from "./pages/Detail";
 import SingleCoin from "./pages/SingleCoin";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
@@ -18,8 +17,6 @@ import Signup from "./pages/Signup";
 import Navbar from "./components/Nav";
 import Footer from "./components/Footer";
 import { StoreProvider } from "./utils/GlobalState";
-import Success from "./pages/Success";
-import OrderHistory from "./pages/OrderHistory";
 import FavoriteCoins from "./pages/FavoriteCoins";
 
 const httpLink = createHttpLink({
