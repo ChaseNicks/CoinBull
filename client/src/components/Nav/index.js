@@ -81,7 +81,7 @@ export default class Navbar extends React.Component {
     return (
       <nav
         className={`navbar is-${color}`}
-        style={{ position: "fixed", top: "0", width: "100%" }}
+        // style={{ position: "fixed", top: "0", width: "100%" }}
       >
         <div className="navbar-brand">
           <NavbarLogo page="CoinBull" />
