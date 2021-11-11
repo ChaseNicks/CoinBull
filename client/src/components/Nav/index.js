@@ -9,7 +9,7 @@ const NavbarLogo = (props) => (
     className="navbar-item is-capitalized is-size-3"
     to="/"
     style={{ color: "rgb(56,200,56)", textDecoration: "none" }}
-    onClick={props.toggleMenu}
+    onClick={props.isOpen ? props.toggleMenu : null}
   >
     CoinBull
   </Link>
@@ -90,7 +90,7 @@ export default class Navbar extends React.Component {
         // style={{ position: "fixed", top: "0", width: "100%" }}
       >
         <div className="navbar-brand">
-          <NavbarLogo page="CoinBull" toggleMenu={this.toggleMenu} />
+          <NavbarLogo page="CoinBull" toggleMenu={this.toggleMenu} isOpen={this.state.activeMenu} />
           <NavbarBurger
             active={this.state.activeMenu}
             toggleMenu={this.toggleMenu}
