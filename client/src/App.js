@@ -9,8 +9,11 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import "bulma/css/bulma.css";
 
+import ScrollToTop from "./utils/ScrollToTop";
+
 import Home from "./pages/Home";
 import SingleCoin from "./pages/SingleCoin";
+import Prices from "./pages/Prices";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -38,7 +41,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const pages = ["about", "prices", "charts", "Dashboard", "favorites"];
+const pages = ["home", "prices", "charts", "dashboard", "favorites"];
 
 function App() {
   return (
@@ -48,13 +51,39 @@ function App() {
           <StoreProvider>
             <Navbar pages={pages} />
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
 
-              <Route exact path="/coins/:id" component={SingleCoin} />
-              <Route exact path="/favorites" component={FavoriteCoins} />
+              <Route exact path="/">
+                <ScrollToTop />
+                <Home />
+              </Route>
+
+              <Route exact path="/prices">
+                <ScrollToTop />
+                <Prices />
+              </Route>
+
+              <Route exact path="/login">
+                <ScrollToTop />
+                <Login  />
+              </Route>
+
+              <Route exact path="/signup">
+                <ScrollToTop />
+                <Signup />
+              </Route>
+
+              <Route exact path="/coins/:id">
+                <ScrollToTop />
+                <SingleCoin />
+              </Route>
+
+              <Route exact path="/favorites">
+                <ScrollToTop />
+                <FavoriteCoins />
+              </Route>
+
               <Route component={NoMatch} />
+
             </Switch>
             <Footer />
           </StoreProvider>
