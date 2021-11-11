@@ -28,8 +28,17 @@ const FavoriteCoins = () => {
     }
   }, [dispatch, userData.favorites]);
 
+  let notLoggedInStyle = {
+    height: "100%",
+    marginTop: "65px"
+  }
+
   if (!userData?.firstName) {
-    return <h2>Users must be logged in to view this page!</h2>;
+    return (<div style={notLoggedInStyle} className="columns is-vcentered is-hcentered">
+              <div className="column has-text-centered">
+                <h2>Users must be logged in to view this page!</h2>
+              </div>
+            </div>)
   }
 
   const handleDeleteCoin = async (name) => {
@@ -57,9 +66,9 @@ const FavoriteCoins = () => {
   }
 
   return (
-    <div className=" favorites-container ">
+    <div className="hero favorites-container is-fullheight">
       <h1 className="has-text-success is-size-5 ml-6">My favorite coins:</h1>
-      <div className="is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
+      <div className="hero-body is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
         {state.favorites.map((coin) => (
           <SingleCoinCard
             coin={coin}

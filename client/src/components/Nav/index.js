@@ -40,13 +40,13 @@ const SignUp = (props) => (
 );
 
 const NavbarItem = (props) => (
-  <a
+  <Link
     className="navbar-item is-capitalized is-size-5 nav-item-styles"
-    href={`${props.page}`}
+    to={`${props.page === "home" ? "/" : props.page}`}
     style={{ textDecoration: "none" }}
   >
     {props.page}
-  </a>
+  </Link>
 );
 
 const NavbarBurger = (props) => (
@@ -85,7 +85,6 @@ export default class Navbar extends React.Component {
       >
         <div className="navbar-brand">
           <NavbarLogo page="CoinBull" />
-          <NavbarItem />
           <NavbarBurger
             active={this.state.activeMenu}
             toggleMenu={this.toggleMenu}
