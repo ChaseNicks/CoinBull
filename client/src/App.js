@@ -41,7 +41,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const pages = ["about", "prices", "charts", "Dashboard", "favorites"];
+const pages = ["Home", "About", "Prices", "Charts", "Dashboard", "Favorites"];
 
 function App() {
   return (
