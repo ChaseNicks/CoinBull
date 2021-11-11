@@ -14,6 +14,7 @@ import ScrollToTop from "./utils/ScrollToTop";
 import Home from "./pages/Home";
 // import Detail from "./pages/Detail";
 import SingleCoin from "./pages/SingleCoin";
+import Prices from "./pages/Prices";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -59,6 +60,11 @@ function App() {
                 <Home />
               </Route>
 
+              <Route exact path="/prices">
+                <ScrollToTop />
+                <Prices />
+              </Route>
+
               <Route exact path="/login">
                 <ScrollToTop />
                 <Login  />
@@ -80,7 +86,7 @@ function App() {
               </Route>
 
               <Route component={NoMatch} />
-              
+
             </Switch>
             <Footer />
           </StoreProvider>
