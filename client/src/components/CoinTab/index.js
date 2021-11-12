@@ -23,7 +23,7 @@ const CoinTab = (coin) => {
   return (
     <tr>
       <th className="is-vcentered">
-        <button className="star-icon">
+        <button className="star-icon" onClick={() => handleAddFavorite(id)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

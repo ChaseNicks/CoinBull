@@ -144,6 +144,7 @@ function ProductList() {
         <table className="table mt-1">
           <thead>
             <tr>
+              <th> </th>
               <th>#</th>
               <th>Coin</th>
               <th id="coin" className="tableHead" onClick={handleSortChange}>
