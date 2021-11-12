@@ -1,7 +1,7 @@
 import upMarket from "../../assets/upmarket.png";
 import downMarket from "../../assets/downmarket.png";
 import { Link } from "react-router-dom";
-import "./SingleCoin.css";
+import "./styles/SingleCoin.css";
 
 const CoinTab = (coin) => {
   let {
