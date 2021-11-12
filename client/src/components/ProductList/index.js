@@ -182,7 +182,6 @@ function ProductList() {
                 Market Cap
               </th>
               <th>Price Chart</th>
-              <th>Add to favorites</th>
             </tr>
           </thead>
           <tbody>

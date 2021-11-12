@@ -62,16 +62,6 @@ const CoinTab = (coin) => {
           <img width="100" src={downMarket} alt="market chart" />
         )}
       </th>
-
-      <th className="is-vcentered">
-        <button
-          className="button is-small is-rounded"
-          style={{ backgroundColor: "rgb(56,200,56)", color: "white" }}
-          onClick={() => handleAddFavorite(id)}
-        >
-          Favorite
-        </button>
-      </th>
     </tr>
   );
 };
