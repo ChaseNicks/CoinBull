@@ -1,3 +1,15 @@
+nav {
+  padding: 1rem;
+}
+
+.navbar-brand {
+  margin-right: 1rem;
+}
+
+.navbar-item {
+  margin-right: 1rem;
+}
+
 .nav-item-styles:hover {
   border-bottom: 5px solid rgb(56, 200, 56);
   color: black !important;
