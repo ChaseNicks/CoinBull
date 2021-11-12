@@ -80,7 +80,6 @@ function ProductList() {
   const [addFavorite] = useMutation(ADD_FAVORITE);
 
   const handleAddFavorite = async (coinId) => {
-    // find the book in `searchedBooks` state by the matching id
 
     const coinToFavorite = coinsState.find((coin) => coin.id === coinId);
 
