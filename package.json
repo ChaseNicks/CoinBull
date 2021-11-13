@@ -21,6 +21,8 @@
     "npx": "^10.2.2"
   },
   "dependencies": {
-    "bulma": "^0.9.3"
+    "bulma": "^0.9.3",
+    "react-hot-toast": "^2.1.1",
+    "react-toastify": "^8.1.0"
   }
 }

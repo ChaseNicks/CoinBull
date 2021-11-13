@@ -3,15 +3,18 @@ import React, { useEffect, useState } from "react";
 import CoinTab from "../CoinTab";
 import Pagination from "../Pagination";
 import { getAllCoins } from "../../utils/API";
+import { GET_MY_FAVORITES } from "../../utils/queries";
 import { ADD_FAVORITE } from "../../utils/mutations";
-import { useMutation } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
 
 function ProductList() {
   const [coinsState, setCoinsState] = useState([]);
+  const [favoritesState, setFavoritesState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(20);
   const [sortOrder, setSortOrder] = useState({ sortTarget: "", value: false });
+  const [getFavoriteCoins] = useQuery(GET_MY_FAVORITES);
   console.log(coinsState);
 
   useEffect(() => {
@@ -24,6 +27,18 @@ function ProductList() {
       }
     };
     fetchCoins();
+  }, []);
+
+  useEffect(() => {
+    const getFavorites = async () => {
+      try {
+        const favorites = await getFavoriteCoins();
+        setFavoritesState(favorites);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    getFavorites();
   }, []);
 
   useEffect(() => {
