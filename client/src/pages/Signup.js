@@ -36,7 +36,7 @@ function Signup(props) {
         {/* <h3 class="title has-text-black">Login</h3> */}
 
         <div
-          className="login"
+          className="login is-flex is-flex-wrap-wrap is-flex-shrink-2"
           style={{
             borderRadius: "25px",
             padding: "1.5rem",
@@ -51,7 +51,7 @@ function Signup(props) {
             <div className="field">
               <div className="control has-icons-left">
                 <input
-                  className="input is-large is-rounded"
+                  className="input is-large is-rounded is-flex-shrink-2"
                   placeholder="First Name"
                   name="firstName"
                   type="firstName"

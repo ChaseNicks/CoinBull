@@ -33,6 +33,7 @@ const FavoriteCoins = () => {
   let notLoggedInStyle = {
     height: "100%",
     marginTop: "65px",
+    marginBottom: "65px"
   };
 
   if (!userData?.firstName) {
@@ -41,8 +42,8 @@ const FavoriteCoins = () => {
         style={notLoggedInStyle}
         className="columns is-vcentered is-hcentered"
       >
-        <div className="column has-text-centered">
-          <h2>Users must be logged in to view this page!</h2>
+        <div className="column has-text-centered mb-5">
+          <h2>You must be logged in to view your favorites</h2>
         </div>
       </div>
     );
@@ -78,7 +79,7 @@ const FavoriteCoins = () => {
   const handleModalRemoval = (e) => {
     e.stopPropagation();
     setInitializer(false);
-    if (e.currentTarget.classList.contains("cancel")) {
+    if (e.currentTarget.classList.contains("close")) {
       e.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove(
         "is-active"
       );
