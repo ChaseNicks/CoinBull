@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const nomicsURL = `https://api.nomics.com/v1/currencies/ticker?key=bf0f8b8bff53b4098df1df96d4d2d0531a4d8ffa&interval=1d,30d&convert=USD&per-page=100&page=1`;
+const nomicsURL = `https://api.nomics.com/v1/currencies/ticker?key=001b0fad7295e9be8c2270792dcc4efb3763624e&interval=1d,30d&convert=USD&per-page=100&page=1`;
 export async function getAllCoins() {
   const res = await axios.get(nomicsURL);
   const coins = res.data;
@@ -25,7 +25,7 @@ export async function getNews(symbol) {
 export async function getCoin(ticker) {
   if (ticker) {
     const res = await axios.get(
-      `https://api.nomics.com/v1/currencies/ticker?key=bf0f8b8bff53b4098df1df96d4d2d0531a4d8ffa&ids=${ticker}&convert=USD&page=1`
+      `https://api.nomics.com/v1/currencies/ticker?key=001b0fad7295e9be8c2270792dcc4efb3763624e&ids=${ticker}&convert=USD&page=1`
     );
     const coin = res.data;
     return coin;
