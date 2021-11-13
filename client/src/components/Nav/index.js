@@ -18,7 +18,7 @@ const NavbarLogo = (props) => (
 const SignIn = (props) => (
   <div
     className="navbar-item is-capitalized  signin"
-    style={{ marginTop: ".2rem" }}
+    style={{ marginTop: ".3rem" }}
   >
     <div
       className="is-size-5"
@@ -33,12 +33,17 @@ const SignIn = (props) => (
 
 const SignUp = (props) => (
   <div
-    className="navbar-item is-capitalized is-size-5 signup"
-    // href={`#${props.page}`}
-    style={{ textDecoration: "none", marginTop: ".2rem" }}
-    onClick={props.toggleMenu}
+    className="navbar-item is-capitalized  signup"
+    style={{ marginTop: ".3rem" }}
   >
-    {props.page}
+    <div
+      className="is-size-5"
+      // href={`#${props.page}`}
+      style={{ textDecoration: "none" }}
+      onClick={props.toggleMenu}
+    >
+      {props.page}
+    </div>
   </div>
 );
 

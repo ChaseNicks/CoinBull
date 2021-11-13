@@ -30,13 +30,13 @@ function SideList() {
   const currentCoins = coinsState.slice(indexOfFirstCoin, indexOfLastCoin);
 
   return (
-    <div className="is-flex-direction-column" style={{ marginTop: "3.5rem" }}>
-      <div className="is-capitalized is-size-3 has-text-left">Explore</div>
+    <div className="" style={{ marginTop: ".5rem" }}>
+
       <div
-        className="is-flex-direction-column"
-        style={{ height: "740px", overflow: "scroll" }}
+        style={{ height: "740px", overflow: "scroll" }} className="is-flex is-justify-content-center"
       >
-        <div className="is-flex is-justify-content-center">
+        <div className="is-flex-direction-row is-justify-content-center">
+        <div className="is-capitalized is-size-3 has-text-left">Explore</div>
           <table className="table mt-1">
             <thead>
               <tr>
