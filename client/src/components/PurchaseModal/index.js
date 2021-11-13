@@ -22,7 +22,8 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
             logo_url: coinData[0].logo_url,
             symbol: coinData[0].symbol,
           });
-          setUsdInput(currentCoin.price);
+          let cryptoCost = parseFloat(currentCoin.price).toFixed(2);
+          setUsdInput(cryptoCost);
         } catch (err) {
           console.error(err);
         }
@@ -34,11 +35,17 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
   const handleInputChange = (e) => {
     const { target } = e;
     if (target.id === "crypto-input") {
-      const cryptoCost = target.value * currentCoin.price;
+      let cryptoCost = target.value * currentCoin.price;
+
+      cryptoCost = parseFloat(cryptoCost).toFixed(2);
+
       setUsdInput(cryptoCost);
       setCryptoInput(target.value);
     } else {
-      const cryptoWorth = target.value / currentCoin.price;
+      let cryptoWorth = target.value / currentCoin.price;
+
+      cryptoWorth = parseFloat(cryptoWorth).toFixed(4);
+
       setCryptoInput(cryptoWorth);
       setUsdInput(target.value);
     }
@@ -64,7 +71,7 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
                   <h1>
                     {currentCoin.name} ({currentCoin.symbol})
                   </h1>
-                  <h1>Price: ${currentCoin.price}</h1>
+                  <h1>Price: ${parseFloat(currentCoin.price).toFixed(4)}</h1>
                 </div>
               </div>
 
