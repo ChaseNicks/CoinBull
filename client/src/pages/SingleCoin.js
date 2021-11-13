@@ -26,10 +26,14 @@ const SingleCoin = () => {
 
   return (
     <div>
-      <div className="is-flex">
-        <Chart singleCoin={id} />
-        {/*  <News /> */}
-        <SideList />
+      <div className="columns">
+        <div className="column">
+          <Chart singleCoin={id} />
+          {/*  <News /> */}
+        </div>
+        <div className="column is-one-third">
+          <SideList />
+        </div>
       </div>
       <NewsCard symbol="ADA" />
     </div>
