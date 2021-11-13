@@ -8,34 +8,27 @@ import "../index.css";
 import NewsCard from "../components/NewsCard";
 
 const SingleCoin = () => {
-  // const [singleCoin, setSingleCoin] = useState("");
 
-  // useEffect(() => {
-  //   const fetchASingleCoin = async () => {
-  //     try {
-  //       const coin = await getASingleCoin();
-  //       setSingleCoin(coin);
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   };
-  //   fetchASingleCoin();
-  // }, []);
-
+  // Get coin ID (ticker) from path params
   const { id } = useParams();
 
   return (
     <div>
       <div className="columns">
+
+        {/* Render chart for single coin */}
         <div className="column">
           <Chart singleCoin={id} />
-          {/*  <News /> */}
         </div>
+
+        {/* Render side list for other viewable coins */}
         <div className="column is-one-third">
           <SideList />
         </div>
       </div>
-      <NewsCard symbol="ADA" />
+
+      {/* Render news cards for specific coin*/}
+      <NewsCard symbol={id} />
     </div>
   );
 };
