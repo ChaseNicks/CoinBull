@@ -1,7 +1,14 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import PurchaseModal from "../PurchaseModal";
 
-const SingleCoinCard = ({ coin, handleDeleteCoin }) => {
+const SingleCoinCard = ({
+  coin,
+  handleDeleteCoin,
+  handlePurchaseButton,
+  handleModalRemoval,
+  initializer,
+}) => {
   return (
     <div className="card m-3 p-2 widget-card">
       <div className="card-content">
@@ -37,15 +44,26 @@ const SingleCoinCard = ({ coin, handleDeleteCoin }) => {
       <footer className="card-footer">
         <button
           className="card-footer-item cards-buttons"
-          style={{ backgroundColor: "rgb(56, 200, 56)"}}
+          style={{ backgroundColor: "rgb(56, 200, 56)" }}
           type="button"
           onClick={() => handleDeleteCoin(coin.name)}
         >
           Delete
         </button>
-        <button className="card-footer-item cards-buttons" type="button" style={{ backgroundColor: "rgb(56, 200, 56)"}}>
+        <button
+          className="card-footer-item cards-buttons"
+          id={coin.ticker}
+          type="button"
+          style={{ backgroundColor: "rgb(56, 200, 56)" }}
+          onClick={handlePurchaseButton}
+        >
           Purchase
         </button>
+        <PurchaseModal
+          handleModalRemoval={handleModalRemoval}
+          initializer={initializer}
+          ticker={coin.ticker}
+        />
       </footer>
     </div>
   );

@@ -248,3 +248,15 @@ article {
 .cards-buttons {
   background-color: hsl(141, 71%, 48%) !important;
 }
+
+.modal-card {
+  width: 100%;
+}
+
+.modal-buttons {
+  width: 50%;
+}
+
+.modal-icon {
+  width: 100px;
+}
