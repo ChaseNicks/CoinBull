@@ -4,13 +4,13 @@ import TradingViewWidget, { Themes } from "react-tradingview-widget";
 const Charting = () => {
   return (
     <div>
-      <div className="is-flex is-justify-content-center">
+      <div>
         <TradingViewWidget
           container_id="techincal-analysis"
           symbol={"BTC" + "USD"}
-          theme={Themes.DARK}
-          width={1400}
-          height={700}
+          theme={Themes.WHITE}
+          width="100%"
+          height="700px"
           local="en"
           toolbar_bg="#f1f3f6"
         />
