@@ -1,7 +1,7 @@
 import React from "react";
 import pricesPhoto from "../assets/chart.png";
-import pricingPhoto from "../assets/prices.png";
-import favPhoto from "../assets/favs.png";
+import pricingPhoto from "../assets/pricess.png";
+import favPhoto from "../assets/favss.png";
 import newsPhoto from "../assets/newsss.png";
 import { Link } from "react-router-dom";
 

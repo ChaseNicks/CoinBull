@@ -4,7 +4,7 @@ import TradingViewWidget, { Themes } from "react-tradingview-widget";
 const Charting = () => {
   return (
     <div>
-      <div>
+      <div style={{ marginLeft: ".3rem", marginRight: ".3rem"}}>
         <TradingViewWidget
           container_id="techincal-analysis"
           symbol={"BTC" + "USD"}
