@@ -8,6 +8,7 @@ const NewsCard = (props) => {
   const [newsState, setNewsState] = useState([]);
   const symbol = props.symbol;
 
+  // Get current news data
   useEffect(() => {
     const fetchNews = async () => {
       try {
@@ -20,13 +21,17 @@ const NewsCard = (props) => {
     fetchNews();
   }, [symbol]);
 
-  const currentNews = newsState;
+  // Remove any news article that doesn't contain sufficient information (description, image, title, etc)
+  const currentNews = newsState.filter(article =>
+    article.description || article.image || article.title
+  );
 
   return (
     <div className="container news-container">
       <div className="is-capitalized is-size-2 has-text-centered my-5">
         Trending Stories
       </div>
+
 
       {currentNews.map((newsItem, i) => (
         <div className="columns is-centered" key={i}>

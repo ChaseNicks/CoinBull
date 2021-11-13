@@ -11,9 +11,6 @@ const Home = () => {
       className="container backgroundbull"
       style={{ marginTop: "2rem", width: "100%" }}
     >
-      {/* <CategoryMenu /> */}
-      {/* <ProductList />
-      <NewsCard symbol="ADA" /> */}
       <h1
         className="is-size-1 is-size-2-mobile has-text-centered has-text-weight-bold"
         style={{ marginTop: "2.5rem", marginBottom: "2.5rem" }}
