@@ -136,8 +136,7 @@ function ProductList() {
   return (
     <>
       <div
-        className="is-flex is-justify-content-center"
-        style={{ marginTop: "5rem" }}
+        className="is-flex is-justify-content-center mt-3"
       >
         <table className="table mt-1">
           <thead>
