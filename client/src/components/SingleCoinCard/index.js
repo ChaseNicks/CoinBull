@@ -57,7 +57,7 @@ const SingleCoinCard = ({
           style={{ backgroundColor: "rgb(56, 200, 56)" }}
           onClick={handlePurchaseButton}
         >
-          Purchase
+          Calculate
         </button>
         <PurchaseModal
           handleModalRemoval={handleModalRemoval}
