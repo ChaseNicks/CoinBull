@@ -13,7 +13,6 @@ function ProductList() {
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(20);
   const [sortOrder, setSortOrder] = useState({ sortTarget: "market_cap", value: true });
-  const [getFavoriteCoins] = useQuery(GET_MY_FAVORITES);
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -124,15 +123,6 @@ function ProductList() {
     }
   };
 
-  const isFavorited = async () => {
-    try {
-      const favoritedCoins = await getFavoriteCoins();
-      console.log(favoritedCoins);
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
   const indexOfLastCoin = currentPage * coinsPerPage;
   const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
   const currentCoins = coinsState.slice(indexOfFirstCoin, indexOfLastCoin);
@@ -206,7 +196,6 @@ function ProductList() {
                 circulating_supply={coin.circulating_supply}
                 market_cap={coin.market_cap}
                 handleAddFavorite={handleAddFavorite}
-                isFavorited={isFavorited}
               />
             ))}
           </tbody>
