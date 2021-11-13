@@ -11,8 +11,6 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
   const [cryptoInput, setCryptoInput] = useState(1);
   const [usdInput, setUsdInput] = useState(0);
 
-  // console.log("currentCoin", currentCoin);
-
   useEffect(() => {
     if (initializer === ticker) {
       const fetchCoin = async () => {
@@ -24,22 +22,25 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
             logo_url: coinData[0].logo_url,
             symbol: coinData[0].symbol,
           });
+          setUsdInput(currentCoin.price);
         } catch (err) {
           console.error(err);
         }
       };
       fetchCoin();
     }
-  }, [initializer, ticker]);
+  }, [currentCoin.price, initializer, ticker]);
 
   const handleInputChange = (e) => {
     const { target } = e;
     if (target.id === "crypto-input") {
       const cryptoCost = target.value * currentCoin.price;
       setUsdInput(cryptoCost);
+      setCryptoInput(target.value);
     } else {
-      const cryptoWorth = currentCoin.price / target.value;
-      setUsdInput(cryptoWorth);
+      const cryptoWorth = target.value / currentCoin.price;
+      setCryptoInput(cryptoWorth);
+      setUsdInput(target.value);
     }
   };
 
