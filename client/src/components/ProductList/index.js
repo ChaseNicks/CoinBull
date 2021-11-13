@@ -66,7 +66,7 @@ function ProductList() {
         } else if (toBeSortedA < toBeSortedB) {
           comparison = -1;
         }
-        if (sortOrder.value === true) {
+        if (sortOrder.value) {
           return comparison;
         } else {
           return comparison * -1;
