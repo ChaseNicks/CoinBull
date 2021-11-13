@@ -70,6 +70,7 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
                         placeholder={`Please enter the amount in ${currentCoin.symbol}`}
                         onChange={handleInputChange}
                         id="crypto-input"
+                        value={cryptoInput}
                       />
                     </p>
                   </div>
@@ -81,6 +82,7 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
                         placeholder="Please enter the amount in USD"
                         onChange={handleInputChange}
                         id="usd-input"
+                        value={usdInput}
                       />
                       <span className="icon is-small is-left">
                         <i className="fas fa-envelope"></i>
