@@ -12,34 +12,15 @@ const SingleCoinCard = ({
   return (
     <div className="card m-3 p-2 widget-card">
       <div className="card-content">
-        <Helmet>
-          <script
-            defer
-            src="https://www.livecoinwatch.com/static/lcw-widget.js"
-          ></script>
-        </Helmet>
         <div
-          className="livecoinwatch-widget-1 "
-          lcw-coin={`${coin.ticker}`}
-          lcw-base="USD"
-          lcw-secondary="BTC"
-          lcw-period="d"
-          lcw-color-tx="#00d084"
-          lcw-color-pr="#00d084"
-          lcw-color-bg="#e6e6e6"
-          lcw-border-w="1"
-          lcw-digits="4"
+          className="nomics-ticker-widget"
+          data-name={`${coin.name}`}
+          data-base={`${coin.ticker}`}
+          data-quote="USD"
         ></div>
-        <div className="media">
-          <div className="media-left">
-            <figure className="image is-32x32">
-              <img src={`${coin.logoURL}`} alt={`${coin.name}`} />
-            </figure>
-          </div>
-          <div className="media-content">
-            <p className="title is-4">{coin.name}</p>
-          </div>
-        </div>
+        <Helmet>
+          <script src="https://widget.nomics.com/embed.js"></script>
+        </Helmet>
       </div>
       <footer className="card-footer">
         <button
@@ -57,7 +38,7 @@ const SingleCoinCard = ({
           style={{ backgroundColor: "rgb(56, 200, 56)" }}
           onClick={handlePurchaseButton}
         >
-          Purchase
+          Calculate
         </button>
         <PurchaseModal
           handleModalRemoval={handleModalRemoval}
