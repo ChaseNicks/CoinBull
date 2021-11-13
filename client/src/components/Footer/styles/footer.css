@@ -3,10 +3,10 @@ footer {
 }
 
 .footerr {
-  height: 7rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
+  height: fit-content;
 }

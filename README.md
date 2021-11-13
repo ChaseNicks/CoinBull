@@ -2,7 +2,7 @@
 
 ## Link to Deployed Application
 
-<!-- TODO: Add link to deployed application -->
+https://coinbullapp.herokuapp.com/
 
 ## Table of Contents
 

@@ -11,11 +11,19 @@ const Footer = () => {
       <Link
         className="is-capitalized is-size-2"
         to="/"
-        style={{ color: "white", textDecoration: "none" }}
+        style={{
+          color: "white",
+          textDecoration: "none",
+          marginTop: "1.5rem",
+          marginBottom: "1.5rem",
+        }}
       >
         CoinBull
       </Link>
-      <div className="has-text-centered footer-cont">
+      <div
+        className="has-text-centered footer-cont"
+        style={{ marginBottom: "1rem" }}
+      >
         © 2021 | Designed & Created by
         <a
           href="https://chasenicks.github.io/Portfolio_Page/"
@@ -61,6 +69,14 @@ const Footer = () => {
         >
           {" "}
           and Tucker Barrett{" "}
+        </a>
+      </div>
+
+      <div style={{ marginBottom: "1.5rem" }}>
+        {" "}
+        All pricing data is brought to you by{" "}
+        <a href="https://nomics.com/" style={{ color: "black" }}>
+          Nomics
         </a>
       </div>
     </footer>

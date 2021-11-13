@@ -14,6 +14,7 @@ import ScrollToTop from "./utils/ScrollToTop";
 import Home from "./pages/Home";
 import SingleCoin from "./pages/SingleCoin";
 import Prices from "./pages/Prices";
+import Charts from "./pages/Charts";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -59,6 +60,11 @@ function App() {
               <Route exact path="/prices">
                 <ScrollToTop />
                 <Prices />
+              </Route>
+
+              <Route exact path="/charts">
+                <ScrollToTop />
+                <Charts />
               </Route>
 
               <Route exact path="/login">
