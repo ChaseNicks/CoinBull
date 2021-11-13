@@ -8,6 +8,8 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
     logo_url: "",
     symbol: "",
   });
+  const [cryptoInput, setCryptoInput] = useState(1);
+  const [usdInput, setUsdInput] = useState(0);
 
   // console.log("currentCoin", currentCoin);
 
@@ -29,6 +31,17 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
       fetchCoin();
     }
   }, [initializer, ticker]);
+
+  const handleInputChange = (e) => {
+    const { target } = e;
+    if (target.id === "crypto-input") {
+      const cryptoCost = target.value * currentCoin.price;
+      setUsdInput(cryptoCost);
+    } else {
+      const cryptoWorth = currentCoin.price / target.value;
+      setUsdInput(cryptoWorth);
+    }
+  };
 
   return (
     <div className="modal">
@@ -55,6 +68,8 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
                         type="number"
                         step="0.01"
                         placeholder={`Please enter the amount in ${currentCoin.symbol}`}
+                        onChange={handleInputChange}
+                        id="crypto-input"
                       />
                     </p>
                   </div>
@@ -64,6 +79,8 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
                         className="input is-success"
                         type="number"
                         placeholder="Please enter the amount in USD"
+                        onChange={handleInputChange}
+                        id="usd-input"
                       />
                       <span className="icon is-small is-left">
                         <i className="fas fa-envelope"></i>
