@@ -49,17 +49,25 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
       <div className="modal-background"></div>
       <div className="modal-content ">
         <div className="card modal-card">
-          <img
-            className="modal-icon ml-6 mt-6"
-            src={currentCoin.logo_url}
-            alt={currentCoin.logo_url}
-          />
           <div className="card-content">
-            <h1 className="label">Buy {currentCoin.name}</h1>
             <div className="content">
-              <h1>
-                {currentCoin.name} price: ${currentCoin.price}
-              </h1>
+              <div className="columns m-1">
+                <div className="column is-one-fifth">
+                  <img
+                    className="modal-icon "
+                    src={currentCoin.logo_url}
+                    alt={currentCoin.logo_url}
+                  />
+                </div>
+
+                <div className="column has-text-left">
+                  <h1>
+                    {currentCoin.name} ({currentCoin.symbol})
+                  </h1>
+                  <h1>Price: ${currentCoin.price}</h1>
+                </div>
+              </div>
+
               <div className="field is-horizontal">
                 <div className="field-body">
                   <div className="field">
