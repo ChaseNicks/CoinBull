@@ -10,11 +10,10 @@ import Auth from "../../utils/auth";
 
 function ProductList() {
   const [coinsState, setCoinsState] = useState([]);
-  const [favoritesState, setFavoritesState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(20);
   const [sortOrder, setSortOrder] = useState({ sortTarget: "", value: false });
-  const [getFavoriteCoins] = useQuery(GET_MY_FAVORITES);
+  const getFavoriteCoins = useQuery(GET_MY_FAVORITES);
   console.log(coinsState);
 
   useEffect(() => {
@@ -27,18 +26,6 @@ function ProductList() {
       }
     };
     fetchCoins();
-  }, []);
-
-  useEffect(() => {
-    const getFavorites = async () => {
-      try {
-        const favorites = await getFavoriteCoins();
-        setFavoritesState(favorites);
-      } catch (err) {
-        console.error(err);
-      }
-    }
-    getFavorites();
   }, []);
 
   useEffect(() => {
@@ -137,6 +124,15 @@ function ProductList() {
     }
   };
 
+  const isFavorited = async () => {
+    try {
+      const favoritedCoins = await getFavoriteCoins();
+      console.log(favoritedCoins);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   const indexOfLastCoin = currentPage * coinsPerPage;
   const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
   const currentCoins = coinsState.slice(indexOfFirstCoin, indexOfLastCoin);
@@ -210,6 +206,7 @@ function ProductList() {
                 circulating_supply={coin.circulating_supply}
                 market_cap={coin.market_cap}
                 handleAddFavorite={handleAddFavorite}
+                isFavorited={isFavorited}
               />
             ))}
           </tbody>

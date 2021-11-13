@@ -15,6 +15,7 @@ const CoinTab = (coin) => {
     circulating_supply,
     market_cap,
     handleAddFavorite,
+    isFavorited
   } = coin;
   price = parseFloat(price).toFixed(4);
   circulating_supply = circulating_supply.replace(/(.)(?=(\d{3})+$)/g, "$1,");
@@ -24,7 +25,7 @@ const CoinTab = (coin) => {
   return (
     <tr>
       <th className="is-vcentered">
-        <button className="star-icon" onClick={() => handleAddFavorite(id)}>
+        <button className="star-icon" onClick={() => {handleAddFavorite(id); isFavorited()}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
