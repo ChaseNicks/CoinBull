@@ -67,7 +67,9 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
                   <h1>
                     {currentCoin.name} ({currentCoin.symbol})
                   </h1>
-                  <h1>Price: ${currentCoin.price}</h1>
+                  <h1>
+                    Price: ${parseFloat(currentCoin.price * 100).toFixed(4)}
+                  </h1>
                 </div>
               </div>
 
