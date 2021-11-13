@@ -15,17 +15,17 @@ const CoinSideTab = (coin) => {
           <img className="coins-icons" src={logo_url} alt={logo_url} />
         </Link>
       </th>
-      <th className="is-vcentered is-size-7-mobile">{name}</th>
-      <th className="is-vcentered is-size-7-mobile">${price}</th>
+      <th className="is-vcentered is-size-6 is-size-7-mobile">{name}</th>
+      <th className="is-vcentered is-size-6 is-size-7-mobile">${price}</th>
       <th
         className={
           
           change > 0
-            ? "has-text-success is-vcentered is-size-7-mobile"
-            : "has-text-danger is-vcentered is-size-7-mobile"
+            ? "has-text-success is-vcentered is-size-6 is-size-7-mobile"
+            : "has-text-danger is-vcentered is-size-6 is-size-7-mobile"
         }
       >
-        {change} %
+        {change}%
       </th>
     </tr>
   );
