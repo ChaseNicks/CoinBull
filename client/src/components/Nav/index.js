@@ -52,7 +52,7 @@ const SignUp = (props) => (
 const NavbarItem = (props) => (
   <Link
     className="navbar-item is-capitalized is-size-5 nav-item-styles"
-    to={`${props.page === "home" ? "/" : props.page}`}
+    to={`${props.page === "home" ? "/" : "/"+ props.page}`}
     style={{ textDecoration: "none" }}
     onClick={props.toggleMenu}
   >
