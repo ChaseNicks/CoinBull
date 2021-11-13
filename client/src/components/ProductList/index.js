@@ -11,7 +11,8 @@ function ProductList() {
   const [coinsState, setCoinsState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(20);
-  const [sortOrder, setSortOrder] = useState({ sortTarget: "market_cap", value: true });
+  const [sortOrder, setSortOrder] = useState({ sortTarget: "", value: false });
+  console.log(coinsState);
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -26,7 +27,6 @@ function ProductList() {
   }, []);
 
   useEffect(() => {
-
     if (sortOrder.sortTarget !== "") {
       let toBeSorted;
       let toBeSortedA;
@@ -66,7 +66,7 @@ function ProductList() {
         } else if (toBeSortedA < toBeSortedB) {
           comparison = -1;
         }
-        if (sortOrder.value) {
+        if (sortOrder.value === true) {
           return comparison;
         } else {
           return comparison * -1;
