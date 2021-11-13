@@ -72,6 +72,7 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
                 <div className="field-body">
                   <div className="field">
                     <p className="control is-expanded ">
+                      <label className="label">{currentCoin.symbol}</label>
                       <input
                         className="input is-success"
                         type="number"
@@ -85,6 +86,7 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
                   </div>
                   <div className="field">
                     <p className="control is-expanded">
+                      <label className="label">USD</label>
                       <input
                         className="input is-success"
                         type="number"
