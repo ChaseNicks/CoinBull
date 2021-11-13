@@ -90,7 +90,11 @@ export default class Navbar extends React.Component {
         // style={{ position: "fixed", top: "0", width: "100%" }}
       >
         <div className="navbar-brand">
-          <NavbarLogo page="CoinBull" toggleMenu={this.toggleMenu} isOpen={this.state.activeMenu} />
+          <NavbarLogo
+            page="CoinBull"
+            toggleMenu={this.toggleMenu}
+            isOpen={this.state.activeMenu}
+          />
           <NavbarBurger
             active={this.state.activeMenu}
             toggleMenu={this.toggleMenu}
@@ -118,7 +122,7 @@ export default class Navbar extends React.Component {
           ) : (
             <>
               <Link to="/login">
-                <SignIn page="Sign In" toggleMenu={this.toggleMenu}/>
+                <SignIn page="Sign In" toggleMenu={this.toggleMenu} />
               </Link>
               <Link to="/signup">
                 <SignUp page="Sign Up" toggleMenu={this.toggleMenu} />

@@ -80,7 +80,6 @@ function ProductList() {
   const [addFavorite] = useMutation(ADD_FAVORITE);
 
   const handleAddFavorite = async (coinId) => {
-
     const coinToFavorite = coinsState.find((coin) => coin.id === coinId);
 
     const { symbol, name, price, market_cap, logo_url } = coinToFavorite;

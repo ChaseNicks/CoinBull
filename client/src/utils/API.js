@@ -21,3 +21,13 @@ export async function getNews(symbol) {
   const news = res.data;
   return news;
 }
+
+export async function getCoin(ticker) {
+  if (ticker) {
+    const res = await axios.get(
+      `https://api.nomics.com/v1/currencies/ticker?key=afc490f6119aa8022118a2f5727f19629736d2e8&ids=${ticker}&convert=USD&page=1`
+    );
+    const coin = res.data;
+    return coin;
+  }
+}

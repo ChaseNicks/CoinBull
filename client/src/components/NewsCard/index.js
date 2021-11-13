@@ -29,7 +29,6 @@ const NewsCard = (props) => {
       </div>
 
       {currentNews.map((newsItem, i) => (
-
         <div className="columns is-centered" key={i}>
           <article className="card news-card column is-three-quarters">
             <NewsItem
@@ -41,7 +40,6 @@ const NewsCard = (props) => {
               image={newsItem.image}
             />
           </article>
-
         </div>
       ))}
     </div>

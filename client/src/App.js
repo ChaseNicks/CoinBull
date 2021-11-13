@@ -52,7 +52,6 @@ function App() {
           <StoreProvider>
             <Navbar pages={pages} />
             <Switch>
-
               <Route exact path="/">
                 <ScrollToTop />
                 <Home />
@@ -70,7 +69,7 @@ function App() {
 
               <Route exact path="/login">
                 <ScrollToTop />
-                <Login  />
+                <Login />
               </Route>
 
               <Route exact path="/signup">
@@ -89,7 +88,6 @@ function App() {
               </Route>
 
               <Route component={NoMatch} />
-
             </Switch>
             <Footer />
           </StoreProvider>

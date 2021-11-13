@@ -2,7 +2,6 @@ const db = require("./connection");
 const { User } = require("../models");
 
 db.once("open", async () => {
-
   // Clear database
   await User.deleteMany();
 
@@ -20,7 +19,8 @@ db.once("open", async () => {
         dayPercentChange: -0.0337,
         volume: 63647947473.73,
         marketCap: 1222285983622.0,
-        logoURL: "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg"
+        logoURL:
+          "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/btc.svg",
       },
     ],
   });
@@ -29,14 +29,14 @@ db.once("open", async () => {
     lastName: "Doe",
     email: "Jane@gmail.com",
     password: "password12345",
-    favorites: []
+    favorites: [],
   });
   await User.create({
     firstName: "Gabriel",
     lastName: "Andersen",
     email: "Gabriel@gmail.com",
     password: "password12345",
-    favorites: []
+    favorites: [],
   });
   await User.create({
     firstName: "Mary",
@@ -51,7 +51,8 @@ db.once("open", async () => {
         dayPercentChange: 0.0002,
         volume: 131033891844.29,
         marketCap: 74881297269.0,
-        logoURL: "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/usdt.svg"
+        logoURL:
+          "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/usdt.svg",
       },
       {
         name: "Ethereum",
@@ -60,9 +61,10 @@ db.once("open", async () => {
         dayPercentChange: -0.0247,
         volume: 33725865813.15,
         marketCap: 545247227454.0,
-        logoURL: "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/eth.svg"
-      }
-    ]
+        logoURL:
+          "https://s3.us-east-2.amazonaws.com/nomics-api/static/images/currencies/eth.svg",
+      },
+    ],
   });
 
   console.log("Users seeded");
