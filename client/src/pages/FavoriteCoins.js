@@ -78,7 +78,7 @@ const FavoriteCoins = () => {
   const handleModalRemoval = (e) => {
     e.stopPropagation();
     setInitializer(false);
-    if (e.currentTarget.classList.contains("cancel")) {
+    if (e.currentTarget.classList.contains("close")) {
       e.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove(
         "is-active"
       );

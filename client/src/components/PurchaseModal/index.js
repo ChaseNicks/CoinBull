@@ -95,21 +95,13 @@ const PurchaseModal = ({ handleModalRemoval, initializer, ticker }) => {
                   </div>
                 </div>
               </div>
-              <div className="field is-grouped">
-                <div className="control modal-buttons">
+              <div className="field">
+                <div className="control ">
                   <button
-                    className="cards-buttons button is-fullwidth is-link"
-                    type="button"
-                  >
-                    Add to cart
-                  </button>
-                </div>
-                <div className="control modal-buttons">
-                  <button
-                    className="cards-buttons button is-fullwidth is-link cancel"
+                    className="button is-fullwidth close modal-close-button"
                     onClick={handleModalRemoval}
                   >
-                    Cancel
+                    Close
                   </button>
                 </div>
               </div>

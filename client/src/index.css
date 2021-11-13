@@ -250,16 +250,13 @@ article {
   width: 450px !important;
 }
 
-.cards-buttons {
+.cards-buttons,
+.modal-close-button {
   background-color: hsl(141, 71%, 48%) !important;
 }
 
 .modal-card {
   width: 100%;
-}
-
-.modal-buttons {
-  width: 50%;
 }
 
 .modal-icon {
