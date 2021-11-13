@@ -131,7 +131,7 @@ export default class Navbar extends React.Component {
                 className="navbar-item is-capitalized nav-item-styles"
               >
                 <a
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{ textDecoration: "none", color: "#363636" }}
                   href="/"
                   className="is-size-5"
                 >

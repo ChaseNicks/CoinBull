@@ -43,7 +43,11 @@ const CoinTab = (coin) => {
           <img className="coins-icons" src={logo_url} alt={logo_url} />
         </Link>
       </th>
-      <th className="is-vcentered">{name}</th>
+      <th className="is-vcentered">
+        <Link className="coin-name" to={`/coins/${id}`}>
+          {name}
+        </Link>
+      </th>
       <th className="is-vcentered">${price}</th>
       <th
         className={
