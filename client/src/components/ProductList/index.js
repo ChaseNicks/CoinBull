@@ -81,6 +81,7 @@ function ProductList() {
 
   const handleAddFavorite = async (coinId) => {
     const coinToFavorite = coinsState.find((coin) => coin.id === coinId);
+    console.log("cointofavorite ====>", coinToFavorite);
 
     const { symbol, name, price, market_cap, logo_url } = coinToFavorite;
 
@@ -135,9 +136,7 @@ function ProductList() {
 
   return (
     <>
-      <div
-        className="is-flex is-justify-content-center mt-3"
-      >
+      <div className="is-flex is-justify-content-center mt-3">
         <table className="table mt-1">
           <thead>
             <tr>
