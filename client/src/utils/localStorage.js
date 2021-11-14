@@ -5,3 +5,11 @@ export const getFavoriteCoinsIds = () => {
 
   return favoriteCoinsIds;
 };
+
+export const favoriteCoinsIds = (coinIdArr) => {
+  if (coinIdArr.length) {
+    localStorage.setItem("favorite_coins", JSON.stringify(coinIdArr));
+  } else {
+    localStorage.removeItem("favorite_coins");
+  }
+};
