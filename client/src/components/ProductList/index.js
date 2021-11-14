@@ -6,13 +6,17 @@ import { getAllCoins } from "../../utils/API";
 import { ADD_FAVORITE } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
+import {
+  AddFavoriteCoinIds,
+  getFavoriteCoinIds,
+} from "../../utils/localStorage";
 
 function ProductList() {
   const [coinsState, setCoinsState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(20);
   const [sortOrder, setSortOrder] = useState({ sortTarget: "", value: false });
-  console.log(coinsState);
+  const [favoriteCoinIds, setFavoriteCoinIds] = useState(getFavoriteCoinIds());
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -25,6 +29,10 @@ function ProductList() {
     };
     fetchCoins();
   }, []);
+
+  useEffect(() => {
+    return () => AddFavoriteCoinIds(favoriteCoinIds);
+  });
 
   useEffect(() => {
     if (sortOrder.sortTarget !== "") {
@@ -81,9 +89,8 @@ function ProductList() {
 
   const handleAddFavorite = async (coinId) => {
     const coinToFavorite = coinsState.find((coin) => coin.id === coinId);
-    console.log("cointofavorite ====>", coinToFavorite);
 
-    const { symbol, name, price, market_cap, logo_url } = coinToFavorite;
+    const { id, symbol, name, price, market_cap, logo_url } = coinToFavorite;
 
     let oneDay;
 
@@ -118,6 +125,7 @@ function ProductList() {
           },
         },
       });
+      setFavoriteCoinIds([...favoriteCoinIds, id]);
     } catch (err) {
       console.error(err);
     }
@@ -193,6 +201,7 @@ function ProductList() {
                 circulating_supply={coin.circulating_supply}
                 market_cap={coin.market_cap}
                 handleAddFavorite={handleAddFavorite}
+                favorite={favoriteCoinIds.includes(coin.id)}
               />
             ))}
           </tbody>

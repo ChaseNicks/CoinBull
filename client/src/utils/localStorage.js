@@ -6,7 +6,7 @@ export const getFavoriteCoinIds = () => {
   return favoriteCoinIds;
 };
 
-export const favoriteCoinIds = (coinIdArr) => {
+export const AddFavoriteCoinIds = (coinIdArr) => {
   if (coinIdArr.length) {
     localStorage.setItem("favorite_coins", JSON.stringify(coinIdArr));
   } else {
