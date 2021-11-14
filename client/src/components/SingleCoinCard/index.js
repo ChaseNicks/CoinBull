@@ -22,7 +22,7 @@ const SingleCoinCard = ({
           <script src="https://widget.nomics.com/embed.js"></script>
         </Helmet>
       </div>
-      <footer className="card-footer is-flex is-align-self-center" style={{ width: "20rem", marginTop: "1rem"}}>
+      <footer className="card-footer is-flex is-align-self-center" style={{ width: "17rem", marginTop: "1rem", gap: ".5rem"}}>
 
       <button
           className="card-footer-item cards-buttons"

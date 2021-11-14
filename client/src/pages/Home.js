@@ -4,16 +4,18 @@ import pricingPhoto from "../assets/pricess.png";
 import favPhoto from "../assets/favss.png";
 import newsPhoto from "../assets/newsss.png";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   return (
+    <div>
     <div
       className="container backgroundbull"
-      style={{ marginTop: "2rem", width: "100%" }}
+      style={{ marginTop: "-2rem", width: "100%" }}
     >
       <h1
         className="is-size-1 is-size-2-mobile has-text-centered has-text-weight-bold"
-        style={{ marginTop: "2.5rem", marginBottom: "2.5rem" }}
+        style={{ marginTop: "2.5rem", marginBottom: "2rem", marginRight: ".8rem", marginLeft: ".8rem" }}
       >
         {" "}
         Designed & Created For You
@@ -185,6 +187,23 @@ const Home = () => {
         <div className="is-flex is-justify-content-center"></div>
       </div>
     </div>
+          <Helmet>
+          <script
+            defer
+            src="https://cryptorank.io/widget/marquee.js"
+          ></script>
+        </Helmet>
+        <div
+            id="cr-widget-marquee"
+            data-coins="ripple,binance-coin,bitcoin,ethereum,tether,eos,monero,dogecoin,shiba-inu,luna,avalanche,chainlink,wrapped-bitcoin,algorand,uniswap,usdcoin,binance-usd,bitcoin-cash,stellar,ethereum-classic"
+            data-theme="light"
+            data-show-symbol="true"
+            data-show-icon="true"
+            data-show-period-change="true"
+            data-period-change="24H"
+            data-api-url="https://api.cryptorank.io/v0"
+        ></div>
+        </div>
   );
 };
 
