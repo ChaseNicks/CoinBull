@@ -31,12 +31,12 @@ function SideList() {
 
   return (
     <div className="" style={{ marginTop: ".5rem" }}>
-
       <div
-        style={{ height: "740px", overflow: "scroll" }} className="is-flex is-justify-content-center"
+        style={{ height: "740px", overflow: "scroll" }}
+        className="is-flex is-justify-content-center"
       >
         <div className="is-flex-direction-row is-justify-content-center">
-        <div className="is-capitalized is-size-3 has-text-left">Explore</div>
+          <div className="is-capitalized is-size-3 has-text-left">Explore</div>
           <table className="table mt-1">
             <thead>
               <tr>

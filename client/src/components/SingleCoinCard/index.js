@@ -10,8 +10,14 @@ const SingleCoinCard = ({
   initializer,
 }) => {
   return (
-    <div className="card m-3 p-2 widget-card is-flex is-justify-content-center" style={{ flexDirection: "column"}}>
-      <div className="card-content" style={{ boxShadow: "8px 8px 15px #D9D9DA, -8px -8px 15px #D9D9DA"}}>
+    <div
+      className="card m-3 p-2 widget-card is-flex is-justify-content-center"
+      style={{ flexDirection: "column" }}
+    >
+      <div
+        className="card-content"
+        style={{ boxShadow: "8px 8px 15px #D9D9DA, -8px -8px 15px #D9D9DA" }}
+      >
         <div
           className="nomics-ticker-widget"
           data-name={`${coin.name}`}
@@ -22,17 +28,10 @@ const SingleCoinCard = ({
           <script src="https://widget.nomics.com/embed.js"></script>
         </Helmet>
       </div>
-      <footer className="card-footer is-flex is-align-self-center" style={{ width: "20rem", marginTop: "1rem"}}>
-
-      <button
-          className="card-footer-item cards-buttons"
-          id={coin.ticker}
-          type="button"
-          style={{ backgroundColor: "rgb(56, 200, 56)", color: "white" }}
-          onClick={handlePurchaseButton}
-        >
-          Calculate
-        </button>
+      <footer
+        className="card-footer is-flex is-align-self-center"
+        style={{ width: "20rem", marginTop: "1rem" }}
+      >
         <button
           className="card-footer-item cards-buttons"
           style={{ backgroundColor: "rgb(56, 200, 56)", color: "white" }}
@@ -40,6 +39,15 @@ const SingleCoinCard = ({
           onClick={() => handleDeleteCoin(coin.name)}
         >
           Delete
+        </button>
+        <button
+          className="card-footer-item cards-buttons"
+          id={coin.ticker}
+          type="button"
+          style={{ backgroundColor: "rgb(56, 200, 56)", color: "white" }}
+          onClick={handlePurchaseButton}
+        >
+          Calculate
         </button>
 
         <PurchaseModal

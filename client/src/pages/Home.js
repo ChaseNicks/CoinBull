@@ -74,7 +74,11 @@ const Home = () => {
             Real-Time Pricing For Your Favorite Coins
           </h1>
           <p
-            style={{ marginTop: "1.3rem", marginLeft: ".3rem", marginRight: ".3rem" }}
+            style={{
+              marginTop: "1.3rem",
+              marginLeft: ".3rem",
+              marginRight: ".3rem",
+            }}
             className="is-size-5 is-size-6-mobile has-text-centered"
           >
             A dynamic table with tons of cryptocurrencies has all the data you

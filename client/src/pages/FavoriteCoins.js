@@ -33,7 +33,7 @@ const FavoriteCoins = () => {
   let notLoggedInStyle = {
     height: "100%",
     marginTop: "65px",
-    marginBottom: "65px"
+    marginBottom: "65px",
   };
 
   if (!userData?.firstName) {
@@ -71,6 +71,7 @@ const FavoriteCoins = () => {
 
   const handlePurchaseButton = (e) => {
     e.stopPropagation();
+
     setInitializer(e.currentTarget.id);
     e.currentTarget.nextElementSibling.classList.add("is-active");
     document.documentElement.classList.add("is-clipped");
@@ -94,7 +95,9 @@ const FavoriteCoins = () => {
 
   return (
     <div className="hero favorites-container is-fullheight">
-      <h1 className="is-size-1 is-size-2-mobile has-text-centered has-text-weight-bold">My Favorites</h1>
+      <h1 className="is-size-1 is-size-2-mobile has-text-centered has-text-weight-bold">
+        My Favorites
+      </h1>
       <div className="hero-body is-flex is-justify-content-space-evenly is-flex-wrap-wrap">
         {state.favorites.map((coin) => (
           <SingleCoinCard
