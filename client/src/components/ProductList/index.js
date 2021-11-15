@@ -12,6 +12,8 @@ import {
   removeCoinId,
 } from "../../utils/localStorage";
 
+import "./styles/ProductList.css";
+
 import { REMOVE_COIN } from "../../utils/mutations";
 import { REMOVE_FROM_FAVORITES } from "../../utils/actions";
 import { useStoreContext } from "../../utils/GlobalState";
@@ -193,7 +195,7 @@ function ProductList() {
               </th>
               <th
                 id="circulating_supply"
-                className="tableHead"
+                className="tableHead to-remove"
                 onClick={handleSortChange}
               >
                 <span className="arrows" onClick={handleSortChange}>
@@ -203,15 +205,15 @@ function ProductList() {
               </th>
               <th
                 id="market_cap"
-                className="tableHead"
+                className="tableHead to-remove"
                 onClick={handleSortChange}
               >
-                <span className="arrows" onClick={handleSortChange}>
+                <span className="arrows to-remove" onClick={handleSortChange}>
                   &#8661;
                 </span>
                 Market Cap
               </th>
-              <th>Price Chart</th>
+              <th className="to-remove">Price Chart</th>
             </tr>
           </thead>
           <tbody>

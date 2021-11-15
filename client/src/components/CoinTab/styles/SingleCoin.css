@@ -8,3 +8,10 @@
 .coin-name {
   color: #363636;
 }
+
+
+@media screen and (max-width: 900px) {
+  .to-remove {
+    display: none;
+  }
+}
