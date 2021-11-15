@@ -118,16 +118,17 @@ const Mobile = () => {
             style={{ marginTop: "1.3rem", marginLeft: ".3rem", marginRight: ".3rem" }}
             className="is-size-5 is-size-6-mobile has-text-centered"
           >
-            Congrats! You're all done, now just move the app whereever you'd like and enjoy!
+            Congrats! You're all done, now just move the app where ever you'd like and enjoy!
           </p>
         </div>
         <div
           style={{ marginTop: "1.3rem" }}
           className="is-flex is-justify-content-center"
         >
-          <img src={stepfour} alt="chart" style={{ height: "25rem"}} />
+          <img src={stepfour} alt="chart" style={{ height: "20rem", width: "20rem"}} />
         </div>
       </div>
+      
     </div>
           <Helmet>
           <script
