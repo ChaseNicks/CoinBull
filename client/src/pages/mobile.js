@@ -45,7 +45,7 @@ const Mobile = () => {
               }}
               className="is-size-5 is-size-6-mobile has-text-centered"
             >
-              Within Saferia or Google you'll see the below "share" icon
+              Within Saferia you'll see the below "share" icon
               indicated in the below picture, click there.
             </p>
           </div>
@@ -154,7 +154,7 @@ const Mobile = () => {
             <img
               src={stepfour}
               alt="chart"
-              style={{ height: "20rem", width: "20rem" }}
+              style={{ height: "18rem", width: "20rem" }}
             />
           </div>
         </div>
