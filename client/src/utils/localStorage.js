@@ -23,9 +23,10 @@ export const removeCoinId = (coinId) => {
     return false;
   }
 
-  const updatedFavoriteCoinIds = favoriteCoinIds?.filter(
-    (favoriteCoinId) => favoriteCoinId !== coinId
-  );
+  const updatedFavoriteCoinIds = favoriteCoinIds?.filter((favoriteCoinId) => {
+    return favoriteCoinId !== coinId;
+  });
+  console.log("updated favoriteCoinIds", updatedFavoriteCoinIds);
   localStorage.setItem(
     "favorite_coins",
     JSON.stringify(updatedFavoriteCoinIds)

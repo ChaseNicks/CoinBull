@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import upMarket from "../../assets/upmarket.png";
 import downMarket from "../../assets/downmarket.png";
 import { Link } from "react-router-dom";
@@ -17,7 +17,16 @@ const CoinTab = (coin) => {
     market_cap,
     handleAddFavorite,
     favorite,
+    handleDeleteCoin,
   } = coin;
+
+  const [isFavorite, setIsFavorite] = useState(favorite);
+
+  // useEffect(() => {
+  //   let isClicked = docoment.getElementById("delete-star").clicked()
+  //   if()
+  // });
+
   price = parseFloat(price).toFixed(4);
   circulating_supply = circulating_supply.replace(/(.)(?=(\d{3})+$)/g, "$1,");
   market_cap = market_cap.replace(/(.)(?=(\d{3})+$)/g, "$1,");
@@ -27,10 +36,21 @@ const CoinTab = (coin) => {
     <tr>
       <th className="is-vcentered">
         <button className="star-icon">
-          {favorite ? (
-            <FaStar />
+          {isFavorite ? (
+            <FaStar
+              id="delete-star"
+              onClick={() => {
+                handleDeleteCoin(name, id);
+                setIsFavorite(false);
+              }}
+            />
           ) : (
-            <FaRegStar onClick={() => handleAddFavorite(id)} />
+            <FaRegStar
+              onClick={() => {
+                handleAddFavorite(id);
+                setIsFavorite(true);
+              }}
+            />
           )}
         </button>
       </th>

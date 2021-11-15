@@ -4,19 +4,28 @@ import CoinTab from "../CoinTab";
 import Pagination from "../Pagination";
 import { getAllCoins } from "../../utils/API";
 import { ADD_FAVORITE } from "../../utils/mutations";
-import { useMutation } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
 import {
   AddFavoriteCoinIds,
   getFavoriteCoinIds,
+  removeCoinId,
 } from "../../utils/localStorage";
 
+import { REMOVE_COIN } from "../../utils/mutations";
+import { REMOVE_FROM_FAVORITES } from "../../utils/actions";
+import { useStoreContext } from "../../utils/GlobalState";
+
 function ProductList() {
+  const [state, dispatch] = useStoreContext();
+
   const [coinsState, setCoinsState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [coinsPerPage] = useState(20);
   const [sortOrder, setSortOrder] = useState({ sortTarget: "", value: false });
   const [favoriteCoinIds, setFavoriteCoinIds] = useState(getFavoriteCoinIds());
+
+  const [removeCoinFromFavorite] = useMutation(REMOVE_COIN);
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -30,9 +39,9 @@ function ProductList() {
     fetchCoins();
   }, []);
 
-  useEffect(() => {
-    return () => AddFavoriteCoinIds(favoriteCoinIds);
-  });
+  // useEffect(() => {
+  //   return () => AddFavoriteCoinIds(favoriteCoinIds);
+  // }, [favoriteCoinIds]);
 
   useEffect(() => {
     if (sortOrder.sortTarget !== "") {
@@ -91,6 +100,7 @@ function ProductList() {
     const coinToFavorite = coinsState.find((coin) => coin.id === coinId);
 
     const { id, symbol, name, price, market_cap, logo_url } = coinToFavorite;
+    console.log("coinTo", coinToFavorite);
 
     let oneDay;
 
@@ -111,7 +121,6 @@ function ProductList() {
     }
 
     try {
-      console.log("coinToFavorite: ", coinToFavorite);
       await addFavorite({
         variables: {
           input: {
@@ -126,6 +135,28 @@ function ProductList() {
         },
       });
       setFavoriteCoinIds([...favoriteCoinIds, id]);
+      AddFavoriteCoinIds(favoriteCoinIds);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleDeleteCoin = async (name, id) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      await removeCoinFromFavorite({
+        variables: { name },
+      });
+      dispatch({
+        type: REMOVE_FROM_FAVORITES,
+        name: name,
+      });
+      removeCoinId(id);
     } catch (err) {
       console.error(err);
     }
@@ -201,6 +232,7 @@ function ProductList() {
                 circulating_supply={coin.circulating_supply}
                 market_cap={coin.market_cap}
                 handleAddFavorite={handleAddFavorite}
+                handleDeleteCoin={handleDeleteCoin}
                 favorite={favoriteCoinIds.includes(coin.id)}
               />
             ))}
