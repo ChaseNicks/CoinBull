@@ -7,6 +7,7 @@ import { REMOVE_COIN } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_FAVORITES, REMOVE_FROM_FAVORITES } from "../utils/actions";
+import { removeCoinId } from "../utils/localStorage";
 
 const FavoriteCoins = () => {
   const [state, dispatch] = useStoreContext();
@@ -50,7 +51,7 @@ const FavoriteCoins = () => {
     );
   }
 
-  const handleDeleteCoin = async (name) => {
+  const handleDeleteCoin = async (name, id) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -65,6 +66,7 @@ const FavoriteCoins = () => {
         type: REMOVE_FROM_FAVORITES,
         name: name,
       });
+      removeCoinId(id);
     } catch (err) {
       console.error(err);
     }

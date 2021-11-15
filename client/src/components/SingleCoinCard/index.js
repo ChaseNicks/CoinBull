@@ -9,6 +9,7 @@ const SingleCoinCard = ({
   handleModalRemoval,
   initializer,
 }) => {
+  console.log("My", coin);
   return (
     <div
       className="card m-3 p-2 widget-card is-flex is-justify-content-center"
@@ -36,7 +37,7 @@ const SingleCoinCard = ({
           className="card-footer-item cards-buttons"
           style={{ backgroundColor: "rgb(56, 200, 56)", color: "white" }}
           type="button"
-          onClick={() => handleDeleteCoin(coin.name)}
+          onClick={() => handleDeleteCoin(coin.name, coin.ticker)}
         >
           Delete
         </button>

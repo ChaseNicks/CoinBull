@@ -4,7 +4,7 @@ import CoinTab from "../CoinTab";
 import Pagination from "../Pagination";
 import { getAllCoins } from "../../utils/API";
 import { ADD_FAVORITE } from "../../utils/mutations";
-import { useQuery, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import Auth from "../../utils/auth";
 import {
   AddFavoriteCoinIds,
@@ -17,7 +17,7 @@ import { REMOVE_FROM_FAVORITES } from "../../utils/actions";
 import { useStoreContext } from "../../utils/GlobalState";
 
 function ProductList() {
-  const [state, dispatch] = useStoreContext();
+  const [, dispatch] = useStoreContext();
 
   const [coinsState, setCoinsState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
