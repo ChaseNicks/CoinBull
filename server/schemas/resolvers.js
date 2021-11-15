@@ -106,7 +106,6 @@ const resolvers = {
       return { token, user };
     },
     addFavorite: async (parent, args, context) => {
-      console.log("addFavorite: ", context.user);
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
@@ -121,7 +120,6 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     removeCoinFromFavorite: async (parent, args, context) => {
-      console.log(context.user);
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },

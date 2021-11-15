@@ -22,8 +22,8 @@ const NewsCard = (props) => {
   }, [symbol]);
 
   // Remove any news article that doesn't contain sufficient information (description, image, title, etc)
-  const currentNews = newsState.filter(article =>
-    article.description || article.image || article.title
+  const currentNews = newsState.filter(
+    (article) => article.description || article.image || article.title
   );
 
   return (
@@ -31,7 +31,6 @@ const NewsCard = (props) => {
       <div className="is-capitalized is-size-2 has-text-centered my-5">
         Trending Stories
       </div>
-
 
       {currentNews.map((newsItem, i) => (
         <div className="columns is-centered" key={i}>

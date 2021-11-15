@@ -52,7 +52,7 @@ const SignUp = (props) => (
 const NavbarItem = (props) => (
   <Link
     className="navbar-item is-capitalized is-size-5 nav-item-styles"
-    to={`${props.page === "home" ? "/" : "/"+ props.page}`}
+    to={`${props.page === "home" ? "/" : "/" + props.page}`}
     style={{ textDecoration: "none" }}
     onClick={props.toggleMenu}
   >
@@ -86,7 +86,9 @@ export default class Navbar extends React.Component {
     let { pages = [], color } = this.props;
 
     // Determine whether to show user the favorites page
-    pages = (Auth.loggedIn() ? pages : pages.filter(page => page !== "favorites"))
+    pages = Auth.loggedIn()
+      ? pages
+      : pages.filter((page) => page !== "favorites");
 
     // Create navbar links for each page
     let navbarItems = pages.map((page) => (
@@ -100,9 +102,7 @@ export default class Navbar extends React.Component {
     };
 
     return (
-      <nav
-        className={`navbar is-${color}`}
-      >
+      <nav className={`navbar is-${color}`}>
         {/* Render clickable Logo */}
         <div className="navbar-brand">
           <NavbarLogo

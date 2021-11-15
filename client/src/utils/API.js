@@ -31,4 +31,3 @@ export async function getCoin(ticker) {
     return coin;
   }
 }
-
