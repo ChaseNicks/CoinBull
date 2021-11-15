@@ -8,14 +8,12 @@ import "../index.css";
 import NewsCard from "../components/NewsCard";
 
 const SingleCoin = () => {
-
   // Get coin ID (ticker) from path params
   const { id } = useParams();
 
   return (
     <div>
       <div className="columns">
-
         {/* Render chart for single coin */}
         <div className="column">
           <Chart singleCoin={id} />
