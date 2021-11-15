@@ -39,10 +39,6 @@ function ProductList() {
     fetchCoins();
   }, []);
 
-  // useEffect(() => {
-  //   return () => AddFavoriteCoinIds(favoriteCoinIds);
-  // }, [favoriteCoinIds]);
-
   useEffect(() => {
     if (sortOrder.sortTarget !== "") {
       let toBeSorted;
@@ -100,7 +96,6 @@ function ProductList() {
     const coinToFavorite = coinsState.find((coin) => coin.id === coinId);
 
     const { id, symbol, name, price, market_cap, logo_url } = coinToFavorite;
-    console.log("coinTo", coinToFavorite);
 
     let oneDay;
 

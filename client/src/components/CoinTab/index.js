@@ -22,11 +22,6 @@ const CoinTab = (coin) => {
 
   const [isFavorite, setIsFavorite] = useState(favorite);
 
-  // useEffect(() => {
-  //   let isClicked = docoment.getElementById("delete-star").clicked()
-  //   if()
-  // });
-
   price = parseFloat(price).toFixed(4);
   circulating_supply = circulating_supply.replace(/(.)(?=(\d{3})+$)/g, "$1,");
   market_cap = market_cap.replace(/(.)(?=(\d{3})+$)/g, "$1,");

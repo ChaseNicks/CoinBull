@@ -15,7 +15,6 @@ const FavoriteCoins = () => {
   const [removeCoinFromFavorite] = useMutation(REMOVE_COIN);
   const userData = data?.getFavoriteCoins || [];
   const [initializer, setInitializer] = useState("");
-  console.log(state);
 
   useEffect(() => {
     if (userData.favorites) {

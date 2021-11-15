@@ -9,7 +9,6 @@ const SingleCoinCard = ({
   handleModalRemoval,
   initializer,
 }) => {
-  console.log("My", coin);
   return (
     <div
       className="card m-3 p-2 widget-card is-flex is-justify-content-center"
