@@ -96,7 +96,10 @@ const FavoriteCoins = () => {
   }
 
   return (
-    <div className="hero favorites-container is-fullheight">
+    <div
+      className="hero favorites-container is-fullheight"
+      style={{ marginTop: "3rem" }}
+    >
       <h1 className="is-size-1 is-size-2-mobile has-text-centered has-text-weight-bold">
         My Favorites
       </h1>
@@ -113,17 +116,17 @@ const FavoriteCoins = () => {
         ))}
       </div>
       <Helmet>
-        <script
-          defer
-          src="https://www.livecoinwatch.com/static/lcw-widget.js"
-        ></script>
+        <script defer src="https://cryptorank.io/widget/marquee.js"></script>
       </Helmet>
       <div
-        className="livecoinwatch-widget-5"
-        lcw-base="USD"
-        lcw-color-tx="#00d084"
-        lcw-marquee-1="movers"
-        lcw-marquee-items="30"
+        id="cr-widget-marquee"
+        data-coins="ripple,binance-coin,bitcoin,ethereum,tether,eos,monero,dogecoin,shiba-inu,luna,avalanche,chainlink,wrapped-bitcoin,algorand,uniswap,usdcoin,binance-usd,bitcoin-cash,stellar,ethereum-classic"
+        data-theme="light"
+        data-show-symbol="true"
+        data-show-icon="true"
+        data-show-period-change="true"
+        data-period-change="24H"
+        data-api-url="https://api.cryptorank.io/v0"
       ></div>
     </div>
   );

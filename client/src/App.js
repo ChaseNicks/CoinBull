@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import SingleCoin from "./pages/SingleCoin";
 import Prices from "./pages/Prices";
 import Charts from "./pages/Charts";
+import Mobile from "./pages/mobile";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -42,7 +43,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const pages = ["home", "prices", "charts", "dashboard", "favorites"];
+const pages = ["home", "prices", "charts", "dashboard", "favorites", "mobile"];
 
 function App() {
   return (
@@ -85,6 +86,11 @@ function App() {
               <Route exact path="/favorites">
                 <ScrollToTop />
                 <FavoriteCoins />
+              </Route>
+
+              <Route exact path="/mobile">
+                <ScrollToTop />
+                <Mobile />
               </Route>
 
               <Route component={NoMatch} />
