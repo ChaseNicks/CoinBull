@@ -7,7 +7,11 @@ const NewsItem = (props) => {
         <img src={props.image} alt={props.title} className="news-image" />
       </div>
       <div className="item-content">
-        <h5 className="title is-5 news-title">{props.title}</h5>
+        <h5 className="title is-5 news-title">
+          <a style={{color: "inherit"}} href={props.url} rel="noreferrer" target="_blank">
+            {props.title}
+          </a>
+        </h5>
         <p>{props.description}</p>
         <a
           href={props.url}
