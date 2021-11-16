@@ -33,7 +33,7 @@ function Signup(props) {
   return (
     <section className="hero is-halfheight">
       <div className="hero-body has-text-centered is-flex is-justify-content-center" style={{ flexDirection: "column" }}>
-      <h1 class="title has-text-black is-size-1 is-size-2-mobile" style={{ marginBottom: "3rem", borderBottom: "" }}>Sign Up</h1>
+      <h1 className="title has-text-black is-size-1 is-size-2-mobile" style={{ marginBottom: "3rem", borderBottom: "" }}>Sign Up</h1>
 
         <div
           className="login is-flex is-flex-wrap-wrap is-flex-shrink-2"
