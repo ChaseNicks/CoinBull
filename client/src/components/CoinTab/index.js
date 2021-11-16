@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Auth from "../../utils/auth";
 import upMarket from "../../assets/upmarket.png";
 import downMarket from "../../assets/downmarket.png";
 import { Link } from "react-router-dom";
@@ -31,7 +32,8 @@ const CoinTab = (coin) => {
     <>
       <tr>
         <th className="is-vcentered">
-          <button className="star-icon">
+          {Auth.loggedIn() ? (
+            <button className="star-icon">
             {isFavorite ? (
               <FaStar
                 id="delete-star"
@@ -49,6 +51,12 @@ const CoinTab = (coin) => {
               />
             )}
           </button>
+          ) : (
+            <button className="star-icon">
+              <FaRegStar onClick={() => alert('You must be logged in to add favorites.')} />
+            </button>
+          ) }
+
         </th>
         <th className="is-vcentered">{rank}</th>
         <th className="is-vcentered">
