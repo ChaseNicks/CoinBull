@@ -5,6 +5,7 @@ import downMarket from "../../assets/downmarket.png";
 import { Link } from "react-router-dom";
 import "./styles/SingleCoin.css";
 import { FaStar, FaRegStar } from "react-icons/fa";
+import ModalAlert from "../ModalAlert";
 
 const CoinTab = (coin) => {
   let {
@@ -22,11 +23,16 @@ const CoinTab = (coin) => {
   } = coin;
 
   const [isFavorite, setIsFavorite] = useState(favorite);
+  const [isActive, setIsActive] = useState(false);
 
   price = parseFloat(price).toFixed(4);
   circulating_supply = circulating_supply.replace(/(.)(?=(\d{3})+$)/g, "$1,");
   market_cap = market_cap.replace(/(.)(?=(\d{3})+$)/g, "$1,");
   change = parseFloat(change * 100).toFixed(2);
+
+  const handleAlert = () => {
+    setIsActive(!isActive);
+  }
 
   return (
     <>
@@ -53,7 +59,7 @@ const CoinTab = (coin) => {
           </button>
           ) : (
             <button className="star-icon">
-              <FaRegStar onClick={() => alert('You must be logged in to add favorites.')} />
+              <FaRegStar onClick={handleAlert} />
             </button>
           ) }
 
@@ -89,6 +95,9 @@ const CoinTab = (coin) => {
           )}
         </th>
       </tr>
+      {isActive ? (
+        <ModalAlert />
+      ) : null }
     </>
   );
 };
