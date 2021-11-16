@@ -1,5 +1,7 @@
 # CoinBull
 
+CoinBull allows users to view the most up-to-date pricing information for a huge variety of cryptocurrencies. Using the Nomics cryptocurrency API and widgets from Nomics, TradingView, and CryptoRank, CoinBull gives users the information they need to make sound decisions for a diverse investment portfolio - or just to satisfy their curiosity. After creating an account, users can save their favorite cryptos for easy viewing. From there, users can use the calculation tool to quickly determine the conversion rates between the US Dollar and the cryptocurrencies of their choice.
+
 ## Link to Deployed Application
 
 [CoinBull](https://coinbullapp.herokuapp.com/)
