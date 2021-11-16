@@ -53,7 +53,7 @@ const Mobile = () => {
             style={{ marginTop: "1.3rem" }}
             className="is-flex is-justify-content-center"
           >
-            <img src={stepone} alt="chart" style={{ height: "40rem" }} />
+            <img src={stepone} alt="chart" style={{ height: "35rem", borderRadius: "1rem" }} />
           </div>
         </div>
 
@@ -85,7 +85,7 @@ const Mobile = () => {
             style={{ marginTop: "1.3rem" }}
             className="is-flex is-justify-content-center"
           >
-            <img src={steptwo} alt="chart" style={{ height: "40rem" }} />
+            <img src={steptwo} alt="chart" style={{ height: "35rem", borderRadius: "1rem" }} />
           </div>
         </div>
 
@@ -118,7 +118,7 @@ const Mobile = () => {
             style={{ marginTop: "1.3rem" }}
             className="is-flex is-justify-content-center"
           >
-            <img src={stepthree} alt="chart" style={{ height: "40rem" }} />
+            <img src={stepthree} alt="chart" style={{ height: "35rem", borderRadius: "1rem" }} />
           </div>
         </div>
 
@@ -154,7 +154,7 @@ const Mobile = () => {
             <img
               src={stepfour}
               alt="chart"
-              style={{ height: "18rem", width: "20rem" }}
+              style={{ height: "18rem", width: "20rem", borderRadius: "1rem" }}
             />
           </div>
         </div>
