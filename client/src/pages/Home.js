@@ -196,6 +196,27 @@ const Home = () => {
           </div>
           <div className="is-flex is-justify-content-center"></div>
         </div>
+
+        <div
+          className="is-flex-direction-column is-justify-content-center is-align-content-center"
+          style={{
+            marginRight: ".2rem",
+            marginLeft: ".2rem",
+            marginTop: "2.5rem",
+            marginBottom: ".5rem",
+          }}
+        >
+          <div className=" is-flex-direction-column is-justify-content-center">
+            <div className="is-flex is-justify-content-center">
+            <a
+              style={{ marginTop: "1.3rem", color: "black" }}
+              className="is-size-5 is-size-6-mobile has-text-centered"
+              href="https://nomics.com"
+            >
+              Crypto Market Cap & Pricing Data Provided By Nomics
+            </a></div>
+          </div>
+        </div>
       </div>
       <Helmet>
         <script defer src="https://cryptorank.io/widget/marquee.js"></script>

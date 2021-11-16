@@ -71,14 +71,6 @@ const Footer = () => {
           and Tucker Barrett{" "}
         </a>
       </div>
-
-      <div style={{ marginBottom: "1.5rem" }}>
-        {" "}
-        All pricing data is brought to you by{" "}
-        <a href="https://nomics.com/" style={{ color: "black" }}>
-          Nomics
-        </a>
-      </div>
     </footer>
   );
 };

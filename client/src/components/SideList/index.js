@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import CoinSideTab from "../CoinSideTab";
-import Pagination from "../Pagination";
+// import Pagination from "../Pagination";
 import { getAllCoins } from "../../utils/API";
+
+
 
 function SideList() {
   // const [state, dispatch] = useStoreContext();
@@ -12,6 +14,7 @@ function SideList() {
   const [coinsPerPage] = useState(100);
 
   // const { loading, data } = useQuery(QUERY_PRODUCTS);
+  
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -29,6 +32,9 @@ function SideList() {
   const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
   const currentCoins = coinsState.slice(indexOfFirstCoin, indexOfLastCoin);
 
+  // const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
+
   return (
     <div className="" style={{ marginTop: ".5rem" }}>
       <div
@@ -40,6 +46,7 @@ function SideList() {
           <table className="table mt-1">
             <thead>
               <tr>
+                <th></th>
                 <th>Coin</th>
                 <th>Name</th>
                 <th>Price</th>
