@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./styles/ModalAlert.css";
 
 const ModalAlert = ({ isActive, handleCloseAlert }) => {
   return (
@@ -7,24 +8,20 @@ const ModalAlert = ({ isActive, handleCloseAlert }) => {
       <div className="modal-background" onClick={handleCloseAlert}></div>
       <div className="modal-card">
         <header className="modal-card-head">
-          <p className="modal-card-title">Modal title</p>
+          <p className="modal-card-title">You must be logged in to add favorites.</p>
           <button className="delete" aria-label="close" onClick={handleCloseAlert}></button>
         </header>
 
-        <section className="modal-card-body">
-          You must be logged in to add favorites.
-        </section>
-
         <footer className="modal-card-foot">
-          <Link to="/login">
-            Log In
+          <Link className="is-size-5 sign-in modal-link-button" to="/login">
+            Sign In
           </Link>
-          <Link to="/signup">
+          <Link className="is-size-5 sign-up modal-link-button" to="/signup">
             Sign Up
           </Link>
-          <button className="button" onClick={handleCloseAlert}>
+          {/* <button className="is-size-5 button modal-link-button" onClick={handleCloseAlert}>
             Cancel
-          </button>
+          </button> */}
         </footer>
       </div>
     </div>
