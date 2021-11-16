@@ -9,7 +9,7 @@ const ModalAlert = ({ isActive, handleCloseAlert }) => {
       <div className="modal-card">
         <header className="modal-card-head">
           <p className="modal-card-title">You must be logged in to add favorites.</p>
-          <button className="delete" aria-label="close" onClick={handleCloseAlert}></button>
+          <button className="close-modal-button" aria-label="close" onClick={handleCloseAlert}>&times;</button>
         </header>
 
         <footer className="modal-card-foot">
