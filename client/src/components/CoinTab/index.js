@@ -31,7 +31,11 @@ const CoinTab = (coin) => {
   change = parseFloat(change * 100).toFixed(2);
 
   const handleAlert = () => {
-    setIsActive(!isActive);
+    setIsActive(true);
+  }
+
+  const handleCloseAlert = () => {
+    setIsActive(false);
   }
 
   return (
@@ -96,7 +100,7 @@ const CoinTab = (coin) => {
         </th>
       </tr>
       {isActive ? (
-        <ModalAlert />
+        <ModalAlert handleCloseAlert={handleCloseAlert} />
       ) : null }
     </>
   );
