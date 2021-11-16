@@ -8,7 +8,7 @@ const ModalAlert = ({ isActive, handleCloseAlert }) => {
       <div className="modal-card">
         <header className="modal-card-head">
           <p className="modal-card-title">Modal title</p>
-          <button className="delete" aria-label="close"></button>
+          <button className="delete" aria-label="close" onClick={handleCloseAlert}></button>
         </header>
 
         <section className="modal-card-body">
