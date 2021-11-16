@@ -30,10 +30,9 @@ function Login(props) {
   };
 
   return (
-    <section className="hero is-fullheight">
-      <div className="hero-body has-text-centered is-flex is-justify-content-center">
-        {/* <h3 class="title has-text-black">Login</h3> */}
-
+    <section className="hero is-halfheight">
+      <div className="hero-body has-text-centered is-flex is-justify-content-center" style={{ flexDirection: "column" }}>
+        <h1 class="title has-text-black is-size-1 is-size-2-mobile" style={{ marginBottom: "3rem" }}>Sign In</h1>
         <div
           className="login"
           style={{
