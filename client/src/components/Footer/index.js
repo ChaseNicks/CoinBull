@@ -59,10 +59,10 @@ const Footer = () => {
           style={{ color: "white", textDecoration: "none" }}
         >
           {" "}
-          Will Berner{" "}
+          Will Berner,{" "}
         </a>
         <a
-          href="https://ctbarrett.tech/index.html"
+          href="https://tucker.tech"
           target="_blank"
           rel="noreferrer"
           style={{ color: "white", textDecoration: "none" }}

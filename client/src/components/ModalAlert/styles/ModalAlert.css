@@ -1,0 +1,31 @@
+.modal-link-button {
+    margin-right: 1rem;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 0.2rem;
+}
+
+.sign-in {
+    background-color: rgb(56, 200, 56);
+    box-shadow: 0 0 0 1px rgb(56, 200, 56);
+    color: white !important;
+    display: flex;
+    justify-content: center;
+}
+
+.sign-up {
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    color: black;
+    box-shadow: 0 0 0 1px black;
+}
+
+.close-modal-button {
+    background-color: lightgray;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

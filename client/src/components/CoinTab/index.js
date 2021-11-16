@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import Auth from "../../utils/auth";
 import upMarket from "../../assets/upmarket.png";
 import downMarket from "../../assets/downmarket.png";
 import { Link } from "react-router-dom";
 import "./styles/SingleCoin.css";
 import { FaStar, FaRegStar } from "react-icons/fa";
+import ModalAlert from "../ModalAlert";
 
 const CoinTab = (coin) => {
   let {
@@ -21,17 +23,27 @@ const CoinTab = (coin) => {
   } = coin;
 
   const [isFavorite, setIsFavorite] = useState(favorite);
+  const [isActive, setIsActive] = useState(false);
 
   price = parseFloat(price).toFixed(2);
   circulating_supply = circulating_supply.replace(/(.)(?=(\d{3})+$)/g, "$1,");
   market_cap = market_cap.replace(/(.)(?=(\d{3})+$)/g, "$1,");
   change = parseFloat(change * 100).toFixed(2);
 
+  const handleAlert = () => {
+    setIsActive(true);
+  }
+
+  const handleCloseAlert = () => {
+    setIsActive(false);
+  }
+
   return (
     <>
       <tr>
         <th className="is-vcentered">
-          <button className="star-icon">
+          {Auth.loggedIn() ? (
+            <button className="star-icon">
             {isFavorite ? (
               <FaStar
                 id="delete-star"
@@ -49,6 +61,12 @@ const CoinTab = (coin) => {
               />
             )}
           </button>
+          ) : (
+            <button className="star-icon">
+              <FaRegStar onClick={handleAlert} />
+            </button>
+          ) }
+
         </th>
         <th className="is-vcentered is-size-7-mobile">{rank}</th>
         <th className="is-vcentered is-size-7-mobile">
@@ -81,7 +99,9 @@ const CoinTab = (coin) => {
           )}
         </th>
       </tr>
-      
+      {isActive ? (
+        <ModalAlert handleCloseAlert={handleCloseAlert} />
+      ) : null }      
     </>
   );
 };
