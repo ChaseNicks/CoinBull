@@ -191,7 +191,7 @@ function ProductList() {
                 <span className="arrows" onClick={handleSortChange}>
                   &#8661;
                 </span>
-                Change
+                Pct  
               </th>
               <th
                 id="circulating_supply"

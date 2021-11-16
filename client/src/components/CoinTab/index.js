@@ -22,7 +22,7 @@ const CoinTab = (coin) => {
 
   const [isFavorite, setIsFavorite] = useState(favorite);
 
-  price = parseFloat(price).toFixed(4);
+  price = parseFloat(price).toFixed(2);
   circulating_supply = circulating_supply.replace(/(.)(?=(\d{3})+$)/g, "$1,");
   market_cap = market_cap.replace(/(.)(?=(\d{3})+$)/g, "$1,");
   change = parseFloat(change * 100).toFixed(2);
@@ -50,23 +50,23 @@ const CoinTab = (coin) => {
             )}
           </button>
         </th>
-        <th className="is-vcentered">{rank}</th>
-        <th className="is-vcentered">
+        <th className="is-vcentered is-size-7-mobile">{rank}</th>
+        <th className="is-vcentered is-size-7-mobile">
           <Link to={`/coins/${id}`}>
             <img className="coins-icons" src={logo_url} alt={logo_url} />
           </Link>
         </th>
         <th className="is-vcentered">
-          <Link className="coin-name" to={`/coins/${id}`}>
+          <Link className="coin-name is-size-7-mobile" to={`/coins/${id}`}>
             {name}
           </Link>
         </th>
-        <th className="is-vcentered">${price}</th>
+        <th className="is-vcentered is-size-7-mobile">${price}</th>
         <th
           className={
             change > 0
-              ? "has-text-success is-vcentered"
-              : "has-text-danger is-vcentered"
+              ? "has-text-success is-vcentered is-size-7-mobile"
+              : "has-text-danger is-vcentered is-size-7-mobile"
           }
         >
           {change} %
@@ -81,6 +81,7 @@ const CoinTab = (coin) => {
           )}
         </th>
       </tr>
+      
     </>
   );
 };
