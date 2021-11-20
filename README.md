@@ -28,8 +28,8 @@ CoinBull allows users to view the most up-to-date pricing information for a huge
 ![Bulma](https://img.shields.io/badge/Bulma-00D1B2?style=for-the-badge&logo=bulma&logoColor=white)&nbsp;
 
 ## Functionality
+![Example](https://user-images.githubusercontent.com/25047954/142732745-960fbd99-2600-41d1-814a-26544cff7d1d.gif)
 
-<!-- TODO: Add screenshots/GIFs of functionality as available -->
 
 ## Challenges
 
